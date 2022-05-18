@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="day_18.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- javascript를 이용한 css control -->
+    <div class="container">
+      <!-- onclick에 함수이름 -->
+      <div id="blue" class="blue" onclick="changeColor()"></div>
+      <div id="red" class="red" onclick="hide()"></div>
+      <div class="clear">
+        <button onclick="setInitilization()">ALL CLEAR</button>
+      </div>
+      <div class="form">
+        <!-- onkeyup : 키보드를 눌렀다가 떼었을 때 발생 -->
+        <input id="userPassword" type="password" value="" onkeyup="" />
+        <!-- userPassword2 : 비밀번호 확인란 -->
+        <input
+          id="userPassword2"
+          type="password"
+          value=""
+          onkeyup="checkUserId()"
+        />
+      </div>
+    </div>
+    <script>
+      function checkUserId() {
+        var password = document.getElementById('userPassword').value;
+        var password2 = document.getElementById('userPassword2').value;
+        if (password == password2) {
+          confirm('비밀번호가 일치합니다');
+        }
+        console.log('userId');
+      }
+      // 함수작성(method)
+      // javascript 함수는 리턴타입이 없음
+      function changeColor() {
+        // class name으로 가져올건지 ID로 가져올것인지
+        // document.getElementById => 바닐라 스크립트 문법
+        // onclick -> click시 함수 호출
+        // 처음에 var color = blue 그래서 if실행 안함
+        // click하면 var color = black 그래서 if 실행
+        var color = document.getElementById('blue').style.backgroundColor;
+        if (color == 'black') {
+          alert('이미 배경은 검은색입니다');
+          return 0;
+        }
+        document.getElementById('blue').style.backgroundColor = 'black';
+        // console.log(color); : 개발자창 켰을 때 출력값 보여줌
+        console.log(color);
+      }
+      // 함수이름은 동사
+      function hide() {
+        document.getElementById('blue').style.display = 'none';
+      }
+      function setInitilization() {
+        document.getElementById('blue').style.display = 'block';
+        document.getElementById('blue').style.backgroundColor = 'blue';
+      }
+    </script>
+  </body>
+</html>

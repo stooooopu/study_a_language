@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hello {
+        position: relative;
+        top: 50px;
+        /* top을 기준으로 밑으로 50만큼 움직여 */
+        left: 100px;
+        background-color: rgb(132, 196, 255);
+        /* 내 화면 길이에 맞게 %가 조정 됨 */
+        width: 30%;
+        height: 30px;
+      }
+      .hello2 {
+        background-color: rgb(43, 138, 138);
+        width: 20%;
+        height: 50px;
+      }
+      .hello3 {
+        background-color: darkorange;
+        width: 50%;
+        height: 29px;
+      }
+    </style>
+    <style>
+      .rel1 {
+        background-color: rgb(182, 121, 240);
+        width: 80px;
+        height: 80px;
+      }
+      .rel2 {
+        background-color: rgb(238, 78, 110);
+        position: relative;
+        left: 80px;
+        width: 80px;
+        height: 80px;
+      }
+      .rel3 {
+        background-color: rgb(250, 127, 106);
+        position: relative;
+        left: 160px;
+        width: 80px;
+        height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div 태그는 공간(구역)을 의미 -->
+    <div class="hello">안녕하십니가</div>
+    <div class="hello2">안녕하십니가</div>
+    <div class="hello3">안녕하십니가</div>
+    <div class="rel1">relative</div>
+    <div class="rel2">relative</div>
+    <div class="rel3">relative</div>
+  </body>
+</html>

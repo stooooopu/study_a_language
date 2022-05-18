@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      section {
+        margin: 50px auto 0;
+        width: 90%;
+        height: 500px;
+      }
+      .title {
+        /* 부모의 height :  auto 면 자식 height에 맞춰짐 */
+        height: auto;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+      .title h2 {
+        text-align: center;
+      }
+      .row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        /* 눈으로 확인하려고
+        width: 100%;
+        height: auto;
+        border: 2px solid black; */
+      }
+      .item {
+        background-color: paleturquoise;
+        color: rgb(31, 207, 207);
+        /* border: 10px double dodgerblue; */
+        border-radius: 10px;
+        padding: 2% 6%;
+        text-align: center;
+      }
+      .item p {
+        font-size: 22px;
+      }
+      .item h2 {
+        margin: 20px 0 40px;
+        font-size: 44px;
+        font-weight: 500;
+      }
+      .item h2 span {
+        font-size: 18px;
+      }
+      .item ul {
+        text-align: left;
+        margin: 20px 0;
+      }
+      .item ul li {
+        margin: 15px 0;
+      }
+      .item button {
+        /* 이때 item의 크기만큼 줬는데도 작은 이유는
+          item에 padding을 줘서 */
+        width: 100%;
+        padding: 14px 0;
+        background-color: transparent;
+        border: 2px solid dodgerblue;
+        font-size: 15px;
+        font-weight: 800;
+        color: rgb(31, 207, 207);
+        border-radius: 20px;
+        cursor: pointer;
+        margin-top: 30px;
+        transition: 0.5s;
+      }
+      .item button:hover {
+        background-color: rgba(255, 255, 255, 0.479);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <header></header> 필요하면 사용 -->
+      <section>
+        <div class="title">
+          <h2>Choose your plan</h2>
+        </div>
+        <div class="row">
+          <div class="item">
+            <p>Starter</p>
+            <h2>19$ <span>/ month</span></h2>
+            <ul>
+              <li>1 Website</li>
+              <li>10 GB</li>
+              <li>Free email Address</li>
+              <li>Basic Web Builder</li>
+              <li>No SSL Certificate</li>
+              <li>Limited Support</li>
+            </ul>
+            <button>Add to Cart</button>
+          </div>
+          <div class="item">
+            <p>Starter</p>
+            <h2>19$ <span>/ month</span></h2>
+            <ul>
+              <li>1 Website</li>
+              <li>10 GB</li>
+              <li>Free email Address</li>
+              <li>Basic Web Builder</li>
+              <li>No SSL Certificate</li>
+              <li>Limited Support</li>
+            </ul>
+            <button>Add to Cart</button>
+          </div>
+          <div class="item">
+            <p>Starter</p>
+            <h2>19$ <span>/ month</span></h2>
+            <ul>
+              <li>1 Website</li>
+              <li>10 GB</li>
+              <li>Free email Address</li>
+              <li>Basic Web Builder</li>
+              <li>No SSL Certificate</li>
+              <li>Limited Support</li>
+            </ul>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

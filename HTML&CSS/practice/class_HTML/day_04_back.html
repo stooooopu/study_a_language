@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      /* 배경화면 CSS */
+      .background {
+        width: 100%;
+        height: 100vh;
+        /* opacity : 투명도 */
+        /* opacity: 0.84; 0~1 까지 숫자 가능*/
+        /* linear-gradient() : 그라데이션 비슷 */
+        background-image: linear-gradient(#c7a8fab6, rgba(0, 8, 51, 0.9)),
+          url(img/background.jpg);
+        background-position: center;
+      }
+      .background p {
+        text-align: center;
+        color: rgb(255, 182, 47);
+        /* 폰트 크기 */
+        font-size: 150px;
+        /* 폰트 사이즈 */
+        font-weight: 800;
+        /* solid : 두꺼운 실선, dotted : 점선 */
+        border: dotted #f33;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- container 하는 이유 : 광고 등에 관련된 div 분리를 위해 -->
+    <div class="container">
+      <div class="background">
+        <p>APPLE MANGO</p>
+      </div>
+    </div>
+  </body>
+</html>

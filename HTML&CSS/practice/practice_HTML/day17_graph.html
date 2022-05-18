@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="day17_graph.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="dashboard-graph">
+        <div class="dashboard-graph-circle">
+          <h3>원형차트</h3>
+          <div class="board circle">
+            <canvas id="circle"></canvas>
+          </div>
+        </div>
+        <div class="dashboard-graph-line">
+          <h3>바 그래프</h3>
+          <div class="board line">
+            <canvas id="graph_line"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const DATA_SETTINGS = {
+        datasets: [
+          {
+            label: 'circle',
+            data: [20, 40, 20, 20],
+            backgroundColor: [
+              'rgb(245,245,245)',
+              'rgb(255,205,86)',
+              'rgba(0,0,255,0.6)',
+              'rgba(255,0,0,0.6)',
+            ],
+          },
+        ],
+      };
+      const MY_CHART_DATA = {
+        type: 'doughnut',
+        data: DATA_SETTINGS,
+      };
+      const labels = ['1', '2', '3', '4', '5', '6'];
+      const DATA_SETTINGS_LINE = {
+        labels: labels,
+        datasets: [
+          {
+            label: 'line',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+          },
+        ],
+      };
+      const MY_CHART_DATA_LINE = {
+        type: 'line',
+        data: DATA_SETTINGS_LINE,
+        options: {},
+      };
+
+      new Chart(document.getElementById('circle'), MY_CHART_DATA);
+      new chart(document.getElementById('graph_line'), MY_CHART_DATA_LINE);
+    </script>
+  </body>
+</html>

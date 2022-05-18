@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* .A {
+        position: relative;
+        margin: 200px auto 0;
+        width: 200px;
+        height: 200px;
+        background-color: black;
+        padding: 50px 50px;
+      }
+      .B {
+        position: absolute;
+        border: 5px solid white;
+        width: 100px;
+        height: 100px;
+      }
+      .C {
+        position: relative;
+        border: 5px solid white;
+        width: 50px;
+        height: 50px;
+        margin: 20px;
+      } */
+      /* align-item = y축 
+        justyfy-content = x축*/
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      /* 미쳤다 인스타 아이콘된다 */
+      .A {
+        display: flex;
+        width: 270px;
+        height: 270px;
+        /* 인스타그램 배경 컬러 */
+        background: radial-gradient(
+          circle at 33% 100%,
+          #fed373 4%,
+          #f15245 30%,
+          #d92e7f 62%,
+          #9b36b7 85%,
+          #515ecf
+        );
+        align-items: center;
+        justify-content: center;
+        border-radius: 55px;
+      }
+      .B {
+        /* 점 이동하기 위해 C::after의 부모태그인 B에 relative */
+        position: relative;
+        display: flex;
+        width: 200px;
+        height: 200px;
+        border: 12px solid white;
+        align-items: center;
+        justify-content: center;
+        border-radius: 53px;
+      }
+      .C {
+        width: 100px;
+        height: 100px;
+        border: 12px solid white;
+        /* 사각형이 동그라미가 됐어요! */
+        border-radius: 50%;
+      }
+      /* 인스타 점 찍기 */
+      /* arter = 특정기호 */
+      .C::after {
+        /* 점 위치 옮기기위해 C::arter 태그에 absolute */
+        position: absolute;
+        /* absolute 이동하기 위해 top bottom right left */
+        top: 15px;
+        right: 15px;
+        content: '';
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="A">
+        <div class="B">
+          <div class="C"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

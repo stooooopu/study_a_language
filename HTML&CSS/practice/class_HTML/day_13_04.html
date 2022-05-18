@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .section-01 {
+        margin-bottom: 50px;
+      }
+      .background-box {
+        width: 80%;
+        height: 200px;
+        background-color: palegreen;
+      }
+      .pink-box {
+        /* 아이템 초기 크기 설정 
+        flex : 1 = flex-basis : 100% 와 동일*/
+        flex-basis: 10%;
+        height: 180px;
+        background-color: pink;
+      }
+      /* 아예 첫 번째 item에 style을 줄 수 있는데 파일관리가 어려움 */
+      .section-02 .pink-box:nth-child(1) {
+        background-color: rgb(232, 255, 100);
+        flex-grow: 0.8;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: 10px;
+      }
+      .blue-box {
+        height: 50px;
+        width: 50%;
+        background-color: rgb(111, 195, 235);
+        animation: blue-box 2s linear infinite;
+      }
+      @keyframes blue-box {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="row section-01">
+        <!-- section을 background box로 사용해도 됨 -->
+        <div class="row background-box">
+          <div class="pink-box"></div>
+          <div class="pink-box"></div>
+          <div class="pink-box"></div>
+        </div>
+      </section>
+      <section class="row section-02">
+        <div class="row background-box">
+          <div class="pink-box">
+            <div class="blue-box"></div>
+            <div class="blue-box"></div>
+          </div>
+          <div class="pink-box"></div>
+          <div class="pink-box"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

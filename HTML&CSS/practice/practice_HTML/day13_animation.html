@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(58, 140, 32);
+      }
+      .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .green-simpson {
+        position: relative;
+        height: 500px;
+        width: 1000px;
+      }
+      .green-simpson .i-01 {
+        position: absolute;
+      }
+      .green-simpson .i-02 {
+        position: absolute;
+        animation: x 1s linear infinite;
+        top: 20px;
+        left: -25px;
+      }
+      @keyframes x {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .dou {
+        height: 700px;
+        width: 500px;
+      }
+      .dou img {
+        width: 500px;
+        height: auto;
+        animation: dou 5s linear infinite;
+      }
+      @keyframes dou {
+        0% {
+          transform: rotate(0turn);
+        }
+        100% {
+          transform: rotate(1turn);
+        }
+      }
+      .hand {
+        position: relative;
+        height: 800px;
+        width: auto;
+      }
+      .hand img {
+        position: absolute;
+        height: 500px;
+        width: auto;
+        animation: hand 2s linear infinite;
+      }
+      @keyframes hand {
+        0% {
+          opacity: 0;
+          transform: translate3d(0, 50%, 0);
+        }
+        100% {
+          opacity: 1;
+          transform: translateZ(0);
+        }
+      }
+      .text-line {
+        position: relative;
+        margin-top: 100px;
+        width: 100%;
+        height: 20px;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 217, 15);
+      }
+      .text-line p {
+        position: absolute;
+        animation: tex 10s linear infinite;
+      }
+      @keyframes tex {
+        from {
+          left: 0%;
+        }
+        to {
+          left: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="green-simpson">
+          <img class="i-01" src="img/side03_01.png" alt="" />
+          <img class="i-02" src="img/side03 copy.png" alt="" />
+        </div>
+        <div class="dou">
+          <img src="img/doughnut.png" alt="" />
+        </div>
+        <div class="hand">
+          <img src="img/side02 copy.png" alt="" />
+        </div>
+        <div class="text-line">
+          <p>
+            The Simpsons The Simpsons a meadow and they live a lot live live
+            live live a lot (school bell rings)
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

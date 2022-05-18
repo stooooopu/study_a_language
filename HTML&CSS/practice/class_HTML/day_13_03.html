@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 2%;
+      }
+      .seventeen {
+        width: 80%;
+        margin: 50px auto 0;
+        /* 잘 먹었나 확인하는 background-color: palevioletred; */
+      }
+      .intro {
+        text-align: center;
+      }
+      .intro h1 {
+        font-size: 50px;
+        font-weight: 800;
+        color: pink;
+        text-shadow: 5px 5px palevioletred;
+      }
+      .intro p {
+        font-size: 16px;
+        color: palevioletred;
+        font-weight: 800;
+        line-height: 28px;
+        margin-top: 20px;
+      }
+      .snapshoot {
+        /* flex-basis 아이템 크기 지정 */
+        flex-basis: 30%;
+        text-align: left;
+        margin-top: 5%;
+        border-radius: 10px;
+      }
+      .snapshoot img {
+        height: 250px;
+        width: auto;
+        border-radius: 15px;
+        border: 5px solid rgb(134, 236, 236);
+      }
+      .caption h3 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        color: rgb(97, 161, 161);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="seventeen">
+        <!-- intro 소개글 -->
+        <div class="intro">
+          <h1>Scoups</h1>
+          <p>안녕하세요 세븐틴 총괄리더 에스쿱스입니다<br />28살 맞냐며</p>
+        </div>
+        <div class="row">
+          <div class="snapshoot">
+            <img src="img/01.jpg" alt="" />
+            <div class="caption">
+              <h3>스냅슛-페이스캠01</h3>
+              <p>차애</p>
+            </div>
+          </div>
+          <div class="snapshoot">
+            <img src="img/02.jpg" alt="" />
+            <div class="caption">
+              <h3>스냅슛-페이스캠02</h3>
+              <p>최애</p>
+            </div>
+          </div>
+          <div class="snapshoot">
+            <img src="img/03.jpg" alt="" />
+            <div class="caption">
+              <h3>스냅슛-페이스캠03</h3>
+              <p>차애</p>
+            </div>
+          </div>
+          <!-- <div class="snapshoot">
+            <img src="img/04.jpg" alt="" />
+            <div class="caption">
+              <h3>랩라-페이스캠</h3>
+              <p>레전드</p>
+            </div>
+          </div> -->
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

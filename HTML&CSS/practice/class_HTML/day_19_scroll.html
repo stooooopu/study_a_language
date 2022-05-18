@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="day_19_scroll.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- scroll 
+        HOME 누르면 scroll 내려가게-->
+      <header>
+        <ul>
+          <li onclick="doScroll()">HOME</li>
+        </ul>
+      </header>
+      <!-- media query -->
+      <!-- 핸드폰사이즈에 맞게 줄여주고 폰트가 깨지지 않게 -->
+      <div class="row">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+    </div>
+    <script>
+      function doScroll() {
+        // top 300은 내가 지정한 사이즈 각 사이트에 맞게 지정해줌
+        // 단위는 px고정인데 jquery는 자동으로 맞춰주지만
+        // script는 내가 직접 써줘야함
+        window.scrollTo({ top: 300, begavior: 'smooth' });
+      }
+    </script>
+  </body>
+</html>

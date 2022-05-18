@@ -1,0 +1,54 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  .background {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(#fdff7963, rgba(0, 51, 0, 0.288)),
+      url(img/background.jpg);
+    background-position: center;
+  }
+  .contact-form {
+    border-radius: 4px;
+    padding: 5px 10px 5px;
+    width: 350px;
+    border: 5px solid rgba(255, 145, 0, 0.76);
+    text-align: center;
+    margin: auto;
+  }
+  .contact-form h2 {
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 161, 45, 0.733);
+    margin-top: 0;
+    padding: 10px;
+  }
+  .contact-form input {
+    background-color: #fdff7942;
+    width: 100%;
+    margin: 7px auto;
+    padding: 10px;
+  }
+  .contact-form input[type='checkbox'] {
+    width: auto;
+    margin: 3px auto;
+    padding: 10px;
+  }
+  .a {
+    height: 8px;
+  }
+  .contact-form textarea {
+    width: 100%;
+    height: 100px;
+    background-color: #fdff7942;
+  }
+  .contact-form input[type='submit'] {
+    cursor: pointer;
+    border-radius: 6px;
+    border: 2px solid rgba(0, 87, 14, 0.562);
+    color: aliceblue;
+    font-size: 20px;
+    background-color: rgba(0, 129, 0, 0.568);
+    width: 130px;
+  }

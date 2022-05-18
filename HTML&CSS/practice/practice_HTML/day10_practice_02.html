@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      header {
+        width: 100%;
+        height: 100px;
+        background-color: black;
+      }
+      .black-box {
+        height: 300px;
+        width: 500px;
+        background-color: black;
+        margin: 100px auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .red-box {
+        height: 200px;
+        width: 100px;
+        background-color: red;
+      }
+      .black-box2 {
+        height: 300px;
+        width: 500px;
+        background-color: black;
+        margin: 100px auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+      }
+      .white-box {
+        height: 100px;
+        width: 400px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header></header>
+      <div class="black-box">
+        <div class="red-box"></div>
+        <div class="red-box"></div>
+        <div class="red-box"></div>
+      </div>
+      <div class="black-box2">
+        <div class="white-box"></div>
+        <div class="white-box"></div>
+      </div>
+    </div>
+  </body>
+</html>

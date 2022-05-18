@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css파일 연결 -->
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script>
+        function success() {
+            alert ('주문 성공!');
+        }
+    </script>
+  </head>
+  <body>
+   <div class="background">
+   <div class="contact-form">
+      <h2>MENU</h2>
+      <input id="menu" type="text" list="menu-list" />
+      <datalist id="menu-list">
+        <option value="americano"></option>
+        <option value="latte"></option>
+      </datalist>
+        <input type="number" min="0" max="5" placeholder="수량">
+        <input type="text" placeholder="회원이름 입력란...">
+        <input type="password" placeholder="회원비밀번호 입력란..." maxlength="13">
+        <input type="checkbox" id="check" checked>
+        <label for="check">광고수신 여부</label>
+        <input type="email" placeholder="이메일 입력란...">
+        <textarea name="message" placeholder="주문시 메모 입력란..."></textarea>
+        <input type="submit" value="주문" onclick="success();">
+      </form>
+    </div>
+    </div>
+  </body>
+</html>

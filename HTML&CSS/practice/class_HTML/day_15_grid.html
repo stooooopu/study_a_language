@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      section {
+        display: grid;
+        /* repeat() : grid안에 있는 아이템을 모두 크기 조절
+          repeat(x,y) : 반복횟수 , (크기에 대한)값 
+          minmax() : 최소 크기와 최대 크기 조절 
+          auto-fit : 자동 반복
+          1fr(fraction) : flex : 1 과 동일*/
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* grid-gap : 간격 조절 */
+        grid-gap: 50px;
+        width: 80%;
+        height: auto;
+        margin: 30px auto 0;
+        background-color: darkolivegreen;
+        padding: 50px;
+      }
+      .item {
+        width: 100%;
+        height: auto;
+        background-color: olive;
+        border: 2px solid beige;
+        border-radius: 15px;
+        box-shadow: 8px 10px rgba(77, 77, 41, 0.705);
+        text-align: center;
+      }
+      .item:nth-child(1) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        transform: scale(1);
+        transition: 0.3s;
+      }
+      .item:nth-child(1) .content h3 {
+        font-size: 25px;
+        color: palevioletred;
+      }
+      .item:nth-child(1) .content p {
+        font-size: 13px;
+        color: beige;
+      }
+      .item:nth-child(1) img {
+        border-radius: 50%;
+        box-shadow: 5px 5px rgba(51, 51, 51, 0.692);
+        width: 50%;
+        height: auto;
+        /* object-fit : 사진 깨짐 방지 */
+        object-fit: cover;
+      }
+      .item:nth-child(1):hover {
+        transform: scale(1.05);
+      }
+      .item:nth-child(2) {
+        padding-top: 20px;
+        transform: scale(1);
+        transition: 0.3s;
+        padding-bottom: 20px;
+      }
+      .item:nth-child(2) .content h3 {
+        font-size: 25px;
+        color: paleturquoise;
+      }
+      .item:nth-child(2) .content p {
+        font-size: 13px;
+        color: beige;
+      }
+      .item:nth-child(2) img {
+        border-radius: 50%;
+        box-shadow: 5px 5px rgba(51, 51, 51, 0.692);
+        width: 50%;
+        height: auto;
+        /* object-fit : 사진 깨짐 방지 */
+        object-fit: cover;
+      }
+      .item:nth-child(2):hover {
+        transform: scale(1.05);
+      }
+
+      .item:nth-child(3) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        transform: scale(1);
+        transition: 0.3s;
+      }
+      .item:nth-child(3) .content h3 {
+        font-size: 25px;
+        color: palegreen;
+      }
+      .item:nth-child(3) .content p {
+        font-size: 13px;
+        color: beige;
+      }
+      .item:nth-child(3) img {
+        border-radius: 50%;
+        box-shadow: 5px 5px rgba(51, 51, 51, 0.692);
+        width: 50%;
+        height: auto;
+        /* object-fit : 사진 깨짐 방지 */
+        object-fit: cover;
+      }
+      .item:nth-child(3):hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <div class="item">
+          <img src="/day_07/파이리.gif" alt="" />
+          <div class="content">
+            <h3>파이리자몽쉘</h3>
+            <p>불꽃타입 포켓몬</p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="/day_07/꼬북이.jpg" alt="" />
+          <div class="content">
+            <h3>꼬부기</h3>
+            <p>물타입 포켓몬</p>
+          </div>
+          <!-- 이런식으로 다른 html연결 가능
+          <a href="grid02.html">클릭</a> -->
+        </div>
+        <div class="item">
+          <img src="/day_07/이상해씨.jpg" alt="" />
+          <div class="content">
+            <h3>이상해씨</h3>
+            <p>풀, 벌레타입 포켓몬</p>
+          </div>
+        </div>
+        <!-- <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div> -->
+      </section>
+    </div>
+  </body>
+</html>

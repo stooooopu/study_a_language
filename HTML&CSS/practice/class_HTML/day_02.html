@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM tag 공부</title>
+    <style>
+      table {
+        margin: auto;
+        box-shadow: 0 3px 7px grey;
+        background-color: white;
+      }
+
+      table:hover {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      tr {
+        border: 1px solid #444444;
+      }
+
+      tr:nth-child(even) {
+        background-color: #eaeaeb;
+      }
+
+      thead {
+        box-shadow: 0 1px 5px grey;
+      }
+
+      th {
+        padding: 1rem 2rem;
+        letter-spacing: 0.4rem;
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      td {
+        padding: 1rem 2rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- form tag 작성 -->
+    <form action="웹서버 주소">
+      아이디 : <input type="text" /> 비밀번호 : <input type="password" /> 회원
+      이메일 : <input type="email" />
+      <input type="submit" />
+      <!-- 폼 안에있는 데이터를 입력하면 웹서버 주소에 입력 됨 -->
+    </form>
+
+    <h3>table tag</h3>
+    <!-- table tag 작성 -->
+    <table>
+      <thead>
+        <!-- tr : table row - 테이블 행  -->
+        <tr>
+          <!-- th : table head - 테이블의 제목(컬럼) -->
+          <th>출장비 내역</th>
+          <th>금액</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- td : table data - 컬럼 데이터(열 데이터) -->
+          <td>교통비</td>
+          <td>30,000</td>
+        </tr>
+        <tr>
+          <td>식비</td>
+          <td>100,000</td>
+        </tr>
+        <tr>
+          <td>숙박비</td>
+          <td>500,000</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>총 합계</td>
+          <td>630,000</td>
+        </tr>
+      </tfoot>
+      <!-- tfoot은 잘 안씀 거의 tbody에 함께 씀 -->
+    </table>
+
+    <h3>table 시간표 만들기</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>월요일</th>
+          <th>화요일</th>
+          <th>수요일</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2">필라테스</td>
+          <td>요가</td>
+        </tr>
+        <tr>
+          <td>주짓수</td>
+          <td>mma</td>
+          <td rowspan="2">명상</td>
+        </tr>
+        <tr>
+          <td>웨이트 훈련</td>
+          <td>크로스핏</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>data list</h3>
+    <!-- data list tag (select와 비슷)-->
+    <label for="movie">영화 추천 해 주세욥</label>
+    <input id="movie" type="text" list="movie-list" />
+    <datalist id="movie-list">
+      <option value="범죄도시"></option>
+      <option value="해리포터와 마법사의 돌"></option>
+      <option value="어벤져스 엔드게임"></option>
+      <option value="판의미로"></option>
+      <option value="타짜"></option>
+      <option value="클래식"></option>
+    </datalist>
+
+    <!-- detail tag 디테일을 보여 주겠따-->
+    <h3>detail tag</h3>
+    <details>
+      <summary>핫시 김현우 최종 선택(안물안궁)</summary>
+      <span>임현주</span>
+    </details>
+    <!-- prograss tag (bar tag)-->
+    <progress value="10" min="0" max="100"></progress>
+    <!-- <progress></progress> 일케만 치면 bar가 꼐속 움직임 재밌음 -->
+
+    <h3>kakaO MAP</h3>
+    <!-- 지도를 표시할 div 입니다 -->
+    <div id="map" style="width: 100%; height: 350px"></div>
+    <!-- script tag 안에서 코딩을 할 수 있음 -->
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f283c9704c76d19621ebd286c77b5d5a"
+    ></script>
+    <script>
+      var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+          center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+          level: 3, // 지도의 확대 레벨
+        };
+
+      // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+      var map = new kakao.maps.Map(mapContainer, mapOption);
+    </script>
+  </body>
+</html>

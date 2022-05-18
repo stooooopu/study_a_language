@@ -1,0 +1,206 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  header {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+  }
+  .dropdown {
+    flex-basis: 30%;
+    padding: 2%;
+  }
+  .dropdown button {
+    font-size: 38px;
+    border: none;
+    padding: 10px 16px;
+    font-weight: 800;
+    border-radius: 5px;
+  }
+  .dropdown-content {
+    /* 부모와 자식관계에서 벗어나기 위해 position:absolute를 준 것 */
+    position: absolute;
+    display: none;
+    width: 150px;
+    background-color: darkcyan;
+  }
+  .dropdown-content a {
+    /* 디폴트가 inline block이니까 이걸 세로로 block으로 바꿔준다 */
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: left;
+    color: whitesmoke;
+  }
+  .dropdown-content a:hover {
+    background-color: rgb(0, 158, 158);
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .ra {
+    flex-basis: 30%;
+    padding: 2%;
+  }
+  .ra button {
+    font-size: 38px;
+    border: none;
+    padding: 10px 16px;
+    font-weight: 800;
+    border-radius: 5px;
+  }
+  .ra-content {
+    display: none;
+    position: absolute;
+    background-color: red;
+    width: 60px;
+  }
+  .ra-content a {
+    display: block;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: white;
+  }
+  .ra:hover .ra-content {
+    display: block;
+  }
+  .in {
+    flex-basis: 30%;
+    padding: 2%;
+  }
+  .in button {
+    font-size: 38px;
+    border: none;
+    padding: 10px 16px;
+    font-weight: 800;
+    border-radius: 5px;
+  }
+  .in-content {
+    display: none;
+    position: absolute;
+    background-color: orange;
+    width: 60px;
+  }
+  .in-content a {
+    display: block;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: white;
+  }
+  .in:hover .in-content {
+    display: block;
+  }
+  .b {
+    flex-basis: 30%;
+    padding: 2%;
+  }
+  .b button {
+    font-size: 38px;
+    border: none;
+    padding: 10px 16px;
+    font-weight: 800;
+    border-radius: 5px;
+  }
+  .b-content {
+    display: none;
+    position: absolute;
+    background-color: yellow;
+    width: 60px;
+  }
+  .b-content a {
+    display: block;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: white;
+  }
+  .b:hover .b-content {
+    display: block;
+  }
+  .o {
+    flex-basis: 30%;
+    padding: 2%;
+  }
+  .o button {
+    font-size: 38px;
+    border: none;
+    padding: 10px 16px;
+    font-weight: 800;
+    border-radius: 5px;
+  }
+  .o-content {
+    display: none;
+    position: absolute;
+    background-color: green;
+    width: 60px;
+  }
+  .o-content a {
+    display: block;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: white;
+  }
+  .o:hover .o-content {
+    display: block;
+  }
+  .oo {
+    flex-basis: 30%;
+    padding: 2%;
+  }
+  .oo button {
+    font-size: 38px;
+    border: none;
+    padding: 10px 16px;
+    font-weight: 800;
+    border-radius: 5px;
+  }
+  .oo-content {
+    display: none;
+    position: absolute;
+    background-color: blue;
+    width: 60px;
+  }
+  .oo-content a {
+    display: block;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: white;
+  }
+  .oo:hover .oo-content {
+    display: block;
+  }
+  .w {
+    flex-basis: 30%;
+    padding: 2%;
+  }
+  .w button {
+    font-size: 38px;
+    border: none;
+    padding: 10px 16px;
+    font-weight: 800;
+    border-radius: 5px;
+  }
+  .w-content {
+    display: none;
+    position: absolute;
+    background-color: purple;
+    width: 60px;
+  }
+  .w-content a {
+    display: block;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: white;
+  }
+  .w:hover .w-content {
+    display: block;
+  }
+  

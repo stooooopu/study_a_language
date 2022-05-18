@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- chart.js를 다운받게 됨 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="day_17_graph.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 그래프UI
+    이미 완성된 그래프를 사용함, 사용하는 방법만 알면 됨
+    chart.js -->
+    <div class="container">
+      <!-- dashboard-graph : 그래프관련 대시보드 -->
+      <div class="dashboard-graph">
+        <!-- dashboard-graph-circle : circle 그래프 UI -->
+        <div class="dashboard-graph-circle">
+          <h3>올해 매출액</h3>
+          <p>목표 매출액 : <span>80%</span></p>
+          <p>작년 매출액 : <span>60.5%</span></p>
+          <div class="border yellow">
+            <!-- 여기에 그래프를 넣을 예정 -->
+            <!-- canvas : html에 그림을 그릴 수 있는 일종의 컨테이너 태그
+              id : 중복불가 / class : 중복가능 -->
+            <canvas id="myChart"></canvas>
+            <div class="text_p">
+              <h3>80%</h3>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-graph-circle">
+          <h3>올해 매출액</h3>
+          <p>목표 매출액 : <span>80%</span></p>
+          <p>작년 매출액 : <span>60.5%</span></p>
+          <div class="border yellow">
+            <canvas id="myChart2"> </canvas>
+          </div>
+        </div>
+        <div class="dashboard-graph-circle">
+          <h3>올해 매출액</h3>
+          <p>목표 매출액 : <span>80%</span></p>
+          <p>작년 매출액 : <span>60.5%</span></p>
+          <div class="border yellow">
+            <canvas id="myChart3"> </canvas>
+          </div>
+        </div>
+        <div class="dashboard-graph-circle">
+          <h3>올해 매출액</h3>
+          <p>목표 매출액 : <span>80%</span></p>
+          <p>작년 매출액 : <span>60.5%</span></p>
+          <div class="border yellow">
+            <canvas id="myChart4"> </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- script 작성 -->
+    <script>
+      // 그래프에 데이터를 넣기 위해서는 코딩이 필요
+      const DATA_SETTINGS = {
+        // JSON (key : value로 구성) 프론트에만 사용하는 것이 아님
+        // key : 중복불가 (코딩에서 key가 들어가면 중복 안된다는 것 기억!)
+        // value : 데이터타입이 온다(값) 중복가능(문자형, 정수형, 논리형, 배열, json ...)
+        datasets: [
+          //  배열에는 데이터 타입이 오는 것
+          {
+            label: '2022매출 통계',
+            //   그래프에 들어갈 데이터
+            data: [20, 80],
+            backgroundColor: ['rgb(245,245,245)', 'rgb(255,205,86)'],
+          },
+        ],
+      };
+      const DATA_SETTINGS_RED = {
+        datasets: [
+          {
+            label: '2020매출 통계',
+            data: [30, 70],
+            backgroundColor: ['rgb(245,245,245)', 'rgba(255,0,0,0.6)'],
+          },
+        ],
+      };
+      const DATA_SETTINGS_BLUE = {
+        datasets: [
+          {
+            label: '2019매출 통계',
+            data: [10, 90],
+            backgroundColor: ['rgb(245,245,245)', 'rgba(0,0,255,0.6)'],
+          },
+        ],
+      };
+      const DATA_SETTINGS_GREEN = {
+        datasets: [
+          {
+            label: '통계',
+            data: [22.5, 77.5],
+            backgroundColor: ['rgb(245,245,245)', '#83DEA4'],
+          },
+        ],
+      };
+      const MY_CHART_DATA = {
+        type: 'doughnut',
+        data: DATA_SETTINGS,
+      };
+      const MY_CHART_DATA_RED = {
+        type: 'doughnut',
+        data: DATA_SETTINGS_RED,
+      };
+      const MY_CHART_DATA_BLUE = {
+        type: 'doughnut',
+        data: DATA_SETTINGS_BLUE,
+      };
+      const MY_CHART_DATA_GREEN = {
+        type: 'doughnut',
+        data: DATA_SETTINGS_GREEN,
+      };
+      // 차트를 생성할 준비
+      // new keyword : 객체지향언어를 의미
+      // where? 어디에 넣을지 지정
+      // getElementById : id로 찾겠다
+      // getElementByClassName : class name으로 찾겠다
+      // new Chart : Chart.js 다운받을 때 폴더안에 chart라는 class파일이 있음
+      new Chart(document.getElementById('myChart'), MY_CHART_DATA);
+      new Chart(document.getElementById('myChart2'), MY_CHART_DATA_RED);
+      new Chart(document.getElementById('myChart3'), MY_CHART_DATA_BLUE);
+      new Chart(document.getElementById('myChart4'), MY_CHART_DATA_GREEN);
+    </script>
+  </body>
+</html>

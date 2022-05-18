@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      section {
+        width: 90%;
+        height: 500px;
+
+        margin: 30px auto 0;
+      }
+      .title {
+        height: auto;
+        text-shadow: 2px 2px pink;
+        font-size: 30px;
+        text-align: center;
+        font-weight: 800;
+        margin-bottom: 50px;
+      }
+      .row {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: auto;
+      }
+      .item {
+        border: 1px solid black;
+        background-color: pink;
+        padding: 30px;
+        border: none;
+        border-radius: 20px;
+        transform: scale(1);
+        transition: 0.5s;
+      }
+      .item p {
+        color: palevioletred;
+        text-shadow: 1px 2px white;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+      .item h2 {
+        color: white;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .item h2 span {
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .item ul {
+        font-size: 18px;
+      }
+      .item ul li {
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .item button {
+        margin-top: 30px;
+        width: 100%;
+        padding: 10px;
+        background-color: palevioletred;
+        color: white;
+        border: 5px double white;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      .item button:hover {
+        background-color: rgba(255, 255, 255, 0.103);
+      }
+      .item:hover {
+        transform: scale(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <div class="title">
+          <h1>Choose UR plan</h1>
+        </div>
+        <div class="row">
+          <div class="item">
+            <p>Starter</p>
+            <h2>19$ <span>/ month</span></h2>
+            <ul>
+              <li>1 Website</li>
+              <li>10 GB</li>
+              <li>Free email Address</li>
+              <li>Basic Web Builder</li>
+              <li>No SSL Certificate</li>
+              <li>Limited Support</li>
+            </ul>
+            <button>Add to Cart</button>
+          </div>
+          <div class="item">
+            <p>Starter</p>
+            <h2>19$ <span>/ month</span></h2>
+            <ul>
+              <li>1 Website</li>
+              <li>10 GB</li>
+              <li>Free email Address</li>
+              <li>Basic Web Builder</li>
+              <li>No SSL Certificate</li>
+              <li>Limited Support</li>
+            </ul>
+            <button>Add to Cart</button>
+          </div>
+          <div class="item">
+            <p>Starter</p>
+            <h2>19$ <span>/ month</span></h2>
+            <ul>
+              <li>1 Website</li>
+              <li>10 GB</li>
+              <li>Free email Address</li>
+              <li>Basic Web Builder</li>
+              <li>No SSL Certificate</li>
+              <li>Limited Support</li>
+            </ul>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

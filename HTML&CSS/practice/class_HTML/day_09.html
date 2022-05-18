@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      header {
+        position: relative;
+        /* header 전체가 들어갈 수 있는 이미지 사이즈 필요 */
+        height: 500px;
+        width: 100%;
+        /* backgropund-color로 크기를 조절 -> 조절 완료 후 주석 or 지움 */
+        /* background-color: violet; */
+        /* img 조금 어둡게 */
+        background-image: linear-gradient(
+            rgba(4, 10, 20, 0.8),
+            rgba(4, 10, 20, 0.8)
+          ),
+          url(img/쿠로미.png);
+        /* background-image와 밑에 두 태그는 한 쌍 */
+        background-position: center;
+        background-size: cover;
+      }
+      .nav {
+        display: flex;
+        padding: 2% 6%;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav img {
+        width: 150px;
+        height: 110px;
+      }
+      .nav-links ul li {
+        list-style: none;
+        /* nav-links에 flex를 주는 것과 비슷한 ui가 나옴*/
+        display: inline-block;
+        padding: 8px 12px;
+      }
+      .nav-links ul li a {
+        color: white;
+        /* a태그 밑줄 제거 */
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: 800;
+      }
+      .nav-links ul li:hover {
+        /* 속도 느리게 훨씬 예쁨 */
+        transition: 700ms;
+        background-color: rgb(252, 90, 117);
+        border-radius: 20px;
+      }
+      .text-box {
+        /* text 위치 */
+        position: absolute;
+        width: 90%;
+        top: 40%;
+        left: 5%;
+        text-align: center;
+        color: white;
+      }
+      .text-box h1 {
+        font-size: 60px;
+      }
+      .text-box p {
+        margin-top: 10px;
+        font-size: 17px;
+        margin-bottom: 25px;
+      }
+      .text-box a {
+        /* a tag는 margin이 안됨 그래서 위에 p tag에 margin bottom을 줌 */
+        text-decoration: none;
+        color: rgb(252, 90, 117);
+        border: 5px solid black;
+        border-radius: 20px;
+        font-size: 20px;
+        /* padding으로 글씨와 border간격 넓힘 */
+        padding: 12px 34px;
+        font-weight: 800;
+        background-color: rgba(0, 0, 0, 0.568);
+      }
+      .text-box a:hover {
+        color: rgb(0, 0, 0);
+        border: 5px solid rgb(252, 90, 117);
+        border-radius: 20px;
+        transition: 1s;
+        background-color: rgba(255, 192, 203, 0.589);
+      }
+      table {
+        margin: auto;
+        box-shadow: 0 3px 7px grey;
+        background-color: white;
+      }
+
+      table:hover {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      tr {
+        border: 1px solid #444444;
+      }
+
+      tr:nth-child(even) {
+        background-color: #eaeaeb;
+      }
+
+      thead {
+        box-shadow: 0 1px 5px grey;
+      }
+
+      th {
+        padding: 1rem 2rem;
+        letter-spacing: 0.4rem;
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      td {
+        padding: 1rem 2rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <!-- nav : logo + menu 
+        header : 메뉴(navigation)도 오고 머릿글, 사이트 로고 등이 옴
+      	왼쪽 로고와 가운데 메뉴 오른쪽 아이콘이 일반적인데 모두 하나의 div로 묶음 -->
+        <div class="nav">
+          <!-- logo img -->
+          <!-- <img src="" alt=""> -->
+          <!-- <div class="img">이미지 로고 위치</div> -->
+          <img src="img/쿠로미아이콘 copy.png" alt="" />
+          <div class="nav-links">
+            <!-- ul은 정렬되지 않은 리스트 ul>li*4 -->
+            <!-- 스마트폰으로 볼 때를 위해 resize가 필요 -->
+            <!-- x버튼 태그 위치 -->
+            <ul>
+              <li><a href="#">HOME</a></li>
+              <li><a href="#">ABOUT</a></li>
+              <li><a href="#">PROGRAMS</a></li>
+              <li><a href="#">CONTACT</a></li>
+              <!-- # <-이동할 사이트가 없다는 의미 -->
+            </ul>
+          </div>
+        </div>
+        <div class="text-box">
+          <h1>♥쿠로미와 멜로디♡</h1>
+          <!-- 만약 p tag안에서 엔터치고 싶으면 br만 하면 됨 -->
+          <p>♡엄청나게 귀엽죠?♥</p>
+          <p>저는 요즘 쿠로미♥에 아주 빠져있어요</p>
+          <p>멜로디♡는 그냥 껴 봤어요</p>
+          <!-- a tag를 버튼처럼 꾸밀예졍 -->
+          <a href="#">♥쿠로미 더 보기♡</a>
+        </div>
+      </header>
+      <div class="section">
+        <!-- 여기부터 본문 내용이 시작 됨 -->
+        <!-- 시간표 레이아웃 -->
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">시간</th>
+              <th>월</th>
+              <th>화</th>
+              <th>수</th>
+              <th>목</th>
+              <th>금</th>
+              <th>토</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>오전반</td>
+              <td>11:00~12:00</td>
+              <td colspan="2">주짓수</td>
+              <td>레슬링</td>
+              <td colspan="2">주짓수</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>오후반</td>
+              <td>12:00~13:00</td>
+              <td colspan="5">서킷트레이닝</td>
+              <td rowspan="2">자유수련</td>
+            </tr>
+            <tr>
+              <td>키즈부</td>
+              <td>14:30~15:30</td>
+              <td colspan="2">주짓수</td>
+              <td>레슬링</td>
+              <td colspan="2">주짓수</td>
+            </tr>
+            <tr>
+              <td>저녁1부</td>
+              <td>19:30~21:00</td>
+              <td colspan="2">주짓수</td>
+              <td>레슬링</td>
+              <td colspan="2">주짓수</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>저녁2부</td>
+              <td>21:00~22:30</td>
+              <td colspan="2">주짓수</td>
+              <td>레슬링</td>
+              <td colspan="2">주짓수</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>자유트레이닝</td>
+              <td>22:30~23:30</td>
+              <td colspan="5">웨이트훈련</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="section">
+        <!-- 카드 레이아웃 -->
+      </div>
+      <section>
+        <!-- div 태그 말고 이렇게 섹션이 올 수도 있음 -->
+      </section>
+    </div>
+  </body>
+</html>

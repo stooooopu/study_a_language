@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="day_21.css" />
+  </head>
+  <body>
+    <!-- popup만들기 -->
+    <div id="popup" class="popup">
+      <div id="close" class="close" onclick="closePopup()"></div>
+    </div>
+    <div class="container">
+      <button id="accept" onclick="openPopup()">확인</button>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <!-- jQuery 장점
+    1. 비동기 통신 지원
+    2. 같은 동작을 짧은 코드로 구현
+    3. 구버전 브라우저 지원 -->
+    <script>
+      function closePopup() {
+        // 바닐라js문법
+        // document.getElementById('popup').style.display = 'none'; -> 다운 안받고 하는거 
+        // $('#popup').hide(); -> jQuery
+        $('#popup').css('display', 'none');
+        // closePopup()을 누르면 버튼 추가
+        $(".container").append('<button id="accept" onclick="blockPopup()">취소</button>');
+      }
+      // function blockPopup() {
+      //   if (('popup'.display = 'none')) {
+        //     document.getElementById('popup').style.display = 'block';
+        //   }
+      // }
+      function openPopup() {
+        // 현재 popup의 css를 보여줘
+        var style = $("#popup").css("display");
+        if ($('#popup').hide()) {
+          // $('#popup').css('display','block');
+          $('#popup').show();
+          return true;
+        }
+      }
+      //   function closePopup() {
+      //     var style = document.getElementById('popup').style.display = 'none';
+      //     if (style == 'none') {
+      //         document.getElementById('popup').style.display = 'block';
+      //         return true;
+      //     }
+      //   } 가능
+    </script>
+  </body>
+</html>

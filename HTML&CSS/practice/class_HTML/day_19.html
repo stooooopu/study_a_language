@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="day_19.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="item">
+          <!-- <div class="tab" onclick="setMenu('TAB1')"><h2>TAB1</h2></div>
+          <div class="tab" onclick="setMenu('TAB2')"><h2>TAB2</h2></div>
+          <div class="tab" onclick="setMenu('TAB3')"><h2>TAB3</h2></div> -->
+          <div class="tab" onclick="setTab1()"><h2>TAB1</h2></div>
+          <div class="tab" onclick="setTab2()"><h2>TAB2</h2></div>
+          <div class="tab" onclick="setTab3()"><h2>TAB3</h2></div>
+        </div>
+        <div id="a" class="content">
+          <p>내용 1</p>
+        </div>
+        <div id="b" class="content">
+          <p>내용 2</p>
+        </div>
+        <div id="c" class="content">
+          <p>내용 3</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      // 실무에서는 파라미터값 받는 방법을 많이 씀
+      //   function setMenu(Value) {
+      //     if (Value == 'TAB1') {
+      //       document.getElementById('a').style.display = 'block';
+      //       document.getElementById('b').style.display = 'none';
+      //       document.getElementById('c').style.display = 'none';
+      //     }
+      //     if (Value == 'TAB2') {
+      //       document.getElementById('b').style.display = 'block';
+      //       document.getElementById('a').style.display = 'none';
+      //       document.getElementById('c').style.display = 'none';
+      //     }
+      //     if (Value == 'TAB3') {
+      //       document.getElementById('c').style.display = 'block';
+      //       document.getElementById('b').style.display = 'none';
+      //       document.getElementById('a').style.display = 'none';
+      //     }
+      //   }
+      // method는 한 가지 기능만 잘 하면 된다 = cleanCode
+      // 확장성때문에(나중에 수정하기 편하게 잘게 쪼개고 나중에 합치면 된다)
+      // 그런 의미에서 위에 실무코드는 cleanCode는 아님
+      function setTab1() {
+        document.getElementById('a').style.display = 'block';
+        document.getElementById('b').style.display = 'none';
+        document.getElementById('c').style.display = 'none';
+      }
+      function setTab2() {
+        document.getElementById('b').style.display = 'block';
+        document.getElementById('a').style.display = 'none';
+        document.getElementById('c').style.display = 'none';
+      }
+      function setTab3() {
+        document.getElementById('c').style.display = 'block';
+        document.getElementById('b').style.display = 'none';
+        document.getElementById('a').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

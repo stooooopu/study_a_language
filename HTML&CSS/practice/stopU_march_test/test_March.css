@@ -1,0 +1,688 @@
+:root {
+    --spring-main: #a2c3d4;
+    --spring-sub: #ebc4bd;
+    --spring-sub2: #a58473;
+    --gucci-main: #d00053;
+    --gucci-sub: #e99ab0;
+    --west-main: #1e4c4c;
+    --west-sub: #8a2714;
+    --west-sub2: #af8c54;
+    --letter-main:#fb31ab;
+    --letter-sub:#2c6cf4;
+    --letter-sub2:#39927e;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+.row-col {
+    display: flex;
+    flex-direction: column;
+}
+.first-main{
+    width: 100%;
+    height: 900px;
+    background-image: url(img/black_photo.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    }
+    .first-main h1 {
+        position: absolute;
+        font-size: 100px;
+        top: 40%;
+        left: 30%;
+        color: white;
+    }
+    span {
+        display: inline-block;
+        animation: block 4.3s infinite;
+        animation-delay: calc(0.1s * var(--i));
+    }
+    @keyframes block {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .first-main p {
+        position: absolute;
+        color: rgba(255, 255, 255, 0.425);
+        top: 53%;
+        left: 73.5%;
+        font-size: 15px;
+        font-weight: lighter;
+    }
+    /* 여기까지가 첫 번째 화면 */
+.section-calendar img {
+    position: absolute;
+    z-index: -3;
+    opacity: 0.8;
+    width: 800px;
+    height: auto;
+    top: 1160px;
+    right: -16px;
+}
+.calendar-side-title {
+    position: relative;
+}
+.calendar-side-title h1 {
+    position: absolute;
+    writing-mode: vertical-lr;
+    font-size: 100px;
+    left: -10px;
+    bottom: -460px;
+    color: rgba(0, 0, 0, 0.671);
+}
+.calendar-side-title p {
+    position: absolute;
+    bottom: -530px;
+    left: 9px;
+}
+table {
+    text-align: center;
+    width: 70%;
+    height: 900px;
+    margin: 50px auto;
+    border: 1px solid black;
+}
+th {
+    width: 13%;
+    height: auto;
+    font-size: 50px;
+    font-weight: 200;
+}
+td {
+    font-size: 30px;
+    height: auto;
+}
+.exhibition-button {
+    flex-wrap: wrap;
+}
+.exhibition-button button {
+    margin: -20px -10px 50px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    background-color: transparent;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.315);
+    border-radius: 4px;
+    width: 200px;
+    transition: 0.3s;
+    font-weight: 100;
+}
+.exhibition-button button:nth-child(1) {
+    color: var(--spring-sub);
+}
+.exhibition-button button:nth-child(1):hover {
+    color: white;
+    background-color: var(--spring-main);
+}
+.exhibition-button button:nth-child(2) {
+    color: var(--gucci-main);
+}
+.exhibition-button button:nth-child(2):hover {
+    color: white;
+    background-color: var(--gucci-sub);
+}
+.exhibition-button button:nth-child(3) {
+    color: var(--west-sub2);
+}
+.exhibition-button button:nth-child(3):hover {
+    color: white;
+    background-color: var(--west-main);
+}
+.exhibition-button button:nth-child(4) {
+    color: var(--letter-sub);
+}
+.exhibition-button button:nth-child(4):hover {
+    color: white;
+    background-color: var(--letter-sub);
+}
+.exhibition-button button:nth-child(5):hover {
+    color: white;
+    background-color: black;
+}
+.exhibition-button button:hover {
+    transform: scale(1.05);
+}
+#day-1, #day-9, #day-6, #day-13, #day-20, #day-27 {
+    color: red;
+}
+#day-5, #day-12, #day-19, #day-26{
+    color: blue;
+}
+/* 여기까지가 달력 */
+.side-nav {
+    position: fixed;
+    height: auto;
+    width: 110px;
+    right: 2px;
+    top: 20px;
+    border: none;
+    z-index: 2;
+}
+.side-nav-item {
+    cursor: pointer;
+    font-size: 15px;
+    height: 70px;
+    border: 5px double gray;
+    border-radius: 0;
+    font-weight: 800;
+    margin-top: 2px;
+    opacity: 0.75;
+    text-align: center;
+    transition: 0.5s;
+    background-color: lightgray;
+    color: white;
+    padding-top: 10px;
+}
+.side-nav-item:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.side-nav-item:nth-child(4){
+    padding-top: 16px;
+}
+/* 여기까지가 side-nav */
+.section-spring {
+    background-color: var(--spring-main);
+    height: auto;
+    width: 100%;
+}
+.section-spring-title {
+    border: 1px solid white;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+}
+.section-spring-title h1 {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 100;
+    margin-top: 30px;
+    color: white;
+}
+.section-spring-title h3 {
+    margin-top: 20px;
+    margin-left: 65%;
+    font-size: 20px;
+    font-weight: 100;
+    color: white;
+}
+.spring-main-section {
+    width: 100%;
+    height: 1600px;
+}
+.spring-information {
+    width: 100%;
+    flex: 1;
+}
+.spring-information-img-section {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.spring-information-item {
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    width: 450px;
+    border: 1px solid white;
+}
+.spring-text {
+    position: relative;
+}
+.spring-text h1{
+    position: absolute;
+    color: var(--spring-sub);
+    font-size: 53px;
+    top: 45%;
+    left: 5%;
+}
+.spring-text-back {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+.spring-text-back p{
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    transform: rotateX(-50%);
+    transition: 1s;
+    bottom: 0;
+    left: 6%;
+    font-size: 16px;
+    color: white;
+    font-weight: 900;
+}
+.spring-text-back:hover {
+    background-color: var(--spring-sub);
+}
+.spring-text-back:hover p {
+    opacity: 1;
+    bottom: 20%;
+}
+.spring-information-item .image {
+    width: 450px;
+    z-index: 100;
+}
+.section-h3 {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 100;
+    margin: 30px auto;
+    color: white;
+    border-bottom: 1px solid white;
+}
+.swiper {
+    width: 600px;
+    height: auto;
+  }
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+}
+.spring-bottom {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    color: white;
+    text-align: right;
+    padding-right: 3%;
+    padding-bottom: 3%;
+    border: 1px solid white;
+    padding-top: 50px;
+}
+/* 여기까지가 spring */
+.section-gucci {
+    width: 100%;
+    height: auto;
+    padding-top: 5%;
+    flex: 1;
+    background-color: black;
+}
+.gucci-main-section {
+    background-color: transparent;
+    width: 98%;
+    height: auto;
+    border: 1px solid white;
+    margin: -1px auto;
+    padding: 2px;
+    flex: 1;
+}
+.gucci-main-section-square {
+    border: 1px solid white;
+    flex-basis: 25%;
+    padding: 10px;
+}
+.gucci-main-section-square h4{
+    text-align: center;
+    font-weight: 100;
+    margin-top: -5px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+}
+.gucci-main-section h5{
+    text-align: center;
+    font-weight: 100;
+    margin-top: 80%;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+}
+.gucci-main-section-square h1{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    margin-top: 70%;
+    color: white;
+    text-align: center;
+}
+.gucci-main-section-cicle {
+    position: relative;
+    border: 1px solid white;
+    border-radius: 50%;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.gucci-main-section-cicle img {
+    width: 60%;
+    height: 90%;
+    margin-left: 20%;
+    padding-top: 15%;
+    transition: 1s;
+}
+.gucci-main-section-cicle img:hover {
+    transform: rotateY(180deg);
+}
+.gucci-main-section-cicle h1 {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    color: white;
+    text-align: left;
+    font-size: 50px;
+}
+.gucci-img-section-line {
+    background-color: transparent;
+    width: 98%;
+    height: auto;
+    border: 1px solid white;
+    margin: 50px auto 0;
+    padding: 1px;
+    flex: 1;
+}
+.gucci-img-section {
+    margin: 10px auto;
+    width: 98%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    border: 1px solid white;
+}
+.gucci-img-item {
+    position: relative;
+    flex-basis: 30%;
+    margin: 10px auto; 
+}
+.gucci-img-item img {
+    width: 100%;
+    height: 650px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.gucci-img-item-text {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+.gucci-img-item-text p{
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    transform: rotateX(-50%);
+    transition: 1s;
+    bottom: 0;
+    left: 20%;
+    font-size: 16px;
+    color: var(--gucci-main);
+}
+.gucci-img-item-text:hover {
+    background-color: rgba(255, 255, 255, 0.582);
+}
+.gucci-img-item-text:hover p {
+    opacity: 1;
+    bottom: 20%;
+    left: 20%;
+}
+/* 여기까지 gucci */
+.section-west {
+    background-color: black;
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.west-main-section {
+    position: relative;
+    background-image: url(img/west02.jpg);
+    width: 95%;
+    height: 1000px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 50px;
+}
+.west-main-section h1 {
+    position: absolute;
+    color: white;
+    font-size: 100px;
+    background-color: var(--west-main);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    writing-mode: vertical-rl;
+    top: 5%;
+    right: 3%;
+}
+.west-main-section h3 {
+    color: white;
+    writing-mode: vertical-rl;
+    position: absolute;
+    right: 15%;
+    top: 60%;
+    background-color: var(--west-sub2);
+    font-size: 50px;
+}
+.west-img-section-left {
+    position: relative;
+    flex-basis: 50%;
+}
+.west-img-item-left {
+    width: 100%;
+}
+.west-img-item-left img {
+    width: 70%;
+    margin-top: 15%;
+    margin-left: 13%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.west-img-item-left:hover img {
+    transform: scale(1.3);
+}
+.west-img-item-left p {
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 100;
+    margin-top: 20px;
+}
+.west-img-section-right {
+    display: flex;
+    margin: 10% auto;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+}
+.west-img-item-right {
+    position: relative;
+    flex-basis: 50%;
+    margin: 10px auto; 
+}
+.west-img-item-right img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+.west-img-item-right-text {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.west-img-item-right-text p{
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    transform: rotateX(-50%);
+    transition: 1s;
+    bottom: 0;
+    font-size: 15px;
+    color: var(--west-main);
+    font-weight: 600;
+}
+.west-img-item-right-text:hover {
+    background-color: rgba(255, 255, 255, 0.582);
+}
+.west-img-item-right-text:hover p {
+    opacity: 1;
+    bottom: 30%;
+}
+/* 여기까지 west */
+.section-letter{
+ position: relative;
+}
+.letter-section-main {
+    position: absolute;
+    width: 90%;
+    height: 100vh;
+    border: 1px solid white;
+    top: -50px;
+    left: 4%;
+    box-shadow: 1px 1px 1px 1px rgb(0, 0, 0);
+}
+.letter-info-y {
+    writing-mode: vertical-rl;
+    position: absolute;
+    font-size: 15px;
+    top: 7%;
+    right: 0;
+}
+.letter-info-x {
+    position: absolute;
+    font-size: 15px;
+    bottom: 8.5%;
+    left: 1%;
+}
+.letter-section-main img {
+    position: absolute;
+    animation: letterCicle 10s linear infinite;
+    transform-origin: 50% 50%;
+    top: 20%;
+    left: 30%;
+}
+@keyframes letterCicle {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(36deg);
+    }
+}
+.section-letter h3 {
+    position: absolute;
+    font-size: 50px;
+    font-weight: 100;
+    top: 110%;
+    left: 25%;
+    color: black;
+}
+.letter-section-input {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 1000px;
+    flex-wrap: wrap;
+}
+.letter-section-input input[type='text']{
+    width: 700px;
+    height: 350px;
+    margin: 50px;
+    border: none;
+    opacity: 0.5;
+    font-size: 50px;
+    border-radius: 5px;
+    box-shadow: -1px 1px 5px -1px rgba(0, 0, 0, 0.651);
+}
+.fantasy {
+    padding-left: 10px;
+    font-family: fantasy;
+    color: var(--letter-sub);
+}
+.fantasy::placeholder {
+    font-family: fantasy;
+    text-align: center;
+    font-size: 100px;
+    color: var(--letter-sub);
+}
+.monospace {
+    padding-left: 10px;
+    font-family: monospace;
+    color: var(--letter-sub2);
+}
+.monospace::placeholder {
+    font-family: monospace;
+    text-align: center;
+    font-size: 100px;
+    color: var(--letter-sub2);
+}
+.sans-serif {
+    padding-left: 10px;
+    font-family: sans-serif;
+    color: var(--letter-main);
+}
+.sans-serif::placeholder {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 100px;
+    color: var(--letter-main);
+}
+.serif {
+    padding-left: 10px;
+    font-family: serif;
+}
+.serif::placeholder {
+    font-family: serif;
+    text-align: center;
+    font-size: 100px;
+}
+.section-letter-real {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+footer {
+    margin-top: 10px;
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    padding-top: 30px;
+}
+.footer-text{
+    text-align: right;
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+    animation: block_text 15s linear infinite;
+}
+@keyframes block_text {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+
+}

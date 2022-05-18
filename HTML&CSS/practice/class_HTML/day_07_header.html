@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(165, 165, 165);
+        padding: 10px 12px;
+        align-items: center;
+      }
+      .logo p {
+        font-size: 24px;
+        font-weight: 800;
+        color: white;
+      } 
+      a {
+        color: rgb(0, 0, 0);
+        font-weight: 800;
+        /* li 밑줄 없애기 */
+        text-decoration: none;
+      }
+      .menu {
+        /* li 옆 점 없애기 */
+        list-style: none;
+        display: flex;
+      }
+      .menu li {
+        padding: 8px 12px;
+      }
+      .menu li:hover {
+        background-color: rgb(226, 226, 226);
+        border-radius: 4px;
+      }
+      .icon p {
+        color: aliceblue;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      footer {
+        background-color: black;
+        color: white;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <p>선화동 맛집사이트</p>
+        </div>
+        <ul class="menu">
+          <!-- (li>a)*5 -->
+          <li><a href="">국밥 맛집</a></li>
+          <li><a href="">커피 맛집</a></li>
+          <li><a href="">칼국수 맛집</a></li>
+          <li><a href="">중국집 맛집</a></li>
+          <li><a href="">고기 맛집</a></li>
+        </ul>
+        <div class="icon">
+          <p>etc영역</p>
+        </div>
+      </header>
+      <footer>
+        <p>footer</p>
+      </footer>
+    </div>
+  </body>
+</html>

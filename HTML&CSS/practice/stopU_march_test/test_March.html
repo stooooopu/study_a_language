@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test_March.css">
+    <title>EXHIBITION</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+  />
+</head>
+<body>
+    <div class="container">
+        <div class="row-col side-nav">
+            <div onclick="doScroll_spring()" class="side-nav-item">TERESA<br>PREITAS</div>
+            <div onclick="doScroll_gucci()" class="side-nav-item">GUCCI<br>Garden</div>
+            <div onclick="doScroll_west()" class="side-nav-item">ALEX<br>PRAGER</div>
+            <div onclick="doScroll_letter()" class="side-nav-item">Calligraphy</div>
+        </div>
+        <div class="first-main">
+            <h1>
+                <span style="--i: 1">E</span>
+                <span style="--i: 2">X</span>
+                <span style="--i: 3">H</span>
+                <span style="--i: 4">I</span>
+                <span style="--i: 5">B</span>
+                <span style="--i: 6">I</span>
+                <span style="--i: 7">T</span>
+                <span style="--i: 8">I</span>
+                <span style="--i: 9">O</span>
+                <span style="--i: 10">N</span>
+            </h1>
+            <p>in Korea</p>
+        </div>
+    <div class="section-calendar">
+            <div class="row-col calendar-side-title">
+                <h1>MARCH:</h1>
+                <p>MARCH<br>EXHIBITION<br>calendar</p>
+            </div>
+            <img src="img/section-back-ground.jpg" alt="">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="first-week">
+                    <td></td>
+                    <td></td>
+                    <td id="day-1">1</td>
+                    <td id="day-2">2</td>
+                    <td id="day-3">3</td>
+                    <td id="day-4">4</td>
+                    <td id="day-5">5</td>
+                </tr>
+                <tr id="second-week">
+                    <td id="day-6">6</td>
+                    <td id="day-7">7</td>
+                    <td id="day-8">8</td>
+                    <td id="day-9">9</td>
+                    <td id="day-10">10</td>
+                    <td id="day-11">11</td>
+                    <td id="day-12">12</td>
+                </tr>
+                <tr id="third-week">
+                    <td id="day-13">13</td>
+                    <td id="day-14">14</td>
+                    <td id="day-15">15</td>
+                    <td id="day-16">16</td>
+                    <td id="day-17">17</td>
+                    <td id="day-18">18</td>
+                    <td id="day-19">19</td>
+                </tr>
+                <tr id="fourth-week">
+                    <td id="day-20">20</td>
+                    <td id="day-21">21</td>
+                    <td id="day-22">22</td>
+                    <td id="day-23">23</td>
+                    <td id="day-24">24</td>
+                    <td id="day-25">25</td>
+                    <td id="day-26">26</td>
+                </tr>
+                <tr id="fifth-week">
+                    <td id="day-27">27</td>
+                    <td id="day-28">28</td>
+                    <td id="day-29">29</td>
+                    <td id="day-30">30</td>
+                    <td id="day-31">31</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        <div class="row exhibition-button">
+            <button onclick="changColor_spring()">어느 봄날,<br> 테레사 프레이타스 사진전</button>
+            <button onclick="changColor_gucci()">구찌 가든 아키타이프</button>
+            <button onclick="changColor_west()">알렉스 프레거, 빅 웨스트</button>
+            <button onclick="changColor_letter()">쓰지않은글씨</button>
+            <button onclick="setInitilization()">reset</button>
+        </div>
+        <div class="section-spring">
+            <div class="section-spring-title">
+                <h1>Springtime Delight</h1>
+                <h3>TERESA FREITAS</h3>
+            </div>
+            <div class="spring-main-section">
+                <div class="spring-information">
+                    <div class="row spring-information-img-section">
+                        <img class="spring-information-item image" src="img/spring04.JPG" alt="">
+                        <div class="spring-information-item spring-text">
+                            <h1>TERESA FREITAS</h1>
+                            <div class="spring-text-back">
+                                <p>포루투갈 출신 여성 작가<br>
+                                    고향 포르투갈의 하늘과<br>
+                                    자연, 건축,<br>
+                                    사람들의 일상을 파스텔톤 동화처럼 연출한다<br>
+                                    고즈넉하고 따스한 풍경<br>
+                                    밝고 사랑스러운 색채의 향연이다<br>
+                                    콘텐츠 크리에이터로 활발하게 활동 중이다<br>
+                                    SNS를 중심으로, 일상을 소재로 한 풍경을 주제로,<br>
+                                    자신만의 파스텔톤 기법으로 작업한다<br>
+                                    "가장 추천하는 작품은 'Rothko Spring'인데요<br>
+                                    봄의 느낌을 가장 많이 담은 작품이기도 하고,<br>
+                                    보고 있으면 꽃밭에 있는 느낌을<br>
+                                    가장 잘 살려주는 것 같아 가장 추천하는 작품입니다."<br>
+                                    -최혜임 책임큐레이터
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="section-h3">Other Photo</h3>
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                      <!-- Slides -->
+                      <div class="swiper-slide"><img src="img/spring02.jpg" alt=""></div>
+                      <div class="swiper-slide"><img src="img/spring03.jpg" alt=""></div>
+                      <div class="swiper-slide"><img src="img/spring05.jpg" alt=""></div>
+                      <div class="swiper-slide"><img src="img/spring07.jpg" alt=""></div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+            </div>
+            <div class="spring-bottom">
+                    <div class="spring-bottom-text">
+                        <p>월-목 10:30~20:00(입장마감 19:00)<br> 
+                            금-일 10:30~20:30(입장마감 19:30)</p>
+                        <p>주최/기획 : (주) 씨씨오씨<br>
+                            문의 : 전시티켓 : 1588-7890<br>
+                            전시운영 : 02-837-6611<br>
+                            작가/출연자 : 테레사 프레이타스</p>
+                    </div>
+            </div>
+        </div>
+        <div class="section-gucci">
+            <div class="row gucci-main-section">
+                    <div class="gucci-main-section-square">
+                        <h4>gucci</h4>
+                        <h1>ABOUT</h1>
+                        <h5>gucci</h5>
+                    </div>
+                    <div class="gucci-main-section-cicle">
+                        <img src="img/gucci06.jpg" alt="">
+                        <h1>GUCCI GARDEN ARCHETYPES</h1>
+                    </div>
+                    <div class="gucci-main-section-square">
+                        <h4>gucci</h4>
+                        <h1>collection</h1>
+                        <h5>gucci</h5>
+                    </div>
+                </div>
+            <div class="gucci-img-section-line">
+                <div class="gucci-img-section">
+                    <div class="gucci-img-item">
+                        <img src="img/gucci01.jpg" alt="">
+                        <div class="gucci-img-item-text">
+                        <p>
+                            서울 동대문디자인플라자(DDP)<br>
+                            구찌의 창의적인 비전을 기념하는<br>
+                            몰입형 멀티미디어 전시<br>
+                            ‘구찌가든 아키타이프:절대적 전형’<br>
+                            해당 전시는<br>
+                            구찌 크리에이티브 디렉터<br>
+                            알레산드로 미켈레(Alessandro Michele)가 선보인<br>
+                        지난 6년간의 캠페인을<br>
+                        멀티미디어를 활용해 재해석한 전시로,<br>  
+                        </p>
+                        </div>
+                    </div>
+                    <div class="gucci-img-item">
+                        <img src="img/gucci02.jpg" alt="">
+                        <div class="gucci-img-item-text">
+                            <p>‘아키타이프(archetype)’는 모든 복제품의 원형,<br>
+                                그 자체로 결코 재현될 수 없는<br>
+                                본래의 형태인 '절대적 전형'을 뜻합니다</p>
+                            </div>
+                    </div>
+                    <div class="gucci-img-item">
+                        <img src="img/gucci07.jpg" alt="">
+                        <div class="gucci-img-item-text">
+                            <p>방문객을 맞는 첫 공간은<br>
+                                무대의 백스테이지와 같이<br>
+                                전시회의 곳곳을 분할된 스크린을 통해 보여주며,</p>
+                            </div>
+                    </div>
+                    <div class="gucci-img-item">
+                        <img src="img/gucci03.jpg" alt="">
+                        <div class="gucci-img-item-text">
+                            <p>총 13개의 구찌 캠페인을 현실로 구현한
+                                <br>다감각적 세계로 이어집니다. </p>
+                            </div>
+                    </div>
+                    <div class="gucci-img-item">
+                        <img src="img/gucci04.jpg" alt="">
+                        <div class="gucci-img-item-text">
+                            <p>전시는 동대문디자인플라자(DDP) 배움터<br>
+                                2층 디자인 박물관에서 무료로 관람이 가능하며,<br>
+                                MY GUCCI 가입 후 전시에 방문해주세요<br>
+                                MY GUCCI 가입 후 MY ACCOUNT 페이지를 캡처하여<br>
+                                '구찌 가든 아키타이프' 전시 기프트샵<br>
+                                외부 데스크에 제시하시면 소정의 기프트를 드립니다.  </p>
+                            </div>
+                    </div>
+                    <div class="gucci-img-item">
+                        <img src="img/gucci05.jpg" alt="">
+                        <div class="gucci-img-item-text">
+                            <p>전시 큐레이터를 맡은 미켈레는<br>
+                                “크리에이티브 디렉터로 함께 한<br>
+                                지난 여정에 사람들을 초대해<br>상상과 이야기의 세계를 걸으며,<br>
+                                예상치 못한 반짝이는 순간들을<br>
+                                함께 넘나드는 것이 흥미롭다고 생각했다<br>
+                                그래서 내 상상으로의 여정을<br>
+                                가장 명확하게 보여줄 수 있는 캠페인처럼,<br>
+                                감정의 놀이터를 만들었다”라고 설명을 덧붙이기도.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="section-west">
+            <div class="west-main-section">
+                <h1>ALEXP RAGER</h1>
+                <h3>Big West</h3>
+            </div>
+            <hr style="width: 100%;">
+            <div class="row west-img-section">
+                <div class="west-img-section-left">
+                <div class="west-img-item-left">
+                    <img src="img/west05.jpg" alt="">
+                    <p>
+                        할리우드의 색감과<br>
+                        섬세한 감정을 카메라에 담아내는 아티스트,<br>
+                        Alex Prager
+                    </p>
+                </div>
+                <div class="west-img-item-left">
+                    <img src="img/west03.jpg" alt="">
+                    <p>
+                        포착된 순간은<br>
+                        특유의 화려한 색감과 미스터리한 연출을 통해<br>
+                        보는 이의 상상력을 자극하고,<br>
+                        찰나에 담긴 내밀한 감정을 섬세하게 묘사한다.
+                    </p>
+                </div>
+                <div class="west-img-item-left">
+                    <img src="img/west04.jpg" alt="">
+                    <p>국내 최초로 진행되는 이번 전시에는<br>
+                        초기작부터 신작까지 작품세계를<br>
+                        총 망라하는 사진과 영상 100여점이 출품된다.
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="west-img-section-right">
+                <div class="west-img-item-right">
+                    <img src="img/west01_left.png" alt="">
+                    <div class="west-img-item-right-text">
+                        <p>알렉스 프레거는 LA를 기반으로 활동하고 있는 영화제작자이자 포토그래퍼이다<br>
+                            프레거는 정식으로 사진과 영상에 대한 교육을 받은 적은 없으나,<br>
+                            2001년 게티뮤지엄에서 윌리엄 이글스턴(William Eggleston, 1939-) 의 전시를 보고<br>
+                            깊은 감명을 받아 카메라를 구입하며 작업을 시작하였다
+                        </p>
+                    </div>
+                </div>
+                <div class="west-img-item-right">
+                    <img src="img/west01_right.png" alt="">
+                    <div class="west-img-item-right-text">
+                        <p>
+                            프레거는 2010년 뉴욕 현대미술관(MoMA)에서의 개인전을 시작으로 미술계에서 주목받기 시작하였다<br>
+                            압도적인 군중의 모습을 담은 <페이스 인 더 크라우드 Face in the Crowd>,<br>
+                            파리 오페라 발레단을 촬영한 <라 그랑드 소르티 La Grande Sortie> 시리즈 외<br>
+                            영화, 패션 등 다양한 프로젝트까지 진행하며 활발하게 활동하고 있다<br>
+                            뉴욕 현대미술관, 휘트니미술관 외 전세계 유수의 기관에서 프레거의 작품을 소장하고 있으며,<br>
+                            뉴욕타임즈를 위해 제작한 13부작 영화,<br>
+                            <터치 오브 이블 Touch of Evil>(2011) (브래드 피트, 게리 올드먼 외 출연)으로 2012년 에미상을 수상하였다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-letter-real">
+        <div class="section-letter">
+            <hr style="width: 100%; color: black; margin-top: 95px; margin-bottom: 5px;">
+            <hr style="width: 100%; color: black; ">
+            <div class="letter-section-main">
+                <p class="letter-info-y">2022-02-15 ~ 2022-03-13<br>
+                    10:00 ~ 19:00 ※ 매주 월요일 휴관<br>
+                    서울서예박물관 현대전시실 2, 현대전시실 1<br>
+                    현대전시실 3, 실험전시실<br>
+                    전체관람
+                </p>
+                <p class="letter-info-x">주최	예술의전당<br>
+                   후원	(사)한국캘리그라피디자인협회<br>
+                   협찬	프링커코리아(주), (주)엘팩토리  
+                    - 문의	02-580-1300  </p>
+                <img src="img/letter01.png" alt="">
+            </div>
+            <hr style="width: 100%; color: black; margin-top: 830px; margin-bottom: 5px;">
+            <hr style="width: 100%; color: black;">
+            <h3>Write the TEXT as you like</h3>
+            <div class="row letter-section-input">
+                <input class="fantasy" type="text" placeholder="fantasy">
+                <input class="monospace" type="text" placeholder="monospace">
+                <input class="sans-serif" type="text" placeholder="sans-serif">
+                <input class="serif" type="text" placeholder="serif">
+                <footer>
+                <div class="footer-text">
+                    <p>Art is anything tou can get away with</p>
+                </div>
+            </footer>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+          const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        autoplay: {
+          delay: 3000,
+        },
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    function changColor_spring(){
+        document.getElementById('day-1').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-2').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-3').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-4').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-5').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-6').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-8').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-9').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-10').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-11').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-12').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-13').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-14').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-15').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-16').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-17').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-18').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-19').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-20').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-21').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-22').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-23').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-24').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-25').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-26').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-27').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-28').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-29').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-30').style.backgroundColor = '#a2c3d49c';
+        document.getElementById('day-31').style.backgroundColor = '#a2c3d49c';
+    }
+    function changColor_gucci(){
+        document.getElementById('day-1').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-2').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-3').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-4').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-5').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-6').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-7').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-8').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-9').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-10').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-11').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-12').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-13').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-14').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-15').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-16').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-17').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-18').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-19').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-20').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-21').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-22').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-23').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-24').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-25').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-26').style.backgroundColor = '#e99ab0c2';
+        document.getElementById('day-27').style.backgroundColor = '#e99ab0c2';
+    }
+    function changColor_west(){
+        document.getElementById('day-1').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-2').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-3').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-4').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-5').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-6').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-7').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-8').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-9').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-10').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-11').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-12').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-13').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-14').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-15').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-16').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-17').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-18').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-19').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-20').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-21').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-22').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-23').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-24').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-25').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-26').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-27').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-28').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-29').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-30').style.backgroundColor = '#1e4c4c70';
+        document.getElementById('day-31').style.backgroundColor = '#1e4c4c70';
+    }
+    function changColor_letter(){
+        document.getElementById('day-1').style.backgroundColor = '#2c6bf498';
+        document.getElementById('day-2').style.backgroundColor = '#2c6bf498';
+        document.getElementById('day-3').style.backgroundColor = '#2c6bf498';
+        document.getElementById('day-4').style.backgroundColor = '#2c6bf498';
+        document.getElementById('day-5').style.backgroundColor = '#2c6bf498';
+        document.getElementById('day-6').style.backgroundColor = '#2c6bf498';
+        document.getElementById('day-8').style.backgroundColor = '#2c6bf498';
+        document.getElementById('day-9').style.backgroundColor = '#2c6bf498';
+        document.getElementById('day-10').style.backgroundColor = '#2c6bf498';
+        document.getElementById('day-11').style.backgroundColor = '#2c6bf498';
+        document.getElementById('day-12').style.backgroundColor = '#2c6bf498';
+        document.getElementById('day-13').style.backgroundColor = '#2c6bf498';
+    }
+    function setInitilization(){
+        document.getElementById('day-1').style.backgroundColor = 'transparent';
+        document.getElementById('day-2').style.backgroundColor = 'transparent';
+        document.getElementById('day-3').style.backgroundColor = 'transparent';
+        document.getElementById('day-4').style.backgroundColor = 'transparent';
+        document.getElementById('day-5').style.backgroundColor = 'transparent';
+        document.getElementById('day-6').style.backgroundColor = 'transparent';
+        document.getElementById('day-7').style.backgroundColor = 'transparent';
+        document.getElementById('day-8').style.backgroundColor = 'transparent';
+        document.getElementById('day-9').style.backgroundColor = 'transparent';
+        document.getElementById('day-10').style.backgroundColor = 'transparent';
+        document.getElementById('day-11').style.backgroundColor = 'transparent';
+        document.getElementById('day-12').style.backgroundColor = 'transparent';
+        document.getElementById('day-13').style.backgroundColor = 'transparent';
+        document.getElementById('day-14').style.backgroundColor = 'transparent';
+        document.getElementById('day-15').style.backgroundColor = 'transparent';
+        document.getElementById('day-16').style.backgroundColor = 'transparent';
+        document.getElementById('day-17').style.backgroundColor = 'transparent';
+        document.getElementById('day-18').style.backgroundColor = 'transparent';
+        document.getElementById('day-19').style.backgroundColor = 'transparent';
+        document.getElementById('day-20').style.backgroundColor = 'transparent';
+        document.getElementById('day-21').style.backgroundColor = 'transparent';
+        document.getElementById('day-22').style.backgroundColor = 'transparent';
+        document.getElementById('day-23').style.backgroundColor = 'transparent';
+        document.getElementById('day-24').style.backgroundColor = 'transparent';
+        document.getElementById('day-25').style.backgroundColor = 'transparent';
+        document.getElementById('day-26').style.backgroundColor = 'transparent';
+        document.getElementById('day-27').style.backgroundColor = 'transparent';
+        document.getElementById('day-28').style.backgroundColor = 'transparent';
+        document.getElementById('day-29').style.backgroundColor = 'transparent';
+        document.getElementById('day-30').style.backgroundColor = 'transparent';
+        document.getElementById('day-31').style.backgroundColor = 'transparent';
+    }
+    function doScroll_spring(){
+        window.scrollTo({top :2000, behavior:'smooth'})
+    }
+    function doScroll_gucci(){
+        window.scrollTo({top :4100, behavior:'smooth'})
+    }
+    function doScroll_west(){
+        window.scrollTo({top :6380, behavior:'smooth'})
+    }
+    function doScroll_letter(){
+        window.scrollTo({top :8950, behavior:'smooth'})
+    }
+</script>
+</html>

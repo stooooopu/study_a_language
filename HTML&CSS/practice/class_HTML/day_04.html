@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .a {
+        background-color: rgb(125, 125, 255);
+        width: 100px;
+        height: 100px;
+      }
+      .b {
+        position: relative;
+        top: 0px;
+        left: 100px;
+        background-color: #5c00ef;
+        width: 100px;
+        height: 100px;
+      }
+      /* relative 다른 class의 위치를 건드리지 않는 선에서 움직임 */
+      .c {
+        position: absolute;
+        top: 0px;
+        left: 100px;
+        background-color: #ffed48;
+        width: 100px;
+        height: 100px;
+      }
+      /* absolute 보통 광고에 많이 쓰임 팝업창 */
+      .d {
+        position: fixed;
+        bottom: 100px;
+        top: 0px;
+        background-color: #ff9d3b;
+        width: 70px;
+        height: 50px;
+      }
+      /* fixed는 스크롤 따라 움직이는거 확인 가능 */
+      body {
+        height: 200vh;
+      }
+      /* body전체 크기 조정 가능 */
+      .mom {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(89, 158, 42);
+      }
+      .son {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(118, 255, 248);
+      }
+      /* 부모태그(mom)기준으로 움직임 */
+    </style>
+  </head>
+  <body>
+    <div class="a">A구역</div>
+    <div class="b">B구역</div>
+    <div class="c">C구역</div>
+    <div class="d">D구역</div>
+    <!-- tag안에 tag가능 -->
+    <div class="mom">
+      부모
+      <div class="son">짜식</div>
+    </div>
+  </body>
+</html>

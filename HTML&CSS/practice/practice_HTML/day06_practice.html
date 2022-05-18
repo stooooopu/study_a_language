@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(221, 221, 221, 0.582),
+            rgba(105, 108, 255, 0.568)
+          ),
+          url(img/windows-6938478_1920.jpg);
+        background-position: center;
+      }
+      .container select {
+        margin: 30px 0 0 0;
+        text-align: center;
+        border: none;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        font-weight: 900;
+        background-color: rgba(255, 106, 0, 0.137);
+        width: 300px;
+        height: 40px;
+      }
+
+      .n {
+        color: green;
+        font-size: 15px;
+      }
+      .d {
+        color: blue;
+        font-size: 15px;
+      }
+      .g {
+        color: yellow;
+        font-size: 15px;
+      }
+      .container {
+        text-align: center;
+        padding: 30px 450px;
+      }
+      .new {
+        text-align: center;
+        font-size: 70px;
+        color: white;
+      }
+      .container input[type='text'] {
+        background-color: rgba(255, 255, 255, 0.459);
+        width: 1000px;
+        height: 300px;
+        border: 3px solid white;
+        text-align: center;
+        font-size: 40px;
+        margin: 50px 0 0 0;
+      }
+      .container input[type='button'] {
+        background-color: rgba(255, 255, 255, 0.308);
+        border: 3px solid rgba(198, 137, 255, 0.37);
+        border-radius: 20%;
+        width: 50px;
+        height: 30px;
+        margin: 20px 0 0 0;
+      }
+    </style>
+    <script>
+      function thankU() {
+        alert('Thank U');
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="new">favorite site</h2>
+      <form>
+        <select name="" onchange="window.open(value,'_blank')" ;>
+          <option>what your favorite site</option>
+          <option class="n" value="https://www.naver.com/">naver</option>
+          <option class="d" value="https://www.daum.net/">daum</option>
+          <option class="g" value="https://www.google.com/">google</option>
+        </select>
+        <input type="text" placeholder="text me! Other site" />
+        <input type="button" value="submit" onclick="thankU();" />
+      </form>
+    </div>
+  </body>
+</html>

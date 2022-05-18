@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        background-color: rgba(255, 144, 110, 0.822);
+        margin: 50px auto 0;
+      }
+      .card {
+        margin: 10px;
+        /* display: inline-block 보여주는 방법이 기본적으로 세로 그걸 가로로 배치한 것 
+        하지만 요새는 flex로 함*/
+        display: inline-block;
+        border-radius: 8px;
+        height: 400px;
+        width: 260px;
+        /* overflow : 컨텐츠가 너무 커서 요소내에 모두 보여주기 힘들 때 사용 */
+        overflow: hidden;
+        box-shadow: 0 20px 30px rgba(112, 57, 57, 0.726);
+        /* x축 y축 그림자 느낌 */
+        padding: 5px;
+        /* 변형 효과 1은 원래크기 */
+        transform: scale(1);
+        /* 효과의 속도 빠를수록 숫자가 작음 */
+        transition: 0.5s;
+      }
+      /* 커서를 갖다대면 효과 */
+      .card:hover {
+        cursor: pointer;
+        transform: scale(1.15);
+      }
+
+      .card img {
+        width: 260px;
+        height: 260px;
+      }
+      .text-wrap {
+        padding: 15px;
+        text-align: right;
+      }
+      .text-wrap h1 {
+        font-size: 34px;
+        font-weight: 800;
+      }
+      .text-wrap p {
+        /* 글씨간격조정 */
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <!-- card 객체 -->
+        <img src="img/파이리.gif" alt="" />
+        <div class="text-wrap">
+          <h1>파이리</h1>
+          <p>불꽃타입의 포켓몬!</p>
+          <p>지우야 파이리가 좋으냐?</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/꼬북이.jpg" alt="" />
+        <div class="text-wrap">
+          <h1>꼬부기</h1>
+          <p>물타입의 포켓몬!</p>
+          <p>지우야 꼬부기가 좋으냐?</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/이상해씨.jpg" alt="" />
+        <div class="text-wrap">
+          <h1>이상해씨</h1>
+          <p>씨앗타입의 풀포켓몬!</p>
+          <p>지우야 이상해씨가 좋으냐?</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

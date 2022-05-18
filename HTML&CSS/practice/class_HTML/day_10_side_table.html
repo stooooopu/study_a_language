@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .side-nav {
+        /* 스크롤을 내릴 때 고정이 되어야 하니까 fixed는 무조건 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 53, 70, 0.363);
+        width: 250px;
+        height: 100%;
+        padding: 20px 30px;
+      }
+      .nav-links {
+        list-style: none;
+      }
+      .nav-links li {
+        padding: 10px 10px;
+      }
+      .nav-links li:hover {
+        background-color: rgba(255, 31, 69, 0.739);
+        border-radius: 20px;
+        transition: 0.8s;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 4px;
+      }
+      .nav-links li a i {
+        font-size: 20px;
+        margin-right: 20px;
+      }
+    </style>
+    <!-- 아이콘을 위한 script -->
+    <script
+      src="https://kit.fontawesome.com/ec2e6610a2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- 관리자페이지는 대부분 header가 왼쪽에 있음 -->
+    <div class="container">
+      <div class="header">
+        <!-- <div class="logo"></div> 로고는 여기-->
+        <div class="side-nav">
+          <ul class="nav-links">
+            <!-- 아이콘은 a태그 안에 i -->
+            <li>
+              <a href="#"><i class="fa-solid fa-house"></i>HOME</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-comment-dots"></i>Message</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-gear"></i>Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

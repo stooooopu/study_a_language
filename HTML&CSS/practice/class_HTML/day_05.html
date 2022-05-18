@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .login-form {
+        /* 위, 오른쪽, 아래쪽, 왼쪽 */
+        margin: 100px 50px;
+        padding: 50px 20px 0px;
+        border: 5px solid rgb(20, 173, 220);
+        width: 200px;
+        height: 200px;
+      }
+      .login-form input {
+        padding: 10px;
+        /* value 'HI'가 자식이라서 부모인 input과 사이가 벌어짐 */
+        width: 100%;
+        margin-bottom: 20px;
+        /* input태그끼리는 부자관계가 아니므로 margin을 사용 */
+      }
+      /* .login-form p {
+        color: rgb(231, 142, 25);
+        font-size: 25px;
+        font-weight: 700;
+        /* padding-top: 50px; */
+      /* padding: 10px; }*/
+    </style>
+  </head>
+  <body>
+    <!-- 사이트와 관련이 없는 것들은 container밖에 만들어 주면 됨
+    <div class="popup"></div> 이런식으로 -->
+    <div class="container">
+      <!-- 이런 식으로 container안에 또 div를 만들어서 관리
+        이때 이 태그안에는 login관련 태그들만 온다 -->
+      <div class="login-form">
+        <!-- <p>로그인 폼 영역</p> -->
+        <input type="text" value="HI" />
+        <input type="text" value="HI2" />
+      </div>
+    </div>
+  </body>
+</html>

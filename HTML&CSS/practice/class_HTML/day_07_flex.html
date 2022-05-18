@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .flex-container {
+        height: 100vh;
+        /* height 100vh에 center로 상태바이동  */
+        align-items: center;
+        display: flex;
+        /* justify-content : item들끼리 간격 조절
+        화면에 맞게 간격이 바뀜 => 반응형*/
+        justify-content: space-around;
+        /* around 양쪽에도 공백이 생김 */
+        /* between 처음과 마지막의 공백 삭제 */
+        /* flex-wrap : 화면크기에 맞게 칸이 계속 좁아짐 해결 */
+        flex-wrap: wrap;
+        /* 화면 비율에 따라 wrap 차례대로 해결 revers wrap 반대로 해결 */
+        /* flex-direction column : 상태바 왼쪽 정렬 */
+        /* flex-direction: column; */
+      }
+      .item {
+        width: 100px;
+        height: 70px;
+        border: 1px solid rgb(255, 255, 255);
+        text-align: center;
+        color: white;
+      }
+      .item1 {
+        background-color: #ef9a9a;
+      }
+      .item2 {
+        background-color: #f48fb1;
+      }
+      .item3 {
+        background-color: #ce93d8;
+      }
+      .item4 {
+        background-color: #b39ddb;
+      }
+      .item5 {
+        background-color: #90caf9;
+      }
+      .item6 {
+        background-color: #a5d6a7;
+      }
+      .item7 {
+        background-color: #e6ee9c;
+      }
+      .item8 {
+        background-color: #fff59d;
+      }
+      .item9 {
+        background-color: #ffcc80;
+      }
+      .item10 {
+        background-color: #d52c0f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="comtainer">
+      <!-- flex-container가 flex배열이 됨 -->
+      <div class="flex-container">
+        <!-- css for문 div.변수이름${$}*원하는 수량 -->
+        <!-- <div class="item1">1</div> -->
+        <!-- <div class="item2">2</div>  -->
+        <!-- div.공통변수이름 변수이름${$}*원하는 수량 -->
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+        <!-- 이때 item이라는 전역변수 생성 -->
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        position: relative;
+        width: 100%;
+        /* vh는 강제로 100%주겠단 의미 */
+        height: 100vh;
+        background-image: url(img/background.png);
+        background-position: center;
+        background-size: cover;
+      }
+      .rocket {
+        position: absolute;
+        width: 250px;
+        right: 10%;
+        bottom: 0;
+        /* animation은 정의
+         rocket은 animation에 대한 변수이름 (이름을 설정해야 재생가능) 
+        변수이름 속도 linear(처음부터끝까지 부드럽게) intinite(4초간격마다 무한으로) */
+        animation: rocket 2s linear infinite;
+      }
+      /* @ : 어노테이션 뒤에 rocket은 animation의 변수이름 진행과정에 대한 효과*/
+      /* key frames 은 구현 */
+      @keyframes rocket {
+        /* animation효과 0%부터 */
+        0% {
+          bottom: 0;
+          opacity: 0;
+        }
+        /* 50% {
+          opacity: 0.5;
+          background-color: black;
+        } */
+        /* animation 100%까지 */
+        100% {
+          bottom: 100%;
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img class="rocket" src="img/rocket.png" alt="" />
+    </div>
+  </body>
+</html>

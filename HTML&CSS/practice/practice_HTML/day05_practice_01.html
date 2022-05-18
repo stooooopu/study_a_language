@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .background {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(#ad81ff63, rgba(177, 147, 64, 0.288)),
+          url(img/img.jpg);
+      }
+      .background h2 {
+        text-align: center;
+        color: aliceblue;
+        font-size: 60px;
+        font-weight: 1000;
+      }
+      .background h4 {
+        text-align: center;
+        color: rgba(240, 248, 255, 0.568);
+        font-size: 30px;
+        font-weight: 800;
+      }
+      .container {
+        padding: 50px 100px 0 100px;
+        text-align: center;
+      }
+      .container button {
+        color: aliceblue;
+        font-size: 40px;
+        width: auto;
+        height: auto;
+        border-radius: 20%;
+        background-color: rgba(255, 40, 40, 0.205);
+        border: 3px solid rgba(255, 0, 0, 0.26);
+        margin: 10px;
+        cursor: pointer;
+      }
+      .img {
+        text-align: center;
+        border-radius: 30px;
+        border: 5px solid rgba(10, 94, 10, 0.281);
+        margin: 30px 0 0 800px;
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+    <script>
+      function 좋아함() {
+        alert('탈퇴하세요');
+      }
+      function 사랑함() {
+        alert('등업하시겠습니까?');
+      }
+    </script>
+  </head>
+  <body>
+    <div class="background">
+      <h2>당당한 파이리를 사랑하는 모임</h2>
+      <h4>당.사.모</h4>
+      <img class="img" src="img/img.jpg" alt="" />
+      <div class="container">
+        <button onclick="좋아함();">좋아함</button>
+        <button onclick="좋아함();">진짜좋아함</button>
+        <button onclick="좋아함();">사랑함</button>
+        <button onclick="사랑함();">사랑하다 죽을 수 있음</button>
+      </div>
+    </div>
+  </body>
+</html>

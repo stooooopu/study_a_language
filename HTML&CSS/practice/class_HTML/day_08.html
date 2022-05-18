@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .card-container {
+        display: flex;
+        width: 1000px;
+        height: 400px;
+        margin: 100px auto;
+      }
+      .item {
+        position: relative;
+        height: 100%;
+        /* flex: 1을 쓰면 아이템들이 일정한 크기를 갖게 됨 */
+        flex: 1;
+        padding: 25px;
+        /* item tag 하위 text는 글씨 색이 white가 됨 */
+        color: white;
+        transition: 0.4s;
+      }
+      .item:hover {
+        /* flex-grow 기존 크기에서 2.5배만큼 늘어남 */
+        flex-grow: 2.5;
+      }
+      /* .caption에서 숨겼던 p tag, button tag를 hover되면 다시 보여주게 */
+      .item:hover .caption {
+        /* none의 반대는 block */
+        display: block;
+      }
+      /* container 기준으로 봤을 때 item은 child임 */
+      .item:nth-child(1) {
+        /* 크로스핏 */
+        background-color: blue;
+      }
+      .item:nth-child(2) {
+        /* 웨이트 */
+        background-color: black;
+      }
+      .item:nth-child(3) {
+        /* 팔 뻗기 */
+        background-color: green;
+      }
+      .item h2 {
+        font-size: 25px;
+        font-weight: 900;
+        text-align: center;
+      }
+      /* 마우스를 올리기 전에는 숨기기 위해 display: none을 준 것 */
+      .caption {
+        display: none;
+        font-size: 12px;
+        margin: 28px 0;
+        /* width에 max값 지정 가능 */
+        max-width: 230px;
+      }
+      .caption button {
+        border: 2px solid white;
+        border-radius: 30px;
+        /* background-color: transparent 배경색 투명 */
+        background-color: transparent;
+        padding: 8px 18px;
+        color: white;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+      .item img {
+        width: 200px;
+        /* 부모태그인 item에 position relative에 대한 absolute*/
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card-container">
+        <div class="item">
+          <h2>크로스핏</h2>
+          <div class="caption">
+            <p>크로스핏 재밌을라나?</p>
+            <button>예약</button>
+          </div>
+          <img src="img/img1.png" alt="" />
+        </div>
+        <div class="item">
+          <h2>웨이트</h2>
+          <div class="caption">
+            <p>웨이트는 힘들어</p>
+            <button>예약</button>
+          </div>
+          <img src="img/img2.png" alt="" />
+        </div>
+        <div class="item">
+          <h2>팔 뻗기</h2>
+          <div class="caption">
+            <p>제일 쉬운 재질임 진심임</p>
+            <button>예약</button>
+          </div>
+          <img src="img/img3.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .card-container {
+        display: flex;
+        width: 1500px;
+        height: 600px;
+        margin: 100px auto;
+      }
+      .card-container h2 {
+        font-size: 100px;
+        text-align: center;
+      }
+      .item {
+        color: white;
+        position: relative;
+        height: 100%;
+        flex: 1;
+        transition: 0.5s;
+        padding: 25px;
+      }
+      .item:hover {
+        flex-grow: 2;
+      }
+      .item:hover .caption {
+        display: block;
+      }
+      .item:nth-child(1) {
+        background-color: orange;
+      }
+      .item:nth-child(2) {
+        background-color: blue;
+      }
+      .item:nth-child(3) {
+        background-color: greenyellow;
+      }
+      .caption {
+        display: none;
+        font-size: 30px;
+        margin: 20px;
+      }
+      .caption button {
+        border: 5px solid white;
+        border-radius: 30px;
+        color: white;
+        background-color: transparent;
+        width: 100px;
+        height: 50px;
+        margin: 20px 0;
+        cursor: pointer;
+      }
+      .item img {
+        position: absolute;
+        width: 200px;
+        height: 300px;
+        right: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card-container">
+        <div class="item">
+          <h2>Dog</h2>
+          <div class="caption">
+            <p>강쥬ㅣ</p>
+            <button>SO CUTE!!!</button>
+          </div>
+          <img src="img/dog.png" alt="" />
+        </div>
+        <div class="item">
+          <h2>Cat</h2>
+          <div class="caption">
+            <p>고앵이</p>
+            <button>SO CUTE!!!</button>
+          </div>
+          <img src="img/cat.png" alt="" />
+        </div>
+        <div class="item">
+          <h2>BEAR</h2>
+          <div class="caption">
+            <p>곰은 사람을 찢어</p>
+            <button>oh...</button>
+          </div>
+          <img src="img/bear.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
