@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        .container {
+        margin: 100px auto;
+        background: rgb(110, 110, 110);
+        width: 600px;
+        height: auto;
+        padding: 3%;
+        border-radius: 5px;
+      }
+      .container h1 {
+        color: white;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .container input {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 8px;
+        background-color: rgba(255, 255, 255, 0.581);
+        border-radius: 5px;
+        border: none;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+      .row input {
+        flex-basis: 30%;
+      }
+      button {
+        color: #fff;
+        border: solid 2px rgba(117, 117, 117, 0.848);
+        border-radius: 3px;
+        box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.254);
+        background-color: transparent;
+        width:80px;
+        padding: 15px 0 15px;
+        margin: 10px 40%;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        cursor: pointer;
+      }
+      .container label {
+          color: white;
+      }
+      .gender{
+          width: 100%;
+          display: flex;
+          border-radius: 3px;
+          padding: 10px 10px;
+          margin: 5px;
+          background-color: rgba(255, 255, 255, 0.319);
+      }
+      #w {
+          width: 20px;
+      }
+      #m {
+          width: 20px;
+      }
+      #wLabel{
+          margin-right: 10px;
+      }
+      #mLabel{
+          margin-left: 20px;
+          margin-right: 10px;
+      }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <h1>회원가입</h1>
+            <label for="userId">아이디</label>
+            <input id="userId" type="text" placeholder="    (*필수)" />
+            <label for="password">비밀번호</label>
+            <input id="password" type="password" placeholder="    (*필수)"/>
+            <label for="rePassword">비밀번호 재확인</label>
+            <input id="rePassword" type="password" placeholder="    (*필수)" />
+            <label for="userName">이름</label>
+            <input id="userName" type="text" placeholder="    (*필수)" />
+            <label for="userGender">성별</label>
+            <div class="gender">
+                <label id="wLabel" for="w">여</label>
+                <input id="w" type="checkbox" checked />
+                <label id="mLabel" for="m">남</label>
+                <input id="m" type="checkbox"/>
+            </div>
+            <label for="userPhone">전화번호</label>
+            <input id="userPhone" type="text" placeholder="    ex) 010-1234-1234" />
+            <label for="userEmail">이메일</label>
+            <input id="userEmail" type="text" placeholder="    abcd@naver.com" />
+            <button type="button" onclick="join()">가입하기</button>
+          </div>
+</body>
+</html>

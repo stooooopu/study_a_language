@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        margin-top: 100px;
+        margin-left: 100px;
+        width: 1500px;
+        height: auto;
+        display: flex;
+        padding: 100px;
+        /* border: 1px solid black; */
+    }
+    .rightSection{
+        /* border: 1px solid black; */
+        border-radius: 5px;
+        margin-right: 20px;
+        width: 50%;
+    }
+    .leftSection{
+        width: 50%;
+        height: auto;
+    }
+    .leftSection label{
+        width: 100%;
+    }
+    .leftSection input{
+        width: 100%;
+        margin: 5px auto;
+    }
+    .leftSection select{
+        width: 100%;
+        margin: 5px auto;
+    }
+    img{
+        width: 70%;
+        margin-top: 10px;
+        margin-left: 25%;
+        border-radius: 6px;
+    }
+    .rightSection div{
+        /* width: 100%; */
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 900;
+    }
+    .leftSection button{
+        width: 100px;
+        height: 50px;
+        margin-left: 20%;
+        margin-top: 50px;
+        background-color: rgba(0, 0, 0, 0.316);
+        border: none;
+        border-radius: 6px;
+        box-shadow: 2px 3px grey;
+        color: white;
+        font-size: 20px;
+    }
+    .priceoutline {
+        border: 2px solid rgb(191, 191, 191);
+        border-radius: 6px;
+        width: 70%;
+        margin-left: 25%;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="rightSection">
+            <img src="../img/펜션.jpg" alt="">
+            <div class="priceoutline">
+                <div class="price">단가 : 200,000</div>
+                <div class="totalPrice">총 금액 : 400,000</div>
+            </div>
+        </div>
+        <div class="leftSection">
+            <h1>예약하기</h1>
+            <label for="userName">이름 (*필수)</label>
+            <input id="userName" type="text" placeholder="    (*필수)" />
+            <label for="userPhone">전화번호 (*필수)</label>
+            <input id="userPhone" type="text" placeholder="    (*필수)ex) 010-1234-1234" />
+            <label for="number">인원수 (*필수)</label>
+            <input id="number" type="number" placeholder="    (*필수)"/>
+            <label for="roomnumber">객실번호 (*필수)</label>
+            <select name="102호" id="" >
+                <option value="">  102호  </option>
+            </select>
+            <label for="checkin">입실날짜 (*필수)</label>
+            <input id="checkin" type="date" />
+            <label for="checkout">퇴실날짜 (*필수)</label>
+            <input id="checkout" type="date" placeholder="    (*필수)" />
+            <button type="button" onclick="join()">예약</button>
+            <button type="button" onclick="join()">취소</button>
+        </div>
+    </div>
+</body>
+</html>
