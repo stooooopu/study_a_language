@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="forms">
+        <!-- 만약 div이름이 모두 다를경우 check하기 힘듦->div이름을 통일 -->
+        <div class="input-box">
+            <input id="email" type="text">
+        </div>
+        <div class="input-box">
+            <input id="name" type="text">
+        </div>
+        <div class="input-box">
+            <input id="phone" type="text">
+        </div>
+        <div class="input-box">
+            <input id="addr" type="text">
+        </div>
+        <div class="input-box">
+            <input id="age" type="text">
+        </div>
+        <button class="join" type="button">회원가입</button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        var count = 0; //전역변수 : function안에 두면 계속 count는 0으로 reset
+        $(".join").on('click',function(){
+            var jsonData = {};
+            var formsChildren = $(".forms").children();
+            console.log(formsChildren); //div.input-box 출력
+            var inputBoxChildren = $('.input-box').children();
+            console.log(inputBoxChildren); //input의 id 출력
+            for(var i=0; i<inputBoxChildren.length; i++){
+                var elementId = inputBoxChildren[i].id;
+                var elementVal = $('#'+elementId).val().trim(); //.val()가져올 때 .trim()습관들이기
+                if(count>=3){ //3번 이상틀렸을 때 막기
+                    alert('3번이상 틀렸습니다 오늘은 회원가입 하실 수 없습니다');
+                    return false;
+                }
+                if(elementVal===''){
+                    alert('내용입력');
+                    $('#'+elementId).focus(); //문자를 합해서 각 아이디를 부르는 것
+                    ++count; //틀렸을 때마다 count를 셈
+                    return false;
+                };
+                if(elementId==='email' && !checkEamil(elementVal)){
+                    alert('email을 확인 해 주세요');
+                    $('#'+elementId).focus();
+                    ++count;
+                    return false;
+                    }
+                if(elementId==='phone' && !checkPhone(elementVal)){
+                    alert('핸드폰번호를 확인 해 주세요');
+                    $('#'+elementId).focus();
+                    ++count;
+                    return false;
+                };
+                jsonData[elementId]=elementVal;
+            }; //for end
+            submitData(jsonData);
+        });
+        function checkEamil(email){
+            var regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+            return regex.test(email);
+        };
+        function checkPhone(phone){
+            var regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+            return regPhone.test(phone);
+        }
+        function submitData(jsonData){
+            console.log(jsonData);
+        }
+    </script>
+</body>
+</html>

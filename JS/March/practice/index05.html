@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li id="boxing">복싱</li>
+            <li><p>수영</p></li>
+            <li>유도</li>
+            <li>헬스</li>
+            <li>레슬링</li>
+        </ul>
+        <div>사격</div>
+    </div>
+    <div class="text-wrapper">
+        <input id="userName" type="text" value="seventeen">
+        <input id="userEmail" type="text" value="seventeen@gmail.com">
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+    <script>
+    // container의 자식 : ul / div사격
+    var containerChildren = $('.container').children();
+    // console.log(containerChildren[0].children) //ul의 li모두 출력
+    // console.log($(".container").children()); // ul , div사격 출력
+    // console.log(containerChildren[0].children.length) // ul의 길이 '5'가 출력됨
+    // li tag 를 for문으로 찾기
+    var len = containerChildren[0].children.length;
+    for (var i=0; i<len; i++){
+        var innerText = containerChildren[0].children[i].innerHTML;
+        // __?? 이때 p tag말고 li tag는 왜 안나오는지??
+        console.log(innerText);
+    }
+    // for문으로 input id 찾아보기
+    // 1. console.log에 찍어서 화살표 누르기
+    var textWrapper = $(".text-wrapper").children();
+    var len = textWrapper.length;
+    for (var i=0; i<len; i++){
+        console.log(textWrapper[i].id);
+        console.log(textWrapper[i].value);
+        // __??이렇게 하면 val만 뜨는데 이게 맞는지??
+        // __??앞에 #는 왜 붙이는지??
+        console.log($('#'+textWrapper[i].id).val());
+    }
+    var container = $(".container");
+    console.log(container[0]);
+    </script>
+</body>
+</html>

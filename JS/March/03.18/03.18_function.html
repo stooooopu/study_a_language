@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            width: 1200px;
+            height: 300px;
+            margin: 30px auto;
+            background-color: darkcyan;
+        }
+        .item {
+            flex-basis: 30%;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="item" onclick="getItem(1)"></div>
+            <div class="item" onclick="getItem('2')"></div>
+            <div class="item" onclick="getItem(3)"></div>
+        </div>
+    </div>
+    <script>
+        function getItem(num) {
+            // 이때 hello world 01 과 hello world+num실행
+            // '==='은 데이터와 데이터 타입 모두 같아야 하기 때문에 실행 안함
+            if(num==2){
+                console.log('hello world 01');    
+            }
+            if(num===2){
+                console.log('hello world 02');    
+            }
+            console.log('hello world'+num);
+            if(isResult()) {
+                // isResult() return이 true이기 때문에 무조건 실행
+                // 만약 return이 false 라면 실행안함
+                // 함수의 위치는 상관없음
+                console.log('실행합니다')
+            }
+        }
+        function isResult(){
+            return true;
+        }
+        // if 함수 배열 정도만 여기 js에서 함
+        // 나머지 복잡한 로직은 백엔드에서
+    </script>
+</body>
+</html>

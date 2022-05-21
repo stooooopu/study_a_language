@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="text-wrapper">
+        <!-- disabled : text고정 수정 불가 -->
+        <input id="title" type="text" value="골라골라 술" disabled>
+        <input id="참이슬" type="text" value="참이슬">
+        <input id="대선" type="text" value="대선">
+        <input id="여수밤바다" type="text" value="여수 밤 바다   ">
+        <input id="한라산" type="text" value="한라산">
+        <input id="린" type="text" value="린">
+    </div>
+    <button>클릭</button>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script>
+        // 클릭했을 때 input value를 가져옴
+        // 조건 : 공백제거
+        // 1. id를 이용해서 중복 제거
+        // 2. text-wrapper 이용(for문)
+
+        // 1. 요소에 id를 지정
+        var name = '여수밤바다';
+        // jquery의 모든 함수는 return값이 있음 
+        var result = $("#"+name).val().trim(); //method chaining
+        console.log(result) //'여수 밤 바다' 출력
+
+        // 2. 부모와 자식 이용
+        // text-wrapper의 자식 정보를 변수에 대입
+        var textWrapperChildren = $('.text-wrapper').children();
+        console.log(textWrapperChildren); //children을 이용 자식 정보를 상세히 알 수 있음
+        for(var i=0; i<textWrapperChildren.length; i++){
+            // value 가져오기
+            var id = textWrapperChildren[i].id;
+            console.log(id);
+            var value = $("#"+id).val().replace(/ /g,''); //모든 공백제거
+            if (value==''){
+                alert ('필수 입력란을 작성');
+                $("#"+id).focus();
+            }
+        }
+        // $("#"+id)를 잘 활용할 것
+    </script>
+</body>
+</html>

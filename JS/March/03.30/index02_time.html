@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="forms">
+        <input id="reservationDate" type="date">
+        <!-- select 1번. value에 값 넣기  -->
+        <select id="menu">
+            <!-- 메뉴선택은 선택이 아니니까 null or none -->
+            <option value="null">메뉴선택</option>
+            <option value="don">돈까스</option>
+            <option value="kal">칼국수</option>
+            <option value="gno">뇨끼</option>
+            <option value="kim">김치볶음밥</option>
+        </select>
+        <button id="btn" type="button">음식 주문</button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        $('#btn').click(function(){
+            var selectedMenu = $('#menu option:selected').val();
+            if(selectedMenu === 'null'){
+                alert ('메뉴를 선택하세요');
+                return false;
+            };
+            // 날짜관련 로직
+
+            //선택한 날짜 (데이터타입 : 문자)
+            var selectedDate = $('#reservationDate').val();
+            //현재 날짜 (데이터타입 : date)
+            var now = new Date();
+            //선택한 날짜(데이터타입 : date)
+            var reservationDate = new Date(selectedDate); //new Date()안에 문자타입 날짜를 넣어서 date타입으로 바꿔줌
+            console.log(selectedDate);
+            console.log(now);
+            console.log(now.getTime());
+            console.log(reservationDate);
+            console.log(reservationDate.getTime());
+            // 양수가 나오면 지난날짜, 음수가 나오면 앞으로 날짜
+            // 1s=1000ms임 1000ms * 60s * 60m * 24h
+            // 몇달인지는 30d 곱하면 됨
+            // 크롬 기준으로 시간을 하는데 간혹가다 시간을 다르게 설정한 사람이있어서
+            // 프론트에서 한 번, 백 엔드에서 한 번, DB에서 한 번 체크해줌
+            var diffDay = (now.getTime() - reservationDate.getTime()) / (1000*60*60*24);
+            console.log(diffDay);
+            if(diffDay >= 1) {
+                alert('오늘날짜 이후로 예약이 가능합니다');
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>

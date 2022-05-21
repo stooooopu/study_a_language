@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="forms">
+        <input id="name" type="text" value="정지유">
+        <input id="hobby" type="text" value="없음">
+    </div>
+    <!-- id와 json의 key는 중복 안되는 점이 같음 -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        // var name = $("#name").val();
+        // var hobby = $("#hobby").val();
+        // var jsonData = {};
+        // // json데이터 넣는 방법
+        // jsonData.name = ''
+        // // 변수를 이용해서 key값을 넣고싶을 땐 이렇게 배열
+        // jsonData[name]='학생';
+        // console.log(jsonData); => {name: '', 정지유: '학생'}
+        var formsChildren = $(".forms").children();
+        console.log(formsChildren);
+        var jsonData = {};
+        for(var i=0; i<formsChildren.length; i++){
+            // forms안에 있는 자식들 정보를 가져옴
+            var inputId = formsChildren[i].id;
+            console.log(inputId); //inputId에 id가 제대로 들어갔는지 확인
+            jsonData[inputId] = $("#"+inputId).val();
+        }
+        console.log(jsonData) //=> {name: '정지유', hobby: '없음'}
+
+        // sever에 보내는 로직 with jQuery
+        function submitServer(jsonData){
+            // 이 jsonData를 서버에 보냄
+        }
+
+    </script>
+</body>
+</html>

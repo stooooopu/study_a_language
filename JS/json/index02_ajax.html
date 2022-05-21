@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="my-gitgub">
+    <h3 class="name"></h3>
+    <p class="followers"></p>
+    <p class="following"></p>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>visibility</th>
+        <th>created_at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tbody id="list">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </tbody>
+  </table>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"></script>
+    <script>
+      // 전송방법 : 동기전송 / 비동기전송
+      $.ajax({ //ajax defualt value : 비동기전송(요청을 목적지에 보내고 나는 다른일을 할 수 있음)
+        url : 'https://api.github.com/users/stooooopu', //목적지 주소
+        type : 'GET', //데이터 조회(select)
+        dataType : 'json', //API서버에서 오는 데이터타입 정의
+        success : (data) => { //서버요청에 성공하면 (6version)
+          // console.log(data);
+          // console.log(data.followers);
+          // console.log(data.following);
+          // html에 데이터 가져오기
+          $('.followers').append(data.followers);
+          $('.following').append(data.following);
+          $('.name').append(data.name);
+          // $('.followers').text() append대신 쓸 수 있음
+          // $('.followers').html()
+        },
+        error : function(request, status, error){ //서버요청에 실패하면 (5version)
+          // http error code => 404 : 없는주소 / 500 : server내부결함, error / 403 : 권한없음
+          console.log(error);
+        }
+        // error : function(request, status, error){ 
+        //   console.log(request);
+        //   if(request.states == 404) {
+        //     alert('없는 주소입니다');
+        //   }
+        // }
+      });//ajax선언
+
+      $.ajax({
+        url : 'https://api.github.com/users/stooooopu/repos',
+        type : 'GET',
+        dataType : 'json',
+        success : function(data){
+          console.log(data);
+          var json = {key : 1};
+          // console.log(json.key);
+          var arr =[{id : 1},{id : 2}];
+          // console.log(arr[0].id);
+          // console.log(arr[1].id);
+          for(var i=0; i<data.length; i++){
+            var html =
+            '<tr><td>'+
+              data[i].id+
+              '</td><td>'+
+              data[i].name+
+              '</td><td>'+
+              data[i].visibility+
+              '</td><td>'+
+              data[i].created_at+
+              '</td></tr>';
+              $('#list').append(html);
+          }
+          // for(var i=0; i<data.le)
+          // $('#list').children()[0].append(data.id);
+          // $('#list').children()[1].append(data.name);
+          // $('#list').children()[2].append(data.visibility);
+          // $('#list').children()[3].append(data.created_at);
+        },
+        error : function(request, status, error){
+          console.log(error);
+        }
+      });
+    </script>
+</body>
+</html>

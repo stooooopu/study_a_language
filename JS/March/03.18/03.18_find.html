@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="item">
+                <div class="baby">Hello world</div>
+            </div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <button onclick="findItem()">FIND</button>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script>
+        // 파일 이름에 min이라고 써있는 파일은 압축 된 파일로
+        // 띄어쓰기나 공백이 없음
+        function findItem(){
+            // children함수에 리턴값이 있어서 가능
+            // 자바 메소드의 개념으로 이해하면 됨
+            // jQuery에서 이미 정의 된 함수라서 가능
+            var val = $(".row").children();
+            console.log(val);
+            var baby = $(".row").find(".baby");
+            console.log(baby)
+        }
+    </script>
+</body>
+</html>

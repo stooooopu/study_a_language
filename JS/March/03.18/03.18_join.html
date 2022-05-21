@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        margin: 100px auto;
+        background: rgba(232, 232, 232, 0.5);
+        width: 800px;
+        height: auto;
+        padding: 3%;
+      }
+      .container h1 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .container input {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+      }
+      .container select {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+      .row input {
+        flex-basis: 30%;
+      }
+      .row select {
+        flex-basis: 30%;
+      }
+      button {
+        color: #fff;
+        border: solid 1px rgba(0, 0, 0, 0.08);
+        background-color: #03c75a;
+        width: 100%;
+        padding: 15px 0 15px;
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>회원 가입</h1>
+      <label for="userId">아이디</label>
+      <input id="userId" type="text" />
+      <label for="password">비밀번호</label>
+      <input id="password" type="password" />
+      <label for="rePassword">비밀번호 재확인</label>
+      <input id="rePassword" type="password" />
+      <label for="userName">이름</label>
+      <input id="userName" type="text" />
+      <label for="yy">생년월일</label>
+      <div class="row">
+        <input id="yy" type="text" placeholder="년(4자)" />
+        <select name="gender" id="pet-select">
+          <option selected>월</option>
+          <option value="01">1</option>
+          <option value="02">2</option>
+          <option value="03">3</option>
+          <option value="04">4</option>
+          <option value="05">5</option>
+          <option value="06">6</option>
+          <option value="07">7</option>
+          <option value="08">8</option>
+          <option value="09">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <label for="dd"></label>
+        <input id="dd" type="text" placeholder="일" />
+      </div>
+      <label for="gender">성별</label>
+      <select name="gender" id="gender">
+        <option selected>성별</option>
+        <option value="M">남자</option>
+        <option value="G">여자</option>
+      </select>
+      <button type="button" onclick="join()">가입하기</button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function join() {
+        // input 박스에 쓴 값 가져오기
+        // .val(); = function val() {return ___ };와 같음
+        var userId = $("#userId").val().trim();
+        // Id공백 삭제
+        // userId.trim(); or var userId = $("#userId").val().trim();
+        // trim = 문자열 함수, 이건 js에서 기본으로 제공하는 함수 = 내장함수
+        // '피카츄'.trim(); 이렇듯 문자 자체가 함수를 가지고 있음
+        // var userId = $("#userId").val().trim(); => 메소드 체이닝
+        // val().trim();이 가능한 이유는 val()의 리턴값이 문자열이니까 가능
+        // 메소드체이닝 : 리턴값이 있는 함수만 가능
+        if(userId == ''){
+          alert('아이디를 입력해주세요') // 공백일경우 창 띄우고
+          $("#userId").focus(); // 창 닫으면 아이디 입력창에 포커스를 줌
+          // 이때 리턴은 이 함수를 끝내려는 목적
+          return true;
+        }
+        if (userId.length > 20){
+          alert('ID는 20글자 이하여야 합니다')
+          $("#userId").val(""); //입력된 값이 지워짐
+          $("#userId").focus();
+        }
+        var password = $("#password").val().trim();
+        var rePassword = $("#rePassword").val().trim();
+        if(password == '' || rePassword == ''){
+          alert('비밀번호를 입력해주세요');
+          $("#password").focus();
+          return false;
+        }
+        if (password !== rePassword) {
+          alert('비밀번호가 다릅니다');
+          $("#rePassword").focus();
+          return false;
+        }
+        var userName = $("#userName").val().trim();
+        if(checkName(userName)){
+          console.log('한글 이름입니다')
+        }else {
+          console.log('한글 이름을 입력해 주세요')
+        }
+      }
+      // 이름에 영어나 말이 안되는 것 입력 걸러내기 코딩 필요없음
+      // 정규표현식(Reguler Expression) : 문자열을 처리하는 방법
+      // 원하는 문자 체크 가능
+      // ^ : 문자를 의미해
+      function checkName(name) {
+        // '가'부터 '힣'까지만 인정할게
+        // 정규표현식(한글이름만 인정)
+        // google에 email 정규표현식, 이름 정규표현식 등... 검색
+        var regex = /^[가-힣]+$/
+       return regex.test(name); //정규표현식 체크 test의 type의 blooen
+      }
+    </script>
+  </body>
+</html>

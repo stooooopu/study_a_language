@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var jsonData3 = [
+            {sal:3000, id: 3},
+            {sal:5000, id: 1},
+            {sal:4400, id: 1},
+            {sal:2300, id: 3}
+        ];
+        console.log(jsonData3);
+        var totalSum=0;
+        var idSum = 0;
+        for(var i=0; i<jsonData3.length; i++){
+            totalSum += jsonData3[i].sal;
+            if(jsonData3[i].id===1){
+                idSum += jsonData3[i].sal;
+            }
+        }
+        console.log(totalSum);
+        console.log(idSum);
+        // 신형만 출력
+        // 배열인걸 잊지말자
+        var jsonData2 =[
+            {name : '짱구', family : { dad : '신형만', mom : '봉미선' } },
+            {name : '유리'},
+            {name : '맹구'}
+        ];
+        console.log(jsonData2[0].family.dad);
+    </script>
+</body>
+</html>

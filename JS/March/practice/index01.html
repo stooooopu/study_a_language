@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 500px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="darkcyan" class="container">
+        <input id="order" type="text" value="Americano">
+        <select id="menu">
+            <option value="none" selected>--커피를 선택하세요--</option>
+            <option value="Americano">아메리카노</option>
+            <option value="Latte">라떼</option>
+            <option value="Icetea">아이스티</option>
+        </select>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            alert('홈페이지에 접속하셨습니다.')
+            // attribute : 속성
+            // $( 'div' ).attr( 'class' ); => div 요소의 class 속성의 값을 가져옵니다.  
+            // 홈페이지에 접속하자마자 alert창 
+            // id를 변경
+            // __??이게 container의 id를 var id에 담은것??
+            // __??container의 id를 var id에 담았으니까 현재까지는 
+            // __??var id = darkcyan 인건가??
+            var id = $(".container").attr('id');
+            console.log(id);
+            //attr 은 속성 이름을 호출할 수도 있고 
+            //속성 값을 수정할 수도 있다.
+            //attr(속성이름 , 값)
+            // darkcyan -> black
+            // __??attr(id)이때 id가 위에 선언한 var id인지
+            // __??container의 id인지 모르겠음 
+            // var id임!! 위에 아이디였으면 $("#")이걸 썼음!
+            $(".container").attr('id','black');
+            // 스타일 변경
+            $(".container").attr('style', 'background-color : darkcyan')
+            //input value 를 가져와서, 해당 option 에 selected
+            // __??이때 value는 왜 Americano, Latte, Icetea가 아닌건지?
+            // order검색창에 메뉴를 쳤을 때 옆에 select 값이 바뀜
+            var orderMenu = $("#order").val();
+            if(orderMenu==='아메리카노'){
+                //option:eq(1) : option 1번째 (oprtion 은 0부터 시작)
+                //attr('selected','selected') selected 속성에 selected 값 넣기
+                // attr('<option value="none" selected>--커피를 선택하세요--</option>의 selected속성'
+                // ,'selected')
+                $("#menu option:eq(1)").attr('selected','selected');
+            }
+            if(orderMenu==='라떼'){
+                $("#menu option:eq(2)").attr('selected','selected');
+            }
+            if(orderMenu==='아이스티'){
+                $("#menu option:eq(3)").attr('selected','selected');
+            }
+        });
+        //keyup : 키보드에서 손을뗐을때 실행.
+        //keydown : 키보드를 눌렀을때 실행.
+        $("#order").on('keyup',function(key){
+            //key : 아무이름이나 써두 된다, 변수이름
+            // 키보드 마다 숫자가 있다 그 숫자가 key 자리로 넘어간다.
+            // keyCode 13 : enter
+            if(key.keyCode == 13){
+                // __??var orderMenu를 왜 한 번더 선언하는지?
+                // 서로 다른 함수니까
+                var orderMenu = $("#order").val();
+                if(orderMenu==='아메리카노'){
+                    $("#menu option:eq(1)").attr('selected','selected');
+                    $("#menu option:eq(2)").removeAttr('selected');
+                    $("#menu option:eq(3)").removeAttr('selected');
+                }
+                if(orderMenu==='라떼'){
+                    $("#menu option:eq(2)").attr('selected','selected');
+                    $("#menu option:eq(1)").removeAttr('selected');
+                    $("#menu option:eq(3)").removeAttr('selected');
+                }
+                if(orderMenu==='아이스티'){
+                    $("#menu option:eq(3)").attr('selected','selected');
+                    $("#menu option:eq(2)").removeAttr('selected');
+                    $("#menu option:eq(1)").removeAttr('selected');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

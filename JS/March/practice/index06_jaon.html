@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        $(function(){
+            var jsonData = {name : '포항폭탄주 이모', age : 40, addr : '포항', familly : { 
+                // familly의 경우 데이터가 많이 들어가야함 -> json안에 json으로 표현
+                dad : '신형만', mom : '봉미선' }} //여기까지가 jsonData 
+                // json출력
+                console.log(jsonData)
+                // json 안에 json 출력
+                console.log(jsonData.familly.dad)
+
+                // 배열json
+                var jsonData2 = [{name : '신짱구', familly : {dad : '신형만', mom : '봉미선'}}, {name : '유리'}, {name : '맹구'}];
+                console.log(jsonData2[0].familly.dad) //신형만 출력
+                console.log(jsonData2[1].name) //유리 출력
+                console.log(jsonData2[2].name) //맹구 출력
+
+                // for문으로 sum{
+                var jsonData3 = [{sal : 3000}, {sal : 5000}, {sal : 4400}, {sal : 2300}];
+                var total = 0;
+                var len = jsonData3.length;
+                for (var i=0; i<len; i++){
+                    // sal까지 지정해 줘야함
+                    total += jsonData3[i].sal;
+                };
+                console.log(total)
+                
+                // each문으로 sum
+                var sum = 0;
+                // __??이때 element는 단순히 변수이름??
+                // __??아니면jsonData3의 각 데이터를 파라미터로 받는??
+                jsonData3.forEach(function(element){
+                    sum += element.sal;
+                });
+                
+                // arrow fuction(version 6)
+                // var대신 let사용 (이전 version5와 다르게 변수 중복 안됨 -> java와 비슷해지고 있음)
+                let just = 0;
+                jsonData3.forEach((element) => {
+                    just += element.sal;
+                });
+                
+                var jsonData4 = {
+                    name : '보노보노',
+                    addr : '보노보노 숲',
+                    friends : ['너부리','포로리','야옹이형'],
+                    familly : [{name : '보노보노아빠', age : 34}, {name : '보노보노엄마', age : 30}],
+                    hobby : '낮잠'
+                };
+
+                // friends의 길이
+                var bonoLen = jsonData4.friends.length;
+                console.log(bonoLen)
+
+                // family나이 합산
+                var ageSum = 0;
+                var famillyLen = jsonData4.familly.length;
+                for(var i=0; i<famillyLen; i++){
+                    ageSum += jsonData4.familly[i].age;
+                }
+                console.log(ageSum)
+
+                // hobby : 낮잠 -> 수영
+                jsonData4.hobby = '수영';
+                console.log(jsonData4.hobby)
+
+                // saying이라는 key를 추가 value에 '포로리야 놀자'넣기
+                jsonData4.saying = '포로리야 놀자';
+                console.log(jsonData4.saying)
+            });
+    </script>
+</html> 

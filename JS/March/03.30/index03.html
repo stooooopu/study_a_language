@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>영수증 번호</th>
+                <th>구매 물품</th>
+                <th>수량</th>
+                <th>구매 날짜</th>
+                <th>구매자</th>
+            </tr>
+        </thead>
+        <tbody id="list">
+            <!-- DB에서 가져온 데이터가 아닌 임의로 넣은 데이터(임시데이터)
+            프론트에서 넘어온 다음에 주석표시나 지워버림 -->
+            <!-- <tr>
+                <td>123</td>
+                <td>아이폰 13</td>
+                <td>10</td>
+                <td>2022-03-30</td>
+                <td>최승철</td>
+            </tr> -->
+        </tbody>
+    </table>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        $(function(){
+            doResponsData(); //페이지 로딩시 해당함수 강제호출
+        });
+        // (server에있는 데이터를 가져와서)그려준다 -> render
+        // rendering 방법 2가지
+        // 1. append(), html(), text() 이용
+        // 장점 : 진입장벽 낮음
+        // 단점 : 유지보수 힘듦
+        function doResponsData(){
+            // json을 이용해서 data수정
+            var json = { //sever에서 응답온 데이터라고 가정
+                no : 500,
+                goods : 'iphone 13',
+                cnt : 10,
+                creatAt : '2022-03-30',
+                name : '윤정한'
+            };
+            // var html = '<tr><td>'+json.no+'</td><td>'+json.goods+'</td><td>'+json.cnt+'</td><td>'+json.creatAt+'</td><td>'+json.name+'</td></tr>'
+            // for(var i=0; i<5; i++){
+            //     $('#list').append(html); //위에 데이터를 괄호 안에 넣어서 업데이트 해 줘야함
+            // }
+            for(var i=0; i<5; i++){
+                var html = '<tr><td>'+i+'</td><td>'+json.goods+'</td><td>'+json.cnt+'</td><td>'+json.creatAt+'</td><td>'+json.name+'</td></tr>'
+                $('#list').append(html); //영수증 번호 자리에 i를 넣어서 1씩 자동 증가
+            }
+            // td데이터 그대로 가져와서 입력
+            // var html = '<tr><td>1000</td><td>아이폰 13</td><td>10</td><td>2022-03-30</td><td>최승철</td></tr>'
+            // for(var i=0; i<5; i++){
+            //     $('#list').append(html); //위에 데이터를 괄호 안에 넣어서 업데이트 해 줘야함
+            // }
+        };
+        // 2. spring시간에 
+    </script>
+</body>
+</html>
