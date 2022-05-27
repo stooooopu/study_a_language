@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 글 작성 팝업 -->
+        <div class="write-popup">
+            <div class="editor">
+                <div class="input-box">
+                    <label for="studentsName">작성자 : </label>
+                    <input id="studentsName" type="text" value="현상원" readonly>
+                </div>
+                <div class="input-box">
+                    <label for="title">제목 : </label>
+                    <input id="title" type="text" placeholder="제목을 입력하세요...">
+                </div>
+                <div class="input-box">
+                    <textarea id="content" rows="10" cols="65" placeholder="내용을 간단히 적어주세요..."></textarea>
+                </div>
+                <div class="btn-area">
+                    <a href="#" class="btn-cancel">취소</a>
+                    <a id="contentSubmit" href="#" class="btn-success">등록</a>
+                </div>
+            </div>
+        </div>
+        <!-- 글 작성 수정 -->
+        <div class="update-popup">
+            <div class="editor">
+                <div class="close">
+                    <a href="#" class="btn-close">닫기</a>
+                </div>
+                <div class="input-box">
+                    <label for="title">제목 : </label>
+                    <input id="upt-title" type="text" placeholder="제목을 입력하세요...">
+                </div>
+                <div class="input-box">
+                    <textarea id="upt-content" rows="10" cols="65" placeholder="내용을 간단히 적어주세요..."></textarea>
+                </div>
+                <div class="btn-area">
+                    <!-- boardId를 숨길거-->
+                    <input id="boardIdHidden" type="hidden">
+                    <a id="contentUpdate" href="#" class="btn-update">수정</a>
+                    <a id="contentDelete" href="#" class="btn-delete">삭제</a>
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="logo-apple"></ion-icon></span>
+                        <span class="title">DW Board</span>                
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Dashboard</span>                
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="title">Students</span>                
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <span class="title">Password</span>                
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title">Sign Out</span>                
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- main -->
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <!-- toggle은 나중에 만들기 -->
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <!-- search -->
+            <div class="search">
+                <label>
+                    <input id="searchBar" type="text" placeholder="작성자를 검색하세요...">
+                </label>
+            </div>
+            <div>
+                <a href="#" class="logout">Logout</a>
+            </div>
+        </div>
+         <!-- cards -->
+         <div class="cardBox">
+             <div class="card">
+                 <div>
+                    <div class="numbers">1,400</div>
+                    <div class="cardName">학생 수</div>
+                 </div>
+                 <div class="iconBx">
+                    <ion-icon name="school-outline"></ion-icon>
+                 </div>
+             </div>
+             <div class="card">
+                <div>
+                   <div class="numbers">500</div>
+                   <div class="cardName">게시글 수</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="book-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                   <div class="numbers">300</div>
+                   <div class="cardName">작성자 수</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="code-slash-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                   <div class="numbers">2,800</div>
+                   <div class="cardName">총 조회 수</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="eye-outline"></ion-icon>
+                </div>
+            </div>
+         </div>
+         <!-- table -->
+         <div class="details">
+             <div class="recentOrders">
+                 <div class="cardHeader">
+                     <h2>Board List</h2>
+                     <a href="#" class="btn">글 작성</a>
+                 </div>
+                 <table>
+                     <thead>
+                         <tr>
+                             <th>게시판 번호</th>
+                             <th>작성자</th>
+                             <th>제목</th>
+                             <th>수정 날짜</th>
+                             <th>작성 날짜</th>
+                             <th>조회 수</th>
+                            </tr>
+                        </thead>
+                        <!-- 더미데이터는 클라이언트의 요구가 다 들어간 거기 때문에 지우면 안됨 주석처리 해야함 -->
+                     <tbody id="boardData">
+                         <!-- <tr>
+                             <td>1</td>
+                             <td>현상원</td>
+                             <td>점심시간이 너무 짧아요!</td>
+                             <td>2022-05-19</td>
+                             <td>2022-05-18</td>
+                             <td><span class="high">8320</span></td>
+                         </tr>
+                         <tr>
+                            <td>2</td>
+                            <td>현상원</td>
+                            <td>학원에 커피기계가 없어요!</td>
+                            <td>2022-05-19</td>
+                            <td>2022-05-18</td>
+                            <td><span class="middle">1200</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>현상원</td>
+                            <td>너무 졸려요...</td>
+                            <td>2022-05-19</td>
+                            <td>2022-05-18</td>
+                            <td><span class="row">5</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>현상원</td>
+                            <td>안녕하세요!</td>
+                            <td>2022-05-19</td>
+                            <td>2022-05-18</td>
+                            <td><span class="row">22</span></td>
+                        </tr> -->
+                     </tbody>
+                 </table>
+                 <div class="pagination">
+                    <a href="#">Previous</a>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">Next</a>
+                 </div>
+             </div>
+         </div>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+<script>
+    $('.btn').click(function(){
+        $('.write-popup').css('display', 'block');
+    });
+    $('.btn-cancel').click(function(){
+        $('.write-popup').css('display', 'none');
+    });
+    // 팝업창 닫기
+    $('.btn-close').click(function(){
+        $('.update-popup').css('display','none');
+    })
+    // $('#contentSubmit').click(function(){
+    //     if(confirm('게시글을 작성하시겠습니까?')){
+    //         $('.write-popup').css('display', 'none');
+    //     }
+    // });
+    let list = document.querySelectorAll('.navigation li');
+    function activeLink(){
+        list.forEach((item) => {item.classList.remove('hovered')});
+        this.classList.add('hovered');
+    }
+    list.forEach((item) => {item.addEventListener('mouseover',activeLink)});
+</script>
+<script>
+
+
+    // 게시판 리스트 호출
+    // 함수를 부른 이유는 밑에 정의한 함수를 부르지 않으면 정의만 해놓고 실행은 안한거
+    getBoardList()
+    
+    // 작성한 게시물을 보여주는 함수
+    function getBoardList(){
+        $.ajax({
+          url : 'http://localhost:8080/api/v1/board',
+          type : 'GET',
+          dataType : 'json',
+          success : function(response){
+              // 잘들어왔는지 확인
+              console.log(response);
+              //html append작성
+              var html = '';
+              if(response.length > 0){
+                  for(var i=0; i<response.length; i++){
+                    // 조회수 로직 구현예정
+                    // var 조회수 =  response[i].조회수;
+                    if(response[i].cnt < 10){
+                        html += "<tr onclick = getBoard("+response[i].boardId+")><td>"+
+                          response[i].boardId+"</td><td>"+
+                          response[i].studentsName+"</td><td>"+
+                          response[i].title+"</td><td>"+
+                          response[i].updateAt+"</td><td>"+
+                          response[i].createAt+"</td><td>"+
+                          '<span class="row">'+response[i].cnt+"</td></tr>";
+                    }
+                    if(response[i].cnt >= 10 & response[i].cnt < 20){
+                        html += "<tr onclick = getBoard("+response[i].boardId+")><td>"+
+                          response[i].boardId+"</td><td>"+
+                          response[i].studentsName+"</td><td>"+
+                          response[i].title+"</td><td>"+
+                          response[i].updateAt+"</td><td>"+
+                          response[i].createAt+"</td><td>"+
+                          '<span class="middle">'+response[i].cnt+"</td></tr>";
+                    } if(response[i].cnt >= 20){
+                        html += "<tr onclick = getBoard("+response[i].boardId+")><td>"+
+                          response[i].boardId+"</td><td>"+
+                          response[i].studentsName+"</td><td>"+
+                          response[i].title+"</td><td>"+
+                          response[i].updateAt+"</td><td>"+
+                          response[i].createAt+"</td><td>"+
+                          '<span class="high">'+response[i].cnt+"</td></tr>";
+                    }
+                  }
+              } else {
+                  // 게시글 없음 로직 구현
+                  html += '<tr><td colspan=6 style = "text-align : center;">게시글이 없습니다</td></tr>';
+              }
+              $('#boardData').append(html); // tbody에 jsonData 렌더링
+          }
+          })
+    }
+
+    // 글작성
+    $('#contentSubmit').click(function(){
+
+        if(confirm('게시글을 작성하시겠습니까?')){
+            var title = $('#title').val();
+            var content = $('#content').val();
+            var studentsId = 5;
+
+            if(title == ''){
+                alert('제목을 입력하세요');
+                $('#title').focus();
+                return false;
+            }
+
+            if(content == ''){
+                alert('본문을 입력하세요');
+                $('#content').focus();
+                return false;
+            }
+
+       var jsonData = {
+            studentsId : studentsId,
+            title : title,
+            content : content
+        }
+            $.ajax({
+            url : 'http://localhost:8080/api/v1/board',
+            type : 'POST',
+            contentType : 'application/json', 
+            dataType : 'json',
+            data: JSON.stringify(jsonData),
+            success : function(response){
+                if(response > 0){
+                    // 작성화면 감추기
+                    $('.write-popup').css('display', 'none');
+
+                    // 글 작성 -> 내가 작성했던 글 지우기
+                    $('#title').val('');
+                    $('#content').val('');
+
+                    // ()는 함수를 호출 한 것
+                    $('#boardData').children().remove(); // boardData = tbody아이디 
+                    // 내가 작성한 게시물을 바로 화면boardList에 추가해서 보여줌
+                    getBoardList(); 
+                    }
+                }
+            }); //ajax end
+        } // if end
+    }); // function end
+
+    // boardId파라미터를 ajax로 보내줄 것
+    function getBoard(boardId){ // 클릭한 게시물 확인하는 함수
+        // boardId html에 hidden하기
+
+        // 1. 화면 none -> block
+        // tr onclick = getBoard("+response[i].boardId+") 행을 클릭 했을 때 안에 Id를 파라미터로 넘김
+        // console.log(boardId); boardId가 잘 들어왔는지 확인
+        $('.update-popup').css('display','block');
+
+        // 2. ajax를 이용해서 서버와 연결
+        $.ajax({
+            url : 'http://localhost:8080/api/v1/board/boardId/'+boardId,
+            type : 'GET',
+            dataType : 'json',
+            success : function(response){
+                console.log(response)
+                // 3. input에 데이터 set해주기
+                $('#upt-title').val(response.title)
+                $('#upt-content').val(response.content)
+                // boardId를 숨겨서 val넣기
+                $('#boardIdHidden').val(boardId);
+                setBoardViews(boardId) //조회수 함수
+            }
+            }); //ajax end
+        }
+
+        // 게시물 수정하는 함수
+        $('#contentUpdate').click(function(){
+
+            // 1. 게시판 번호 확인
+            var boardId = $('#boardIdHidden').val(); // hidden에 숨겨둔 baordId가져오기
+            // console.log(boardId)
+
+            // 2. json만들어서 수정할 제목과 내용 ajax로 보내기
+            var title = $('#upt-title').val();
+            var content = $('#upt-content').val();
+
+            var jsonData = {
+                title : title,
+                content : content
+            }
+
+            // 3. ajax를 이용해서 업데이트
+            $.ajax({
+            url : 'http://localhost:8080/api/v1/board/boardId/'+boardId,
+            type : 'PATCH',
+            contentType : 'application/json', 
+            dataType : 'json',
+            data: JSON.stringify(jsonData),
+            success : function(response){
+                if(response > 0){
+                    alert('수정 완료')
+                    $('.update-popup').css('display','none');
+                    location.reload(); //F5
+                }
+            }
+            }); //ajax end
+        })
+
+        $('#contentDelete').click(function(){
+            
+            // 게시판 번호 확인
+            var boardId = $('#boardIdHidden').val();
+
+            if(confirm('정말 삭제 하시겠습니까?')){
+                $.ajax({
+                url : 'http://localhost:8080/api/v1/board/boardId/'+boardId,
+                type : 'DELETE',
+                dataType : 'json',
+                success : function(response){
+                        $('.update-popup').css('display','none');
+                }
+                }); //ajax end
+            }
+        })
+
+        function setBoardViews(boardId){ // 게시판 조회수 증가함수
+            $.ajax({
+                url : 'http://localhost:8080/api/v1/board/views/boardId/'+boardId,
+                type : 'PATCH',
+                dataType : 'json',
+                success : function(response){
+                    if(response > 0){
+                        $('#boardData').children().remove();
+                        getBoardList();
+                    }
+                    
+                }
+                }); //ajax end
+        }
+
+
+        // 1. 키보드를 누를 때 -> keydown
+        // 2. 누른 키를 뗄 때 -> keyup
+        // 3. 키보드를 계속 누르고 있을 때 -> keypress
+
+        // 파라미터에 어떤걸 눌렀다 뗄때 실행할지를 파라미터에 적음
+        // 파라미터에 엔터의 번호를 넣는다
+        $('#searchBar').keyup(function(key){
+            // 13 == enter
+            if(key.keyCode == 13){
+                // 1. input 값을 가져옴
+                var search = $('#searchBar').val(); // input에 작성한 작성자값을 가져옴
+                // 2. ajax호출
+                $.ajax({
+                url : 'http://localhost:8080/api/v1/board/search?writer='+search, // input의 값을 가져옴
+                type : 'GET',
+                dataType : 'json',
+                success : function(response){
+                    // 잘들어왔는지 확인
+                    console.log(response);
+                    //html append작성
+                    var html = '';
+                    if(response.length > 0){
+                        for(var i=0; i<response.length; i++){
+                            if(response[i].cnt < 10){
+                                html += "<tr onclick = getBoard("+response[i].boardId+")><td>"+
+                                response[i].boardId+"</td><td>"+
+                                response[i].studentsName+"</td><td>"+
+                                response[i].title+"</td><td>"+
+                                response[i].updateAt+"</td><td>"+
+                                response[i].createAt+"</td><td>"+
+                                '<span class="row">'+response[i].cnt+"</td></tr>";
+                            }
+                            if(response[i].cnt >= 10 & response[i].cnt < 20){
+                                html += "<tr onclick = getBoard("+response[i].boardId+")><td>"+
+                                response[i].boardId+"</td><td>"+
+                                response[i].studentsName+"</td><td>"+
+                                response[i].title+"</td><td>"+
+                                response[i].updateAt+"</td><td>"+
+                                response[i].createAt+"</td><td>"+
+                                '<span class="middle">'+response[i].cnt+"</td></tr>";
+                            } if(response[i].cnt >= 20){
+                                html += "<tr onclick = getBoard("+response[i].boardId+")><td>"+
+                                response[i].boardId+"</td><td>"+
+                                response[i].studentsName+"</td><td>"+
+                                response[i].title+"</td><td>"+
+                                response[i].updateAt+"</td><td>"+
+                                response[i].createAt+"</td><td>"+
+                                '<span class="high">'+response[i].cnt+"</td></tr>";
+                            }
+                        }
+                    } else {
+                        // 게시글 없음 로직 구현
+                        html += '<tr><td colspan=6 style = "text-align : center;">게시글이 없습니다</td></tr>';
+                    }
+                    $('#boardData').children().remove();
+                    $('#boardData').append(html); // tbody에 jsonData 렌더링
+                }
+          })
+
+            }
+        })
+
+</script>
+</html>
