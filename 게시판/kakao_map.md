@@ -2,55 +2,55 @@
 ## 1. kakao developers검색 -> 내 애플리케이션 -> 애플리케이션 추가하기  
 -> 앱 이름, 사업자명 입력
 
-![카카오맵_1](../게시판/img/카카오맵_1.JPG)
+![kakaoMap_01](../게시판/img/kakaoMap_01.JPG)
 
 ## 2. 플랫폼 -> 필요 플랫폼 등록 -> 사이트 도메인에 지도가 필요한 url넣기
 
-![카카오맵_2](../게시판/img/카카오맵_2.JPG)
+![kakaoMap_02](../게시판/img/kakaoMap_02.JPG)
 
 ## 3. Web 사이트 도메인에 맞게 들어갔는지 확인
 
-![카카오맵_3](/게시판/img/카카오맵_3.JPG)
+![kakaoMap_03](../게시판/img/kakaoMap_03.JPG)
 
 ## 4. 카카오맵api 검색
 
-![카카오맵_4](/게시판/img/카카오맵_4.JPG)
+![kakaoMap_04](../게시판/img/kakaoMap_04.JPG)
 
 ## 5. 필요한 플랫폼 선택 -> sample
 
-![카카오맵_5](/게시판/img/카카오맵_5.JPG)
+![kakaoMap_05](../게시판/img/kakaoMap_05.JPG)
 
 ## 6. 마커 생성하기
 
-![카카오맵_6](/게시판/img/카카오맵_6.JPG)
+![kakaoMap_06](../게시판/img/kakaoMap_06.JPG)
 
 ## 7. script 복사
 
-![카카오맵_7](/게시판/img/카카오맵_7.JPG)
+![kakaoMap_07](../게시판/img/kakaoMap_07.JPG)
 
 ## 8. 지도가 필요한 script에 붙여넣기
 
-![카카오맵_8](/게시판/img/카카오맵_8.JPG)
+![kakaoMap_08](../게시판/img/kakaoMap_08.JPG)
 
 ## 9. kakao developers -> 앱키 -> JavaScript키 복사
 
-![카카오맵_9](/게시판/img/카카오맵_9.JPG)
+![kakaoMap_09](../게시판/img/kakaoMap_09.JPG)
 
 ## 10. '발급받은 APP KEY를 사용하세요'에 붙여넣기
 
-![카카오맵_10](/게시판/img/카카오맵_10.JPG)
+![kakaoMap_10](../게시판/img/kakaoMap_10.JPG)
 
 ## 11. 카카오맵div복사
 
-![카카오맵_11](/게시판/img/카카오맵_11.JPG)
+![kakaoMap_11](../게시판/img/kakaoMap_11.JPG)
 
 ## 12. 카카오맵이 필요한 div안에 붙여넣기
 
-![카카오맵_12](/게시판/img/카카오맵_12.JPG)
+![kakaoMap_12](../게시판/img/kakaoMap_12.JPG)
 
 ## 13. script복사
 
-![카카오맵_13](/게시판/img/카카오맵_13.JPG)
+![kakaoMap_13](../게시판/img/kakaoMap_13.JPG)
 
 ## 14. script안에 붙여넣기
-![카카오맵_14](/게시판/img/카카오맵_14.JPG)
+![kakaoMap_14](../게시판/img/kakaoMap_14.JPG)
