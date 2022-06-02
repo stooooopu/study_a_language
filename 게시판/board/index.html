@@ -544,5 +544,10 @@
                 }
           })
         }
+        // 밑의 console은 선택 페이지의 컬러를 불러오는건데 ajax는 비동기이기 때문에
+        // java에 요청을 보내고 응답이 오는 동안 console을 실행시킴
+        // 하지만pageNum2는 ajax로 만든 html이기 때문에 요청결과가 오기 전에 이미 실행
+        // 결과는 undefined
+        console.log($('#pageNum2').css('color'));
 </script>
 </html>
