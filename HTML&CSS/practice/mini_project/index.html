@@ -29,36 +29,101 @@
                 </div>
             </div>
         </div>
-        <!-- 메인화면 -->
         <header>
-            <img src="" alt="">
             <h1>blog</h1>
         </header>
+            <div class="prolog">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span>prolog</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>blog</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <div class="row">
         <div class="side-nav">
+            <div class="profile">
+                <img src="" alt="">
+                <p>회원 닉네임</p>
+                <p>회원설명</p>
+            </div>
             <ul>
                 <li>
                     <a href="#">
-                        <span class="title">DW Board</span>                
+                        <span class="side-nav-list view-all">전체보기</span>                
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="title">DW Board</span>                
+                        <span class="side-nav-list vlog">일상공유</span>                
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="title">DW Board</span>                
+                        <span class="side-nav-list review">리뷰</span>                
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="title">DW Board</span>                
+                        <span class="side-nav-list photo">사진첩</span>                
                     </a>
                 </li>
             </ul>
+            <!-- 검색창 -->
+            <input type="text">
         </div>
-        <div class="main-section"></div>
+        <!-- 메인 blog화면 -->
+        <div class="main-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>글 번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성 날짜</th>
+                        <th>조회 수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tbody id="boardData">
+                        <tr>
+                            <td>글 번호</td>
+                            <td>글 제목</td>
+                            <td>작성자</td>
+                            <td>2022-05-18</td>
+                            <td><span>20</span></td>
+                        </tr>
+                        <tr>
+                            <td>글 번호</td>
+                            <td>글 제목</td>
+                            <td>작성자</td>
+                            <td>2022-05-18</td>
+                            <td><span>20</span></td>
+                        </tr>
+                        <tr>
+                            <td>글 번호</td>
+                            <td>글 제목</td>
+                            <td>작성자</td>
+                            <td>2022-05-18</td>
+                            <td><span>20</span></td>
+                        </tr>
+                        <tr>
+                            <td>글 번호</td>
+                            <td>글 제목</td>
+                            <td>작성자</td>
+                            <td>2022-05-18</td>
+                            <td><span>20</span></td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     </div>
 </body>
 <script>

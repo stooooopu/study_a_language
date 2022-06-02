@@ -3,6 +3,77 @@
     margin: 0;
     box-sizing: border-box;
 }
+.container {
+    padding: 100px;
+}
+.row{
+    display: flex;
+}
+.prolog {
+    margin: 10px;
+    text-align: center;
+}
+.prolog ul {
+    display: flex;
+    justify-content: flex-end;
+    height: 30px;
+    list-style: none;
+}
+.prolog ul li{
+    width: 10%;
+    border: 1px solid blue;
+}
+.prolog ul li a {
+    text-decoration: none;
+}
 .write-popup{
     display: none;
+}
+header{
+    width: 100%;
+    height: 300px;
+    background-image: url(img/header_img.jpg);
+    background-position : center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+.side-nav{
+    border: 1px solid blue;
+    width: 15%;
+    padding: 10px;
+}
+.profile {
+    border: 1px solid black;
+    height: 200px;
+}
+.profile img{
+    border: 1px solid black;
+    width: 50%;
+    height: 50%;
+}
+.side-nav ul {
+    list-style: none;
+}
+.side-nav ul li {
+    line-height: 30px;
+}
+.side-nav ul li a {
+    text-decoration: none;
+}
+.main-section {
+    padding-left: 5%;
+}
+.main-section table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.main-section table thead th{
+    text-align: center;
+    font-weight: 600;
+}
+.main-section table tbody td{
+    text-align: center;
+    padding: 10px;
 }
