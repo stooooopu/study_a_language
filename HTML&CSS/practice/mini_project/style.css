@@ -18,13 +18,18 @@ body{
 }
 .prolog ul {
     display: flex;
-    justify-content: flex-end;
     height: 30px;
     list-style: none;
 }
 .prolog ul li{
-    width: 10%;
-    border: 1px solid blue;
+    margin-right: 1%;
+    width: 7%;
+    box-shadow: 1px 1px 3px 1px #dadce0;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 18px;
+    font-weight: 700;
+    color: gray;
 }
 .prolog ul li a {
     text-decoration: none;
@@ -40,22 +45,35 @@ header{
     background-size: cover;
     color: white;
     text-align: center;
+    padding-top: 5%;
+}
+header h1 {
+    font-size: 100px;
 }
 .side-nav{
-    border: 1px solid blue;
+    box-shadow: 1px 1px 3px 1px #dadce0;
     width: 15%;
     padding: 10px;
 }
 .profile {
-    border: 1px solid black;
-    height: 200px;
+    box-shadow: 1px 1px 3px 1px #dadce0;
+    height: 400px;
 }
-.profile img{
-    border: 1px solid black;
-    width: 50%;
-    height: 50%;
+.profile-img img{
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+.profile p {
+    text-align: right;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-weight: 500;
 }
 .side-nav ul {
+    text-align: center;
     list-style: none;
 }
 .side-nav ul li {
@@ -64,11 +82,29 @@ header{
 .side-nav ul li a {
     text-decoration: none;
 }
+.side-nav input {
+    border: none;
+    border-radius: 3px;
+    width: 70%;
+    height: 30px;
+    box-shadow: 1px 1px 3px 1px #dadce0 inset;
+}
+.side-nav button {
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px 1px #dadce0;
+    cursor: pointer;
+    width: 50px;
+    height: 30px;
+}
 .main-section {
-    margin-left: 20%;
+    border-radius: 3px;
+    margin-left: 5%;
     padding-left: 5%;
     padding-right: 5%;
-    border: 1px solid red;
+    box-shadow: 1px 1px 3px 1px #dadce0;
+    width: 80%;
 }
 .main-section table{
     width: 100%;
@@ -82,4 +118,21 @@ header{
 .main-section table tbody td{
     text-align: center;
     padding: 10px;
+}
+.writing-box {
+    padding-left: 85%;
+    margin: 50px auto;
+}
+.writing-box-button{
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 3px;
+    padding-top: 5%;
+    box-shadow: 1px 1px 3px 1px #dadce0;
+    font-weight: 600;
+}
+.writing-box a {
+    text-decoration: none;
 }
