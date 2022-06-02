@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    height: 100vh;
+}
 .container {
     padding: 100px;
 }
@@ -62,7 +65,10 @@ header{
     text-decoration: none;
 }
 .main-section {
+    margin-left: 20%;
     padding-left: 5%;
+    padding-right: 5%;
+    border: 1px solid red;
 }
 .main-section table{
     width: 100%;
