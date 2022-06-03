@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <div class="container">
-        <!-- 글작성 팝업 -->
+<!-- 글작성 팝업 -->
         <div class="write-popup">
             <div class="editor">
                 <div class="input-box">
@@ -29,10 +30,12 @@
                 </div>
             </div>
         </div>
+
+<!-- header -->
         <header>
             <h1>blog</h1>
         </header>
-            <div class="prolog">
+            <div class="prolog-blog-select">
                 <ul>
                     <li>
                         <a href="#">
@@ -46,7 +49,11 @@
                     </li>
                 </ul>
             </div>
+
+
         <div class="row">
+
+<!-- side-nav -->
         <div class="side-nav">
             <div class="profile">
                 <div class="profile-img">
@@ -77,9 +84,12 @@
                     </a>
                 </li>
             </ul>
-            <!-- 검색창 -->
+
+<!-- 검색창 -->
             <input type="text">
             <button>검색</button>
+
+<!-- 통계 + js필요! -->
             <div class="statistics-card">
                 <div class="card">
                     <div class="cardName">게시물 수</div>
@@ -90,9 +100,92 @@
                     <div id="viewsCnt">500</div>
                 </div>
             </div>
+
+<!-- logout button -->
+            <div class="log-out">
+                <button>
+                    <a href="#">logout</a>
+                </button>
+            </div>
         </div>
-        <!-- 메인 blog화면 -->
-        <div class="main-section">
+
+<!-- 메인 prolog화면 -->
+        <div class="main-section main-prolog">
+            <div class="main-row">
+
+<!-- 방명록list -->
+                <div class="guest-book guest-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>글 번호</th>
+                                <th>작성자</th>
+                                <th>본문</th>
+                                <th>작성 날짜</th>
+                            </tr>
+                        </thead>
+                            <tbody id="boardData">
+                                <tr>
+                                    <td>글 번호</td>
+                                    <td>작성자</td>
+                                    <td>본문</td>
+                                    <td>2022-05-18</td>
+                                </tr>
+                                <tr>
+                                    <td>글 번호</td>
+                                    <td>작성자</td>
+                                    <td>본문</td>
+                                    <td>2022-05-18</td>
+                                </tr>
+                                <tr>
+                                    <td>글 번호</td>
+                                    <td>작성자</td>
+                                    <td>본문</td>
+                                    <td>2022-05-18</td>
+                                </tr>
+                                <tr>
+                                    <td>글 번호</td>
+                                    <td>작성자</td>
+                                    <td>본문</td>
+                                    <td>2022-05-18</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <a href="#">이전</a>
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">다음</a>
+                    </div>
+                </div>
+
+<!-- 방명록 작성 -->
+                <div class="guest-book guest-input">
+                    <h2>방명록을 남겨주세요</h2>
+                    <div class="guest-input-wrap">
+                        <div class="guest-input-box">
+                            <label for="guest-writer">작성자 </label>
+                            <input id="guest-writer" type="text">
+                        </div>
+                        <div class="guest-input-box">
+                            <label for="guest-input">방명록 </label>
+                            <input id="guest-input" type="text" maxlength="30" placeholder="최대 30글자까지 가능합니다">
+                            <!-- <textarea id="content" rows="2" cols="50" placeholder="내용을 입력하세요"></textarea> -->
+                        </div>
+                        <div class="btn-area">
+                            <a href="#" class="guest-btn-cancel">취소</a>
+                            <a id="contentSubmit" href="#" class="btn-success">등록</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- 메인 blog화면 -->
+        <div class="main-section main-blog">
             <div class="writing-box">
                 <div class="writing-box-button">
                     <a href="#">글 작성</a>
@@ -150,11 +243,7 @@
             </div>
         </div>
     </div>
-        
 </div>
 </body>
-<script>
-
-
-</script>
+<script src="index.js"></script>
 </html>
