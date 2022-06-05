@@ -254,7 +254,7 @@
           dataType : 'json',
           success : function(response){
               // 잘들어왔는지 확인
-              console.log(response);
+            //   console.log(response);
             //   for(var i=0; i<response.list.length; i++){
             //       console.log(response.list[i].boardId)
             //   }
@@ -329,7 +329,7 @@
         if(confirm('게시글을 작성하시겠습니까?')){
             var title = $('#title').val();
             var content = $('#content').val();
-            var studentsId = 5;
+            var studentsId = 1;
 
             if(title == ''){
                 alert('제목을 입력하세요');
@@ -548,6 +548,6 @@
         // java에 요청을 보내고 응답이 오는 동안 console을 실행시킴
         // 하지만pageNum2는 ajax로 만든 html이기 때문에 요청결과가 오기 전에 이미 실행
         // 결과는 undefined
-        console.log($('#pageNum2').css('color'));
+        // console.log($('#pageNum2').css('color'));
 </script>
 </html>
