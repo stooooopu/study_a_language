@@ -253,13 +253,13 @@
           type : 'GET',
           dataType : 'json',
           success : function(response){
-              // 잘들어왔는지 확인
+            // 잘들어왔는지 확인
             //   console.log(response);
             //   for(var i=0; i<response.list.length; i++){
             //       console.log(response.list[i].boardId)
             //   }
-              //html append작성
-              var html = '';
+
+            var html = '';
               if(response.list.length > 0){
                   for(var i=0; i<response.list.length; i++){
                     // 조회수 로직 구현예정
