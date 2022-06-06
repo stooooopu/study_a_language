@@ -101,7 +101,7 @@
                         </tr>
                      </thead>
                      <tbody id="boardData">
-                         <tr>
+                         <!-- <tr>
                              <td>hyunsangwon</td>
                              <td>현상원</td>
                              <td>2022-05-19</td>
@@ -115,17 +115,17 @@
                             <td>hyunsangwon</td>
                             <td>현상원</td>
                             <td>2022-05-19</td>
-                        </tr>
+                        </tr> -->
                      </tbody>
                  </table>
                  <div class="pagination">
-                    <a href="#">Previous</a>
+                    <!-- <a href="#">Previous</a>
                     <a href="#">1</a>
                     <a href="#">2</a>
                     <a href="#">3</a>
                     <a href="#">4</a>
                     <a href="#">5</a>
-                    <a href="#">Next</a>
+                    <a href="#">Next</a> -->
                  </div>
              </div>
          </div>
@@ -147,6 +147,59 @@
     list.forEach((item) => {item.addEventListener('mouseover',activeLink)});
 </script>
 <script>
+    // 게시판 리스트 호출
+    getBoardList(1,10)
+    
+    // 학생리스트 확인 함수
+    function getBoardList(pageNum,pageSize){
+        $.ajax({
+          url : 'http://localhost:8080/api/v1/students?pageNum='+pageNum+'&pageSize='+pageSize,
+          type : 'GET',
+          dataType : 'json',
+          success : function(response){
+            //   json데이터가 맞게 들어왔는지 먼저 확인
+            //   console.log(response);
 
+            var html = ''; // 데이터를 담을 변수 생성
+
+              for(var i=0; i<response.list.length; i++){
+                //   console.log(response.list[i].studentsId)
+                //   console.log(response.list[i].studentsName)
+                //   console.log(response.list[i].createAt)
+                // <tr> <td>hyunsangwon</td> <td>현상원</td> <td>2022-05-19</td> </tr>
+                html += "<tr><td>"+response.list[i].studentsId+"</td><td>"
+                    +response.list[i].studentsName+"</td><td>"
+                    +response.list[i].createAt+"</td></tr>";
+            }
+            
+            // 페이지 구현
+            var paginationHtml = '';
+            
+            if(response.hasPreviousPage){ // 이전 페이지가 true라면
+                paginationHtml += '<a onclick="getBoardList('+(response.pageNum-1)+','+pageSize+')" href="#">Previous</a>';
+            }
+                  for(var i=0; i<response.navigatepageNums.length; i++){ //페이지 번호만큼 for문 실행
+                    // 페이지 번호가 있는 만큼 만들기
+                    // 다음페이지 눌렀을 때 다음페이지로 넘어가기 onclick으로 구현
+                    paginationHtml += '<a id="pageNum'+response.navigatepageNums[i]+'" onclick="getBoardList('+response.navigatepageNums[i]+','+pageSize+')" href="#">'+response.navigatepageNums[i]+'</a>';
+                }
+                if(response.hasNextPage){ // 다음 페이지가 true라면
+                    paginationHtml += '<a onclick="getBoardList('+(response.pageNum+1)+','+pageSize+')"  href="#">Next</a>';
+                }
+                $('.pagination').children().remove();
+                $('.pagination').append(paginationHtml);
+                
+                // 페이지 번호에 맞게 css수정
+                $('#pageNum'+pageNum).css('backgroundColor','#287bff');
+                $('#pageNum'+pageNum).css('color','#fff');
+
+                // 둘의 children().remove()와 append()의 순서는 중요!
+                // 반대로 하면 생성도 전에 모두 삭제 됨!!
+                $('#boardData').children().remove();
+                // 데이터가 맞게 들오온 걸 확인 후 table에 append
+                $('#boardData').append(html);
+            } 
+        })
+    }
 </script>
 </html>
