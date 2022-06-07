@@ -145,6 +145,9 @@
         this.classList.add('hovered');
     }
     list.forEach((item) => {item.addEventListener('mouseover',activeLink)});
+    $('.btn-close').click(function(){
+        $('.update-popup').css('display','none');
+    })
 </script>
 <script>
     // 게시판 리스트 호출
@@ -167,7 +170,8 @@
                 //   console.log(response.list[i].studentsName)
                 //   console.log(response.list[i].createAt)
                 // <tr> <td>hyunsangwon</td> <td>현상원</td> <td>2022-05-19</td> </tr>
-                html += "<tr><td>"+response.list[i].studentsId+"</td><td>"
+                html += "<tr onclick = getBoard("+response.list[i].studentsId+")><td>"
+                    +response.list[i].studentsId+"</td><td>"
                     +response.list[i].studentsName+"</td><td>"
                     +response.list[i].createAt+"</td></tr>";
             }
@@ -201,5 +205,111 @@
             } 
         })
     }
+
+    function getBoard(studentsId){
+
+        // console.log(studentsId);
+        $('.update-popup').css('display','block');
+        
+        $.ajax({
+            url : 'http://localhost:8080/api/v1/students/id/'+studentsId,
+            type : 'GET',
+            dataType : 'json',
+            success : function(response){
+                console.log(response)
+
+                // $('#수정할 정보 Id').val().(json으로 받아온 val넣기)
+                $('#studentsId').val(response.studentsId)
+                $('#studentsName').val(response.studentsName)
+                $('#studentsPassword').val(response.studentsPassword)
+
+                // studentsId를 왜 $('#boardIdHidden')의 val안에 넣지??
+                // boardId를 숨겨서 val넣기 <- index.html 주석
+                $('#boardIdHidden').val(studentsId);
+            }
+            }); //ajax end
+    }
+
+    // 수정함수
+    $('#contentUpdate').click(function(){
+        // boardIdHidden의 val = 내가 클릭한 studentsId
+        // studentsId는 jsonData의 studentsId와 이름 겹치니까 변수이름 수정
+        var studentsIdHidden = $('#boardIdHidden').val();
+        // console.log(studentsIdHidden);
+
+        // var 변수 = $('#수정할 정보 Id').val()
+        // studentsId는 jsonData의 studentsId와 이름 겹치니까 변수이름 수정
+        var uptStudentsId = $('#studentsId').val();
+        var studentsName = $('#studentsName').val();
+        var studentsPassword = $('#studentsPassword').val();
+
+        var jsonData = {
+            studentsId : uptStudentsId,
+            studentsName : studentsName,
+            studentsPassword : studentsPassword
+        }
+
+        $.ajax({
+            url : 'http://localhost:8080/api/v1/students/id/'+studentsIdHidden,
+            type : 'PATCH',
+            contentType : 'application/json', 
+            dataType : 'json',
+            data: JSON.stringify(jsonData),
+            success : function(response){
+                if(response > 0){
+                    alert('수정 완료')
+                    $('.update-popup').css('display','none');
+                    location.reload(); //F5
+                }
+            }
+            }); //ajax end
+    })
+
+    // 삭제 함수
+    $('#contentDelete').click(function(){
+            
+            // 게시판 번호 확인
+            var studentsIdHidden = $('#boardIdHidden').val();
+
+            if(confirm('정말 삭제 하시겠습니까?')){
+                $.ajax({
+                url : 'http://localhost:8080/api/v1/students/id/'+studentsIdHidden,
+                type : 'DELETE',
+                dataType : 'json',
+                success : function(response){
+                        $('.update-popup').css('display','none');
+                }
+                }); //ajax end
+            }
+        })
+
+    $('#searchBar').keyup(function(key){
+        if(key.keyCode == 13){ //keyCode13 = 엔터
+            var writer = $('#searchBar').val();
+            $.ajax({
+                url : 'http://localhost:8080/api/v1/students/search?writer='+writer, // input의 값을 가져옴
+                type : 'GET',
+                dataType : 'json',
+                success : function(response){
+                    console.log(response[0]);
+                    var html = '';
+                    if(response.length > 0){
+                        for(var i=0; i<response.length; i++){
+                            html += "<tr onclick = getBoard("+response[i].studentsId+")><td>"
+                                +response[i].studentsId+"</td><td>"
+                                +response[i].studentsName+"</td><td>"
+                                +response[i].createAt+"</td></tr>";
+                        }
+                    } else {
+                        // 게시글 없음 로직 구현
+                        html += '<tr><td colspan=6 style = "text-align : center;">게시글이 없습니다</td></tr>';
+                    }
+                    
+                    $('#boardData').children().remove();
+                    $('#boardData').append(html)
+                }
+            })            
+        }
+    })
 </script>
 </html>
