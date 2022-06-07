@@ -243,9 +243,9 @@
     // 게시판 리스트 호출
     // 함수를 부른 이유는 밑에 정의한 함수를 부르지 않으면 정의만 해놓고 실행은 안한거
     getBoardList(1, 10)
-    
     // 작성한 게시물을 보여주는 함수
     function getBoardList(pageNum, pageSize){
+        // console.log(pageNum)
         $.ajax({
             // 하드코딩 : 변수로 데이터르 안받고 직접 값을 입력
             // url : 'http://localhost:8080/api/v1/board?pageNum=1&pageSize=10'

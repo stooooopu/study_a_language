@@ -128,6 +128,7 @@
                     <a href="#">5</a>
                     <a href="#">Next</a> -->
                  </div>
+                 <!-- <input type="hidden" name="pageNum" value="#{pageNum}"> -->
              </div>
          </div>
     </div>
@@ -156,6 +157,7 @@
     
     // 학생리스트 확인 함수
     function getBoardList(pageNum,pageSize){
+        console.log(pageNum)
         $.ajax({
           url : 'http://localhost:8080/api/v1/students?pageNum='+pageNum+'&pageSize='+pageSize,
           type : 'GET',
@@ -163,7 +165,6 @@
           success : function(response){
             //   json데이터가 맞게 들어왔는지 먼저 확인
             //   console.log(response);
-
             var html = ''; // 데이터를 담을 변수 생성
 
               for(var i=0; i<response.list.length; i++){
@@ -284,33 +285,63 @@
             }
         })
 
-    $('#searchBar').keyup(function(key){
-        if(key.keyCode == 13){ //keyCode13 = 엔터
-            var writer = $('#searchBar').val();
-            $.ajax({
-                url : 'http://localhost:8080/api/v1/students/search?writer='+writer, // input의 값을 가져옴
-                type : 'GET',
-                dataType : 'json',
-                success : function(response){
-                    console.log(response[0]);
-                    var html = '';
-                    if(response.length > 0){
-                        for(var i=0; i<response.length; i++){
-                            html += "<tr onclick = getBoard("+response[i].studentsId+")><td>"
-                                +response[i].studentsId+"</td><td>"
-                                +response[i].studentsName+"</td><td>"
-                                +response[i].createAt+"</td></tr>";
+            
+            $('#searchBar').keyup(function(key){
+                if(key.keyCode == 13){ //keyCode13 = 엔터
+                    var writer = $('#searchBar').val();
+                    var pageNum = 1;
+                    var pageSize = 10;
+                    $.ajax({
+                        // search?writer=김&pageNum=1&pageSize=10
+                        url : 'http://localhost:8080/api/v1/students/search?writer='+writer+'&pageNum='+pageNum+'&pageSize='+pageSize,
+                        type : 'GET',
+                        dataType : 'json',
+                        success : function(response){
+                            
+                            console.log(pageNum)
+                            var html = '';
+                            if(response.list.length > 0){
+                                for(var i=0; i<response.list.length; i++){
+                                    html += "<tr onclick = getBoard("+response.list[i].studentsId+")><td>"
+                                        +response.list[i].studentsId+"</td><td>"
+                                        +response.list[i].studentsName+"</td><td>"
+                                        +response.list[i].createAt+"</td></tr>";
+                                }
+                                // 페이지 구현
+                                console.log(html)
+                                var paginationHtml = '';
+                                
+                                // <a href="#">Previous</a>
+                                // <a href="#">Next</a>
+                                if(response.hasPreviousPage){ // 이전 페이지가 true라면
+                                    paginationHtml += '<a onclick="getSearchList('+(response.pageNum-1)+','+pageSize+')" href="#">Previous</a>';
+                                }
+                                    for(var i=0; i<response.navigatepageNums.length; i++){ //페이지 번호만큼 for문 실행
+                                        // 페이지 번호가 있는 만큼 만들기
+                                        // 다음페이지 눌렀을 때 다음페이지로 넘어가기 onclick으로 구현
+                                        paginationHtml += '<a id="pageNum'+response.navigatepageNums[i]+'" onclick="getSearchList('+response.navigatepageNums[i]+','+pageSize+')" href="#">'+response.navigatepageNums[i]+'</a>';
+                                    }
+                                    if(response.hasNextPage){ // 다음 페이지가 true라면
+                                        paginationHtml += '<a onclick="getSearchList('+(response.pageNum+1)+','+pageSize+')"  href="#">Next</a>';
+                                    }
+                                    $('.pagination').children().remove();
+                                    $('.pagination').append(paginationHtml);
+                                    
+                                    // 페이지 번호에 맞게 css수정
+                                    $('#pageNum'+pageNum).css('backgroundColor','#287bff');
+                                    $('#pageNum'+pageNum).css('color','#fff');
+        
+                            } else {
+                                // 게시글 없음 로직 구현
+                                html += '<tr><td colspan=6 style = "text-align : center;">게시글이 없습니다</td></tr>';
+                            }
+                            $('#boardData').children().remove();
+                            $('#boardData').append(html)
                         }
-                    } else {
-                        // 게시글 없음 로직 구현
-                        html += '<tr><td colspan=6 style = "text-align : center;">게시글이 없습니다</td></tr>';
-                    }
-                    
-                    $('#boardData').children().remove();
-                    $('#boardData').append(html)
+                    })
                 }
-            })            
-        }
-    })
+            })
+        
+
 </script>
 </html>
