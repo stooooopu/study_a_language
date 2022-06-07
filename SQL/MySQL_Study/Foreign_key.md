@@ -1,63 +1,63 @@
-# foreign key 
+# FOREIGN KEY 
 - 참조키(외래키)는 컬럼 이름이 중요한게 아니라, 데이터 타입이 같아야 한다
-## on delete 
+## ON DELETE 
 - 부모테이블 데이터에 __삭제__ 이벤트가 발생  
  -> 자식테이블 데이터에 이벤트 발생
-## on update 
+## ON UPDATE 
 - 부모테이블 데이터에 __수정__ 이벤트가 발생  
  -> 자식테이블 데이터에 이벤트 발생
 ```sql
 CREATE TABLE 테이블_이름  
   (column명 type (type의 길이),  
-  foreign key(
+  FOREIGN KEY(
       생성하는 테이블 column 중 참조하려는 column이름
       ) 
-  references 참조할table(참조 할 coulmn) 
+  REFERENCES 참조할table(참조 할 coulmn) 
     
-= 자식table(자식coulmn) references 부모table(부모coulmn)
+= 자식table(자식coulmn) REFERENCES 부모table(부모coulmn)
 ```
 ```sql
  CREATE TABLE emp
-  ( empno int(11),  
-  ABC int(5),  
-  ename barchar(20),  
-  deptno int(5),  
-  foreign key(deptno) referebces dept(deptno))
+  ( empno INTEGER(11),  
+  ABC INTEGER(5),  
+  ename VARCHAR(20),  
+  deptno INTEGER(5),  
+  FOREIGN KEY(deptno) REFERENCES dept(deptno))
 
   or
 
-  foreign key(ABC) referebces dept(deptno))  
+  FOREIGN KEY(ABC) REFERENCES dept(deptno))  
 ```
 - 조건 : 참조하고자 하는 테이블은 고유한 컬럼이어야 함
-- foreign key(ABC) 가 들어갈 수 있는 이유
+- FOREIGN KEY(ABC) 가 들어갈 수 있는 이유
   - 데이터타입도 같고 괄호 안에 조건도 같아서 가능  
   - 하지만 헷갈리지 않기 위해 보통 column 이름을 같게함
 ---
 # 이벤트 종류
-## 1. cascade : 자식데이터 삭제 or 수정
+## 1. CASECADE : 자식데이터 삭제 or 수정
 ```sql
-foreign key(deptno) references dept(deptno) ON DELETE CASCADE (or on update cascade) 
+FOREIGN KEY(deptno) REFERENCES dept(deptno) ON DELETE CASECADE (or ON UPDATE CASECADE) 
 ```
 - dept table에 deptno 30을 지웠을 때  
 => emp table deptno 30 인 사람들 모두 삭제됨  
 
-## 2. set null : 자식데이터 null 업데이트
+## 2. SET NULL : 자식데이터 null 업데이트
 ```sql
-foreign key(deptno) references dept(deptno) on delete set null (or on update set null)
+FOREIGN KEY(deptno) REFERENCES dept(deptno) ON DELETE SET NULL (or ON UPDATE SET NULL)
 ```
 - dept table에 deptno 30을 지웠을 때  
 => emp table deptno 30 인 사람들의 deptno 모두 null로 바뀜  
 
-## 3. set default : 자식데이터 default 값으로 업데이트
+## 3. SET DEFAULT : 자식데이터 DEFAULT 값으로 업데이트
 ```sql
-foreign key(deptno) references dept(deptno) on delete set default (or on update set default)
+FOREIGN KEY(deptno) REFERENCES dept(deptno) ON DELETE SET DEFAULT (or ON UPDATE SET DEFAULT)
 ```  
 - dept table에 deptno 30을 지웠을 때  
-=> emp table deptno 30 인 사람들의 deptno 모두 default값으로 바뀜
+=> emp table deptno 30 인 사람들의 deptno 모두 DEFAULT값으로 바뀜
 
-## 4. restrict(default) : 부모데이터 삭제 or 수정 불가능  
+## 4. RESTRICT(DEFAULT) : 부모데이터 삭제 or 수정 불가능  
 ```sql
-foreign key(deptno) references dept(deptno) on delete restrict (or on update restrict)
+FOREIGN KEY(deptno) REFERENCES dept(deptno) ON DELETE RESTRICT (or ON UPDATE RESTRICT)
 ```
 - dept table에 deptno 30을 지우고 싶어도  
 emp table deptno 30이있으니 지우거나 수정 불가  
@@ -66,7 +66,7 @@ dept table deptno 60은 지우거나 수정 가능
 
 ## 5. NO ACTION : 자식테이블의 데이터 변경 안됨
 ```sql
-foreign key(deptno) references dept(deptno) on delete set no action (or on update no action)
+FOREIGN KEY(deptno) REFERENCES dept(deptno) ON DELETE set NO ACTION (or ON UPDATE NO ACTION)
 ```
 - dept table에 deptno 30을 지웠을 때  
 => emp table deptno 30 인 사람들 남아 있음  
@@ -74,7 +74,7 @@ foreign key(deptno) references dept(deptno) on delete set no action (or on updat
 ---
 # ALTER로 FK 이벤트 주기
 ```sql
-ALTER TABLE 자식테이블 ADD FOREIGN KEY (FK컬럼명) REFERENCES 부모테이블 (FK컬럼명) ON DELETE CASCADE;
+ALTER TABLE 자식테이블 ADD FOREIGN KEY (FK컬럼명) REFERENCES 부모테이블 (FK컬럼명) ON DELETE CASECADE;
 ```
 
 
