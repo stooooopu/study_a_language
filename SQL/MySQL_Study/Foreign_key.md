@@ -6,7 +6,7 @@
 ## on update 
 - 부모테이블 데이터에 __수정__ 이벤트가 발생  
  -> 자식테이블 데이터에 이벤트 발생
-```
+```sql
 CREATE TABLE 테이블_이름  
   (column명 type (type의 길이),  
   foreign key(
@@ -16,7 +16,7 @@ CREATE TABLE 테이블_이름
     
 = 자식table(자식coulmn) references 부모table(부모coulmn)
 ```
-```
+```sql
  CREATE TABLE emp
   ( empno int(11),  
   ABC int(5),  
@@ -35,28 +35,28 @@ CREATE TABLE 테이블_이름
 ---
 # 이벤트 종류
 ## 1. cascade : 자식데이터 삭제 or 수정
-```
-foreign key(deptno) references dept(deptno) on delete cascade (or on update cascade) 
+```sql
+foreign key(deptno) references dept(deptno) ON DELETE CASCADE (or on update cascade) 
 ```
 - dept table에 deptno 30을 지웠을 때  
 => emp table deptno 30 인 사람들 모두 삭제됨  
 
 ## 2. set null : 자식데이터 null 업데이트
-```
+```sql
 foreign key(deptno) references dept(deptno) on delete set null (or on update set null)
 ```
 - dept table에 deptno 30을 지웠을 때  
 => emp table deptno 30 인 사람들의 deptno 모두 null로 바뀜  
 
-## 3. set default : 자식데이터 default 값으로 업데이트s
-```
+## 3. set default : 자식데이터 default 값으로 업데이트
+```sql
 foreign key(deptno) references dept(deptno) on delete set default (or on update set default)
 ```  
 - dept table에 deptno 30을 지웠을 때  
 => emp table deptno 30 인 사람들의 deptno 모두 default값으로 바뀜
 
 ## 4. restrict(default) : 부모데이터 삭제 or 수정 불가능  
-```
+```sql
 foreign key(deptno) references dept(deptno) on delete restrict (or on update restrict)
 ```
 - dept table에 deptno 30을 지우고 싶어도  
@@ -65,11 +65,18 @@ emp table deptno 30이있으니 지우거나 수정 불가
 dept table deptno 60은 지우거나 수정 가능
 
 ## 5. NO ACTION : 자식테이블의 데이터 변경 안됨
-```
+```sql
 foreign key(deptno) references dept(deptno) on delete set no action (or on update no action)
 ```
 - dept table에 deptno 30을 지웠을 때  
 => emp table deptno 30 인 사람들 남아 있음  
+
+---
+# ALTER로 FK 이벤트 주기
+```sql
+ALTER TABLE 자식테이블 ADD FOREIGN KEY (FK컬럼명) REFERENCES 부모테이블 (FK컬럼명) ON DELETE CASCADE;
+```
+
 
 ---
 
