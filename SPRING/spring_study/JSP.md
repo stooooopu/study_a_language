@@ -1,7 +1,8 @@
 ## Spring project생성
 1. https://start.spring.io/  
 
-![jsp](../spring_study/img/jsp.JPG)
+![jsp](../spring_study/img/jsp.JPG)  
+
 2. spring_workspaces -> zipFile옮기고 여기에 압축풀기
 3. eclipse -> file -> import -> 경로지정
 4. properties 확장자명 -> yaml로 수정
