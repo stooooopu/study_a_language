@@ -314,15 +314,15 @@
                                 // <a href="#">Previous</a>
                                 // <a href="#">Next</a>
                                 if(response.hasPreviousPage){ // 이전 페이지가 true라면
-                                    paginationHtml += '<a onclick="getSearchList('+(response.pageNum-1)+','+pageSize+')" href="#">Previous</a>';
+                                    paginationHtml += '<a onclick="**어떤 함수를 써야할지 모르겠음('+(response.pageNum-1)+','+pageSize+')" href="#">Previous</a>';
                                 }
                                     for(var i=0; i<response.navigatepageNums.length; i++){ //페이지 번호만큼 for문 실행
                                         // 페이지 번호가 있는 만큼 만들기
                                         // 다음페이지 눌렀을 때 다음페이지로 넘어가기 onclick으로 구현
-                                        paginationHtml += '<a id="pageNum'+response.navigatepageNums[i]+'" onclick="getSearchList('+response.navigatepageNums[i]+','+pageSize+')" href="#">'+response.navigatepageNums[i]+'</a>';
+                                        paginationHtml += '<a id="pageNum'+response.navigatepageNums[i]+'" onclick="**어떤 함수를 써야할지 모르겠음('+response.navigatepageNums[i]+','+pageSize+')" href="#">'+response.navigatepageNums[i]+'</a>';
                                     }
                                     if(response.hasNextPage){ // 다음 페이지가 true라면
-                                        paginationHtml += '<a onclick="getSearchList('+(response.pageNum+1)+','+pageSize+')"  href="#">Next</a>';
+                                        paginationHtml += '<a onclick="**어떤 함수를 써야할지 모르겠음('+(response.pageNum+1)+','+pageSize+')"  href="#">Next</a>';
                                     }
                                     $('.pagination').children().remove();
                                     $('.pagination').append(paginationHtml);
