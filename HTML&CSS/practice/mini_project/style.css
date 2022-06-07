@@ -18,10 +18,10 @@ body{
 }
 
 .main-prolog {
-    display: block;
+    display: none;
 }
 .main-blog {
-    display: none;
+    display: block;
 }
 .write-popup{
     display: none;
