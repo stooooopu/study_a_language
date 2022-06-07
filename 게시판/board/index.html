@@ -300,6 +300,7 @@
                     paginationHtml += '<a onclick="getBoardList('+(response.pageNum-1)+','+pageSize+')" href="#">Previous</a>';
                   }
                   for(var i=0; i<response.navigatepageNums.length; i++){ //페이지 번호만큼 for문 실행
+                    // navigatepageNums : 블록 개수
                     // 페이지 번호가 있는 만큼 만들기
                     // 다음페이지 눌렀을 때 다음페이지로 넘어가기 onclick으로 구현
                     paginationHtml += '<a id="pageNum'+response.navigatepageNums[i]+'" onclick="getBoardList('+response.navigatepageNums[i]+','+pageSize+')" href="#">'+response.navigatepageNums[i]+'</a>';
