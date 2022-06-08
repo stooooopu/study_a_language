@@ -1,21 +1,42 @@
-## Spring project생성
-1. https://start.spring.io/  
 
-![jsp](../spring_study/img/jsp.JPG)  
-
-2. spring_workspaces -> zipFile옮기고 여기에 압축풀기
-3. eclipse -> file -> import -> 경로지정
-4. properties 확장자명 -> yaml로 수정
-5. salmap 패키지 생성
-6. sqlmapper.xml 생성
-7. banner(option), logback (query결과 뜨는 것) 추가
-8. MVC package -> class파일 생성
----
 # JSP
-- html안에서 java코딩이 가능한 파일 생성
+## Java Server Page
+- JSP는 템플릿 엔진으로 html안에서 java코딩이 가능한 파일 생성
 - 이클립스같은IDE에서만 사용가능하기 때문에  
-퍼블리셔는 html로 개발하고 백엔드에서 JSP로 변경하면 됨
+퍼블리셔는 html로 개발하고 백엔드에서 JSP로 변경하면 됨  
 
+if, else
+```jsp
+if 
+    <c:if test="if문 조건"></c:if>
+if else
+    <c:choose>
+		<c:when test="if문 조건"> if </c:when>
+		<c:otherwise> else </c:otherwise>
+	</c:choose>
+```
+for-each
+```jsp
+java
+for(int i : array) {  }
+
+jsp
+<c:forEach items="${array}" var="index"></c:forEach>
+```
+
+
+---
+## controller
+- @Controller 사용
+- return JSP파일명
+```java
+@GetMapping("/home")
+	public String loadHomePage(ModelMap map) {
+        map.addAttribute("key", "value");
+        map.addAttribute("key", value);
+		return "index";
+	}
+```
 ---
 # JSP 설치
 
@@ -57,57 +78,44 @@ fileName : index.js
 <script type="text/javascript" src="/resources/static/js/index.js"></script>
 ```
 ---
-# eclipse에서 table생성
-```
-학생게시판 만들기
+# OTHER
 
-table : 
-- 학생 
-번호
-이름
-패스워드
+- for-each  
+1. 조건식 생략가능  
+2. 변수에 바로 대입 됨  
+3. 데이터타입이 중요
+```java
+int array[] = {10,20};
 
-- 게시판
-제목
-내용
-작성자
-수정날짜
-최초게시날짜
+// for
+	for (int i=0; i<array.length; i++) {
+		int x = array[i];
+		System.out.println(x);
+		}
+// for-each
+		for(int i : array) {
+        // for문 array[i] = for-each문 i
+			System.out.println(i);
+		}
 
-둘의 관계는 1:n의 관계
+// 결과는 동일
 ```
-1. src/main/resources 우클릭 -> other -> General -> file ->  
-fileName : init.sql
-```sql
--- sql파일 여기서 table작성
--- CREATE TABLE IF NOT EXISTS : 이 테이블이 존재하지 않는다면 생성해라
--- DDL autocommit
-CREATE TABLE IF NOT EXISTS students( -- 학생 테이블
-	students_id INTEGER(4) AUTO_INCREMENT NOT NULL PRIMARY KEY COMMENT '학생 아이디',
-    students_name VARCHAR(20) COMMENT '학생 이름',
-    students_password VARCHAR(200) COMMENT '학생 비밀번호', -- 우리가 암호화해서 저장하기 때문에 글자수 제한을 크게 해야함
-    create_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '가입 날짜' -- insert할때 입력 안하면 디폴트로 현재시간을 넣어 주겠다
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```java
+    List<Pizza> pizzaList = new ArrayList<Pizza>();
+		Pizza p1 = new Pizza();
+		p1.pizzaMoney = 1000;
+		p1.pizzaName = "불고기피자";
+		
+		Pizza p2 = new Pizza();
+		p2.pizzaMoney = 2000;
+		p2.pizzaName = "페퍼로니피자";
+		
+		pizzaList.add(p1);
+		pizzaList.add(p2);
+    
+    for(Pizza p : pizzaList) {
+			System.out.println(p.pizzaMoney);
+			System.out.println(p.pizzaName);
+		}
+```
 
-CREATE TABLE IF NOT EXISTS board -- 게시판 테이블
-( 
-    board_id INTEGER(4) AUTO_INCREMENT NOT NULL PRIMARY KEY COMMENT '게시판 아이디',
-    students_id INTEGER(4) COMMENT '학생 아이디',
-    title VARCHAR(50) COMMENT '제목',
-    content VARCHAR(100) COMMENT '글 내용',
-    update_at DATETIME COMMENT '수정 날짜',
-    create_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '작성 날짜',
-    CONSTRAINT board_students_id_fk FOREIGN KEY (students_id) REFERENCES students(students_id)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
--- run할 때 이 파일을 실행시킬지 결정은 yaml에서 함
--- DDL을 스키마라고 함
-```
-- mybatis시작 할 때 DB의 경로를 dw로 해 주었기 때문에 생성된 테이블은  
-dw에 저장되어있음
-- 만약 dw테이블이 존재하지 않는다면
-```sql
--- 만약 dw라는 database가 존재하지 않는다면 이렇게 생성
--- 지금 이 CREATE에서는 대소문자 구분 안함
-CREATE database IF NOT EXISTS DW DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE DW; -- 데이터베이스를 만들면 이걸 사용할 거라고 말하는거 
-```
