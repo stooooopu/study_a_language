@@ -433,3 +433,14 @@ body{
     padding: 0.5rem 0.75rem;
     border-radius: 5px;
 }
+.login-join-button{
+    width: 200px;
+}
+.login {
+    font-size: 20px;
+    padding: 0.5rem 0.75rem;
+}
+.join-students {
+    font-size: 20px;
+    padding: 0.5rem 0.75rem;
+}
