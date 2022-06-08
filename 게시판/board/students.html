@@ -84,7 +84,10 @@
             </div>
             <div>
                 <a href="#" class="logout">Logout</a>
-                <a href="#" onclick = "hrefLink()" style="display: none" class="btn login">login</a>
+                <div class="login-join-button"  style="display : none">
+                    <a href="#" onclick = "hrefLink()" class="btn login">login</a>
+                    <a href="#" onclick="joinHrefLink()" class="btn join-students">회원가입</a>
+                </div>
             </div>
         </div>
          <!-- table -->
@@ -92,7 +95,6 @@
              <div class="recentOrders">
                  <div class="cardHeader">
                      <h2>학생 명단</h2>
-                     <a href="#" class="btn join-students" style="display : none">학생 추가</a>
                  </div>
                  <table>
                      <thead>
@@ -346,8 +348,7 @@
     $('.logout').on('click',function(){
     var result = confirm('로그아웃 하시겠습니까?');
     if(result){
-        $('.login').css('display','block')
-        $('.join-students').css('display','block')
+        $('.login-join-button').css('display','block')
         $('.logout').css('display','none')
     }
 })
@@ -355,6 +356,14 @@
 function hrefLink(){
     var link = '../login.html'
     var result = confirm('로그인 하시겠습니까?');
+    if(result){
+        location.href = link;
+    }
+}
+
+function joinHrefLink(){
+    var link = '../join.html'
+    var result = confirm('회원가입 하시겠습니까?');
     if(result){
         location.href = link;
     }
