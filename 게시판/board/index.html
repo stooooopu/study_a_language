@@ -246,16 +246,16 @@
     getBoardList(1, 10)
     // 작성한 게시물을 보여주는 함수
     function getBoardList(pageNum, pageSize){
-        var controllerUrl = 'http://localhost:8080/api/v1/board?pageNum='+pageNum+'&pageSize='+pageSize
+        var controllerUrl = 'http://localhost:8080/api/v1/board?pageNum='+pageNum+'&pageSize='+pageSize;
         var keyword = $('#keyword').val();
         if(keyword != 'null'){
-            controllerUrl = 'http://localhost:8080/api/v1/board/search?writer='+keyword+'pageNum='+pageNum+'&pageSize='+pageSize
+            controllerUrl = 'http://localhost:8080/api/v1/board/search?writer='+keyword+'&pageNum='+pageNum+'&pageSize='+pageSize;
         }
         // console.log(pageNum)
         $.ajax({
             // 하드코딩 : 변수로 데이터르 안받고 직접 값을 입력
             // url : 'http://localhost:8080/api/v1/board?pageNum=1&pageSize=10'
-          url : 'http://localhost:8080/api/v1/board?pageNum='+pageNum+'&pageSize='+pageSize,
+          url : controllerUrl,
           type : 'GET',
           dataType : 'json',
           success : function(response){
@@ -336,7 +336,7 @@
         if(confirm('게시글을 작성하시겠습니까?')){
             var title = $('#title').val();
             var content = $('#content').val();
-            var studentsId = 8;
+            var studentsId = 10;
 
             if(title == ''){
                 alert('제목을 입력하세요');
@@ -494,45 +494,6 @@
                 type : 'GET',
                 dataType : 'json',
                 success : function(response){
-                    // 잘들어왔는지 확인
-                    // console.log(response);
-                    //html append작성
-                    // var html = '';
-                    // if(response.length > 0){
-                    //     for(var i=0; i<response.length; i++){
-                    //         if(response.list[i].cnt < 10){
-                    //             html += "<tr onclick = getBoard("+response.list[i].boardId+")><td>"+
-                    //             response.list[i].boardId+"</td><td>"+
-                    //             response.list[i].studentsName+"</td><td>"+
-                    //             response.list[i].title+"</td><td>"+
-                    //             response.list[i].updateAt+"</td><td>"+
-                    //             response.list[i].createAt+"</td><td>"+
-                    //             '<span class="row">'+response.list[i].cnt+"</td></tr>";
-                    //         }
-                    //         if(response.list[i].cnt >= 10 & response.list[i].cnt < 20){
-                    //             html += "<tr onclick = getBoard("+response.list[i].boardId+")><td>"+
-                    //             response.list[i].boardId+"</td><td>"+
-                    //             response.list[i].studentsName+"</td><td>"+
-                    //             response.list[i].title+"</td><td>"+
-                    //             response.list[i].updateAt+"</td><td>"+
-                    //             response.list[i].createAt+"</td><td>"+
-                    //             '<span class="middle">'+response.list[i].cnt+"</td></tr>";
-                    //         } if(response.list[i].cnt >= 20){
-                    //             html += "<tr onclick = getBoard("+response.list[i].boardId+")><td>"+
-                    //             response.list[i].boardId+"</td><td>"+
-                    //             response.list[i].studentsName+"</td><td>"+
-                    //             response.list[i].title+"</td><td>"+
-                    //             response.list[i].updateAt+"</td><td>"+
-                    //             response.list[i].createAt+"</td><td>"+
-                    //             '<span class="high">'+response.list[i].cnt+"</td></tr>";
-                    //         }
-                    //     }
-                    // } else {
-                    //     // 게시글 없음 로직 구현
-                    //     html += '<tr><td colspan=6 style = "text-align : center;">게시글이 없습니다</td></tr>';
-                    // }
-                    // $('#boardData').children().remove();
-                    // $('#boardData').append(html); // tbody에 jsonData 렌더링
                     var html = '';
               if(response.list.length > 0){
                   for(var i=0; i<response.list.length; i++){
