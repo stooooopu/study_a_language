@@ -4,18 +4,17 @@
 - JSP는 템플릿 엔진으로 html안에서 java코딩이 가능한 파일 생성
 - 이클립스같은IDE에서만 사용가능하기 때문에  
 퍼블리셔는 html로 개발하고 백엔드에서 JSP로 변경하면 됨  
-
-if, else
+## * if / else
 ```jsp
-if 
+// if 
     <c:if test="if문 조건"></c:if>
-if else
+// if else
     <c:choose>
 		<c:when test="if문 조건"> if </c:when>
 		<c:otherwise> else </c:otherwise>
 	</c:choose>
 ```
-for-each
+## * for-each
 ```jsp
 java
 for(int i : array) {  }
@@ -23,7 +22,17 @@ for(int i : array) {  }
 jsp
 <c:forEach items="${array}" var="index"></c:forEach>
 ```
+## * languge = java로 설정
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+```
 
+## * function사용 설정
+```jsp
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+```
 
 ---
 ## controller
@@ -37,6 +46,22 @@ jsp
 		return "index";
 	}
 ```
+
+---
+# file.html -> file.jsp로 변경
+1. src/main/webapp > WEB-INF > views 에 file.html그대로 넣기
+2. 옮긴 html상단에 붙여넣기
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+```
+3. .html확장명을 .jsp로 변경하기  
+이때 2번과 3번 순서가 바뀌면 파일이 깨짐
+
+
+
 ---
 # JSP 설치
 

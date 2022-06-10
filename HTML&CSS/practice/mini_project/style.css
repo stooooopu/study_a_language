@@ -1,261 +1,276 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-:root{
-    --button-shadow: 1px 1px 3px 1px #dadce0;
-    --box-inset: 1px 1px 3px 1px #dadce0 inset; 
+:root {
+  --button-shadow: 1px 1px 3px 1px #dadce0;
+  --box-inset: 1px 1px 3px 1px #dadce0 inset;
 }
-body{
-    height: 100vh;
+body {
+  height: 100vh;
 }
 .container {
-    padding: 100px;
+  padding: 5px;
+  margin: 7%;
+  box-shadow: var(--button-shadow);
+  border-radius: 5px;
 }
-.row{
-    display: flex;
+.row {
+  display: flex;
 }
 
 .main-prolog {
-    display: none;
+  display: none;
 }
 .main-blog {
-    display: block;
+  display: block;
 }
-.write-popup{
-    display: none;
+.write-popup {
+  display: none;
 }
 
 .main-section {
-    border-radius: 3px;
-    margin-left: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-    box-shadow: 1px 1px 3px 1px #dadce0;
-    width: 80%;
+  border-radius: 3px;
+  margin-left: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  /* box-shadow: 1px 1px 3px 1px #dadce0; */
+  width: 80%;
 }
 .prolog-blog-select {
-    margin: 10px 0;
-    text-align: center;
+  width: 100%;
+  margin: 0 0 10px 0;
+  text-align: center;
+  box-shadow: 1px 2px 1px #dadce0;
+  border-end-start-radius: 10px;
+  border-end-end-radius: 10px;
 }
 .prolog-blog-select ul {
-    display: flex;
-    height: 30px;
-    list-style: none;
+  display: flex;
+  height: 30px;
+  list-style: none;
+  justify-content: left;
 }
-.prolog-blog-select ul li{
-    margin-right: 1%;
-    width: 7%;
-    box-shadow: 1px 1px 3px 1px #dadce0;
-    cursor: pointer;
-    border-radius: 3px;
-    font-size: 18px;
-    font-weight: 700;
-    color: gray;
+.prolog-blog-select ul li {
+  margin-right: 1%;
+  width: 7%;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: 700;
+  color: gray;
 }
 .prolog-blog-select ul li a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-header{
-    width: 100%;
-    height: 300px;
-    background-image: url(img/header_img.jpg);
-    background-position : center;
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding-top: 5%;
+header {
+  width: 100%;
+  height: 300px;
+  background-image: url(img/header_img.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding-top: 5%;
 }
 header h1 {
-    font-size: 100px;
-}
-/* ----------------------------------basic end---------------------------------- */
-
-
-
-.side-nav{
-    box-shadow: 1px 1px 3px 1px #dadce0;
-    width: 15%;
-    padding: 10px;
-}
-.profile {
-    box-shadow: 1px 1px 3px 1px #dadce0;
-    height: auto;
-}
-.profile-img img{
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: auto;
-}
-.profile p {
-    text-align: right;
-    font-size: 15px;
-    margin-top: 5px;
-    margin-right: 5px;
-    font-weight: 500;
-}
-.side-nav ul {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    text-align: center;
-    list-style: none;
-}
-.side-nav ul li {
-    line-height: 40px;
-}
-.side-nav ul li a {
-    text-decoration: none;
-}
-.side-nav input {
-    border: none;
-    border-radius: 3px;
-    width: 70%;
-    height: 30px;
-    box-shadow: 1px 1px 3px 1px #dadce0 inset;
-}
-.side-nav button {
-    background-color: transparent;
-    border: none;
-    border-radius: 3px;
-    box-shadow: 1px 1px 3px 1px #dadce0;
-    cursor: pointer;
-    width: 50px;
-    height: 30px;
-}
-
-
-
-.main-blog table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    text-align: center;
-}
-.main-blog table thead th{
-    font-size: 25px;
-    font-weight: 600;
-}
-.main-blog table tr {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-.main-blog table tbody td{
-    text-align: center;
-    padding: 10px;
-}
-.main-blog table tr:last-child{
-    border-bottom: none;
-}
-
-
-.writing-box {
-    padding-left: 85%;
-    margin: 50px auto;
-}
-.writing-box-button{
-    text-align: center;
-    width: 100px;
-    height: 50px;
-    font-size: 20px;
-    border-radius: 3px;
-    padding-top: 5%;
-    box-shadow: 1px 1px 3px 1px #dadce0;
-    font-weight: 600;
-}
-.writing-box a {
-    text-decoration: none;
-}
-.pagination {
-    margin-top: 50px;
-    font-size: 20px;
-    text-align: center;
-}
-.pagination a {
-    box-shadow: 1px 1px 3px 1px #dadce0;
-    width: 10px;
-    text-decoration: none;
-    margin-left: 10px;
-    border-radius: 3px;
-    padding: 3px 5px;
-}
-
-.statistics-card {
-    margin-top: 20px;
-    text-align: left;
-}
-.card {
-    font-size: 15px;
-    line-height: 25px;
-}
-.log-out {
-text-align: right;
-}
-.log-out button {
-    font-size: 14px;
-    height: 20px;
-}
-.log-out button a {
-    text-decoration: none;
-}
-/* ----------------------------------main-blog end---------------------------------- */
-
-
-/* prolog화면 css */
-.guest-book {
-    box-shadow: 1px 1px 3px 1px #dadce0 inset;
-    border-radius: 3px;
-    text-align: center;
-}
-.main-row {
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
-    padding: 2%;
-}
-.guest-list {
-    width: 100%;
-    margin-right: 50px;
-    height: auto;
-}
-.guest-input {
-    width: 100%;
-    height: auto;
-    padding: 5%;
-}
-/* prolog table */
-.guest-list table {
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse;
-    margin-top: 100px;
-}
-.guest-list th {
-    font-size: 20px;
-    font-weight: 600;
-}
-.guest-list table tr {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-.guest-list table tbody td{
-    text-align: center;
-    padding: 10px;
-}
-.guest-list table tr:last-child{
-    border-bottom: none;
-}
-
-.guest-input-wrap {
-    margin: 50px auto;
-}
-.guest-input-box {
-    margin-top: 30px;
+  font-size: 100px;
 }
 .btn-area {
     margin-top: 50px;
-}
+  }
 .btn-area a {
+    box-shadow: var(--button-shadow);
+    padding: 1.5%;
+    font-weight: 600;
     text-decoration: none;
 }
+/* ----------------------------------basic end---------------------------------- */
+
+.side-nav {
+  /* box-shadow: 1px 1px 3px 1px #dadce0; */
+  width: 15%;
+  padding: 10px;
+}
+.profile {
+  box-shadow: 1px 2px 3px 1px #dadce0;
+  height: auto;
+  padding: 1%;
+}
+.profile-img img {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+.profile p {
+  text-align: right;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+}
+.side-nav ul {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  list-style: none;
+}
+.side-nav ul li {
+  line-height: 40px;
+}
+.side-nav ul li a {
+  text-decoration: none;
+}
+.side-nav input {
+  border: none;
+  border-radius: 3px;
+  width: 70%;
+  height: 30px;
+  box-shadow: 1px 1px 3px 1px #dadce0 inset;
+}
+.side-nav button {
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px 1px #dadce0;
+  cursor: pointer;
+  width: 50px;
+  height: 30px;
+}
+
+.main-blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  text-align: center;
+}
+.main-blog table thead th {
+  font-size: 25px;
+  font-weight: 600;
+}
+.main-blog table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.main-blog table tbody td {
+  text-align: center;
+  padding: 10px;
+}
+.main-blog table tr:last-child {
+  border-bottom: none;
+}
+
+.writing-box {
+  padding-left: 85%;
+  margin: 50px auto;
+}
+.writing-box-button {
+  text-align: center;
+  width: 100px;
+  /* height: 50px; */
+  font-size: 15px;
+  border-radius: 3px;
+  /* padding-top: 5%; */
+  box-shadow: var(--button-shadow);
+  font-weight: 400;
+}
+.writing-box a {
+  text-decoration: none;
+}
+.pagination {
+  margin-top: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+.pagination a {
+  box-shadow: 1px 1px 3px 1px #dadce0;
+  width: 10px;
+  text-decoration: none;
+  margin-left: 10px;
+  border-radius: 3px;
+  padding: 3px 5px;
+}
+
+.statistics-card {
+  margin-top: 20px;
+  text-align: left;
+}
+.card {
+  font-size: 15px;
+  line-height: 25px;
+}
+.log-out {
+  text-align: right;
+}
+.log-out button {
+  font-size: 14px;
+  height: 20px;
+}
+.log-out button a {
+  text-decoration: none;
+}
+/* ----------------------------------main-blog end---------------------------------- */
+
+/* prolog화면 css */
+.guest-book {
+  box-shadow: var(--button-shadow);
+  border-radius: 3px;
+  text-align: center;
+}
+.main-row {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  padding: 2%;
+}
+.guest-list {
+  width: 100%;
+  margin-right: 50px;
+  height: auto;
+}
+.guest-input {
+  box-shadow: var(--box-inset);
+  width: 100%;
+  height: auto;
+  padding: 5%;
+}
+.guest-input-box input {
+    border: none;
+    box-shadow: var(--box-inset);
+    padding: 1.5%;
+    border-radius: 3px;
+    margin-left: 2%;
+}
+/* prolog table */
+.guest-list table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-top: 100px;
+}
+.guest-list th {
+  font-size: 20px;
+  font-weight: 600;
+}
+.guest-list table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.guest-list table tbody td {
+  text-align: center;
+  padding: 10px;
+}
+.guest-list table tr:last-child {
+  border-bottom: none;
+}
+
+.guest-input-wrap {
+  margin: 50px auto;
+}
+.guest-input-box {
+  margin-top: 30px;
+}
+
+
