@@ -16,7 +16,7 @@ public class Interceptor implements HandlerInterceptor{
 }
 ```
 
-![ip_01](/spring_study/img/ip_01.jpg)
+![ip_01](img/ip_01.JPG)
 
 전체선택 -> 생성
 
@@ -90,7 +90,7 @@ public class WebConfig implements WebMvcConfigurer {
 }
 ```
 
-![ip_02](/spring_study/img/ip_02.jpg)
+![ip_02](img/ip_02.JPG)
 
 ```java
 package com.dw.board.conf;
