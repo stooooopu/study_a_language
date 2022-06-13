@@ -19,7 +19,8 @@
 
 ---
 # @RestController
-- 정리예정
+- Spring에서 외부의 요청(ex HTML등)을 받는 controller
+- @CrossOrigin과 함께 사용
 ---
 # @Autowired
 Spring이 해당 객체(class)를 관리 해 줌   
@@ -56,10 +57,10 @@ private MainService service;
 ## @PostMapping("/")
 - __insert__ 시 사용
 - url은 중복되지 않지만 Annotation이 다를경우 중복 가능(like 오버로딩)
-## @PatchMapping("/{PK}")
+## @DeleteMapping("/")
 - __delete__ 시 사용
 - 파라미터로 PK받아야 함
-## @PatchMapping("/")
+## @PatchMapping("/{PK}")
 - __update__ 시 사용
 ## @RequestBody
 - 파라미터로 넘어오는 VO를 대신 new(인스턴스화)
@@ -87,3 +88,11 @@ install 클릭 -> Quit Installer 클릭
 - 오류발생시 이전 commit으로 돌아감
 - {Exception.class} : 모든 오류
 - {NullPointerException.class} : null 오류
+
+---
+# @RequestParam
+- 1개의 HTTP 요청 파라미터를 받기 위해서 사용
+- 반드시 해당 파라미터가 넘어와야함
+- 넘어오지 않을시 error 400 이 뜸
+- queryString과 변수명이 동일해야함
+- @RequestParam 은 url 상에서 데이터를 찾음
