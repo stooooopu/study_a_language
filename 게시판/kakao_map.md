@@ -8,6 +8,16 @@
 
 ![kakaoMap_02](../게시판/img/kakaoMap_02.JPG)
 
+```
+http://127.0.0.1:5501
+http://127.0.0.1:5500
+http://127.0.0.1:5502
+http://127.0.0.1:5503
+http://localhost:8080
+```
+- 이때 portNum 5500-5503까지는 goLive
+- 8080Spring portNum에서 locallhost = 현재 주소  
+지도가 필요한 url을 완전 동일하게 써줘야 불러올 수 있음
 ## 3. Web 사이트 도메인에 맞게 들어갔는지 확인
 
 ![kakaoMap_03](../게시판/img/kakaoMap_03.JPG)
