@@ -96,3 +96,24 @@ install 클릭 -> Quit Installer 클릭
 - 넘어오지 않을시 error 400 이 뜸
 - queryString과 변수명이 동일해야함
 - @RequestParam 은 url 상에서 데이터를 찾음
+
+---
+# @ResponseBody 
+Controller에서 return을 "파일명"이 아닌 다른 타입으로 리턴이 필요할 때 사용
+```java
+// jsp project
+@PostMapping("/login")
+	public @ResponseBody boolean callLogin(@RequestBody Map<String,Object> data, HttpSession httpSession) {
+		String userId = (String) data.get("userId");
+		String userPassword = (String) data.get("userPassword");
+		
+		System.out.println(userId);
+		System.out.println(userPassword);
+		
+		// session에 데이터 set
+		httpSession.setAttribute("userId", userId);
+		// 원래 password는 session에 넣지 않음
+		httpSession.setAttribute("userPassword", userPassword);
+		return true;
+	}
+```
