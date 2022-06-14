@@ -117,3 +117,8 @@ Controller에서 return을 "파일명"이 아닌 다른 타입으로 리턴이 �
 		return true;
 	}
 ```
+
+---
+# @Component 
+- 타입기반의 자동주입 어노테이션 
+- @Autowired, @Resource와 비슷한 기능을 수행
