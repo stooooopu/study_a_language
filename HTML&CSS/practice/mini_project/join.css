@@ -39,9 +39,10 @@ body {
   margin-bottom: 20px;
 }
 .join-section select {
-  width: 100%;
+  width: 35%;
   height: 30px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+  border: none;
 }
 .detail-addr {
     width: 68%;

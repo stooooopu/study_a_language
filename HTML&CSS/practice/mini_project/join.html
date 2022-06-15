@@ -17,6 +17,12 @@
         <input id="password" type="password" />
         <label for="rePassword">비밀번호 재확인</label>
         <input id="rePassword" type="password" />
+        <label for="gender">성별</label>
+        <select name="" id="gender">
+          <option value="">성별을 선택 해 주세요</option>
+          <option value="w">여성</option>
+          <option value="m">남성</option>
+        </select>
         <label for="userAddr">주소</label>
         <input id="userAddr" type="text" />
         <div class="detail-addr">
@@ -59,7 +65,7 @@
         };
 
         $.ajax({
-          url: "http://localhost:8080/api/v1/students",
+          url: "http://localhost:8080",
           type: "POST",
           // postman에서 json선택하는게 밑에 contentType
           contentType: "application/json", // 서버에 json타입으로 보낼 예정(요청)
