@@ -4,46 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>blog</title>
     <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
     <div class="container">
-<!-- 글작성 팝업 -->
-        <div class="write-popup">
-            <div class="editor">
-                <div class="input-box">
-                    <label for="popup-writer">작성자 : </label>
-                    <input id="popup-writer" type="text">
-                </div>
-                <div class="input-box">
-                    <label for="title">제목 : </label>
-                    <input id="title" type="text" placeholder="제목을 입력하세요">
-                </div>
-                <div class="input-box">
-                    <textarea id="content" rows="10" cols="65" placeholder="내용을 입력하세요"></textarea>
-                </div>
-                <div class="btn-area">
-                    <a href="#" class="btn-cancel">취소</a>
-                    <a id="contentSubmit" href="#" class="btn-success">등록</a>
-                </div>
-            </div>
-        </div>
 
 <!-- header -->
         <header>
-            <h1>blog</h1>
+            <a href="index.html">MY BLOG</a>
         </header>
             <div class="prolog-blog-select">
                 <ul>
                     <li>
-                        <a class="prolog-btn" href="#">
+                        <a class="prolog-btn" href="prolog.html">
                             <span>prolog</span>
                         </a>
                     </li>
                     <li>
-                        <a class="blog-btn" href="#">
+                        <a class="blog-btn" href="index.html">
                             <span>blog</span>
                         </a>
                     </li>
@@ -62,22 +42,22 @@
             </div>
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="index.html">
                         <span class="side-nav-list view-all">전체보기</span>                
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="dailyLife.html">
                         <span class="side-nav-list vlog">일상공유</span>                
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="review.html">
                         <span class="side-nav-list review">리뷰</span>                
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="photoBook.html">
                         <span class="side-nav-list photo">사진첩</span>                
                     </a>
                 </li>
@@ -101,94 +81,14 @@
 
 <!-- logout button -->
             <div class="log-out">
-                <button>
+                <button type="button">
                     <a href="#">logout</a>
                 </button>
             </div>
         </div>
-
-<!-- 메인 prolog화면 -->
-        <div class="main-section main-prolog">
-            <div class="main-row">
-
-<!-- 방명록list -->
-                <div class="guest-book guest-list">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>글 번호</th>
-                                <th>작성자</th>
-                                <th>본문</th>
-                                <th>작성 날짜</th>
-                            </tr>
-                        </thead>
-                            <tbody id="boardData">
-                                <tr>
-                                    <td>글 번호</td>
-                                    <td>작성자</td>
-                                    <td>본문</td>
-                                    <td>2022-05-18</td>
-                                </tr>
-                                <tr>
-                                    <td>글 번호</td>
-                                    <td>작성자</td>
-                                    <td>본문</td>
-                                    <td>2022-05-18</td>
-                                </tr>
-                                <tr>
-                                    <td>글 번호</td>
-                                    <td>작성자</td>
-                                    <td>본문</td>
-                                    <td>2022-05-18</td>
-                                </tr>
-                                <tr>
-                                    <td>글 번호</td>
-                                    <td>작성자</td>
-                                    <td>본문</td>
-                                    <td>2022-05-18</td>
-                                </tr>
-                        </tbody>
-                    </table>
-                    <div class="pagination">
-                        <a href="#">이전</a>
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#">다음</a>
-                    </div>
-                </div>
-
-<!-- 방명록 작성 -->
-                <div class="guest-book guest-input">
-                    <h2>방명록을 남겨주세요</h2>
-                    <div class="guest-input-wrap">
-                        <div class="guest-input-box">
-                            <label for="guest-writer">작성자 </label>
-                            <input id="guest-writer" type="text">
-                        </div>
-                        <div class="guest-input-box">
-                            <label for="guest-input">방명록 </label>
-                            <input id="guest-input" type="text" maxlength="30" placeholder="최대 30글자까지 가능합니다">
-                            <!-- <textarea id="content" rows="2" cols="50" placeholder="내용을 입력하세요"></textarea> -->
-                        </div>
-                        <div class="btn-area">
-                            <a href="#" class="guest-btn-cancel">취소</a>
-                            <a id="contentSubmit" href="#" class="btn-success">등록</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 <!-- 메인 blog화면 -->
         <div class="main-section main-blog">
-            <div class="writing-box">
-                <div class="writing-box-button">
-                    <a href="#">글 작성</a>
-                </div>
-            </div>
+            <div class="writing-box"></div>
             <table>
                 <thead>
                     <tr>

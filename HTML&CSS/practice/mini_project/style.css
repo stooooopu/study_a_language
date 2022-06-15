@@ -1,3 +1,4 @@
+/* ----------------------------------basic---------------------------------- */
 * {
   padding: 0;
   margin: 0;
@@ -19,13 +20,6 @@ body {
 .row {
   display: flex;
 }
-
-.main-prolog {
-  display: none;
-}
-.main-blog {
-  display: block;
-}
 .write-popup {
   display: none;
 }
@@ -35,7 +29,6 @@ body {
   margin-left: 5%;
   padding-left: 5%;
   padding-right: 5%;
-  /* box-shadow: 1px 1px 3px 1px #dadce0; */
   width: 80%;
 }
 .prolog-blog-select {
@@ -71,26 +64,94 @@ header {
   background-image: url(img/header_img.jpg);
   background-position: center;
   background-size: cover;
-  color: white;
+  /* color: white; */
   text-align: center;
   padding-top: 5%;
+  cursor: pointer;
 }
-header h1 {
+header a {
+  font-weight: 100;
   font-size: 100px;
+  text-decoration: none;
+}
+header a:link {
+  color : white;
+}
+header a:visited {
+  color : white;
 }
 .btn-area {
     margin-top: 50px;
-  }
+}
 .btn-area a {
     box-shadow: var(--button-shadow);
     padding: 1.5%;
     font-weight: 600;
     text-decoration: none;
 }
-/* ----------------------------------basic end---------------------------------- */
 
+a:link {
+  color : black;
+}
+a:visited {
+  color : black;
+}
+
+/* ----------------------------------popup---------------------------------- */
+.write-popup {
+  position: absolute;
+  left: 35%;
+  top: 30%;
+  width: 700px;
+  height: 500px;
+  background-color: rgba(240, 240, 240, 0.99);
+  padding: 3%;
+  border-radius: 5px;
+  text-align: center;
+}
+.input-box {
+  margin-top: 10px;
+}
+.input-box input {
+  height: 30px;
+  width: 50%;
+  border: none;
+  box-shadow: var(--box-inset);
+  border-radius: 5px;
+}
+.input-box input::placeholder{
+  padding-left: 10px;
+  font-size: 15px;
+}
+.input-box:nth-child(2) {
+  margin-left: 2.4%;
+  margin-bottom: 20px;
+}
+.input-box textarea {
+  height: 200px;
+  width: 100%;
+  box-shadow: var(--box-inset);
+  border: none;
+}
+.input-box textarea::placeholder {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 15px;
+}
+.write-popup .btn-area a {
+  padding: 3%;
+  border-radius: 5px;
+  margin: 0px 30px;
+  background-color: rgb(250, 250, 250);
+}
+.btn-area a:hover {
+  background-color: rgb(200, 200, 200);
+  color: white;
+  box-shadow: var(--button-shadow);
+}
+
+/* ----------------------------------side-nav---------------------------------- */
 .side-nav {
-  /* box-shadow: 1px 1px 3px 1px #dadce0; */
   width: 15%;
   padding: 10px;
 }
@@ -121,6 +182,17 @@ header h1 {
 .side-nav ul li {
   line-height: 40px;
 }
+.side-nav ul li:hover {
+  background-color: black;
+  border-radius: 5px;
+  transition-duration : 0.5s;
+}
+.side-nav ul li:hover a,
+.side-nav ul li.hovered a
+{
+  transition-duration : 0.5s;
+  color: white;
+}
 .side-nav ul li a {
   text-decoration: none;
 }
@@ -141,6 +213,7 @@ header h1 {
   height: 30px;
 }
 
+/* ----------------------------------main-blog---------------------------------- */
 .main-blog table {
   width: 100%;
   border-collapse: collapse;
@@ -165,14 +238,13 @@ header h1 {
 .writing-box {
   padding-left: 85%;
   margin: 50px auto;
+  height: 50px;
 }
 .writing-box-button {
   text-align: center;
   width: 100px;
-  /* height: 50px; */
   font-size: 15px;
   border-radius: 3px;
-  /* padding-top: 5%; */
   box-shadow: var(--button-shadow);
   font-weight: 400;
 }
@@ -211,9 +283,8 @@ header h1 {
 .log-out button a {
   text-decoration: none;
 }
-/* ----------------------------------main-blog end---------------------------------- */
 
-/* prolog화면 css */
+/* ---------------------------------- prolog---------------------------------- */
 .guest-book {
   box-shadow: var(--button-shadow);
   border-radius: 3px;
@@ -273,4 +344,7 @@ header h1 {
   margin-top: 30px;
 }
 
+/* ----------------------------------main-review---------------------------------- */
 
+
+/* ----------------------------------main-photoBook---------------------------------- */
