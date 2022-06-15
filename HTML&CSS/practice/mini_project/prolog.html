@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prolog</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+<!-- header -->
+        <header>
+            <a href="index.html">MY BLOG</a>
+        </header>
+            <div class="prolog-blog-select">
+                <ul>
+                    <li>
+                        <a class="prolog-btn" href="prolog.html">
+                            <span>prolog</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="blog-btn" href="index.html">
+                            <span>blog</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+<!-- side-nav -->
+    <div class="row">
+        <div class="side-nav">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="img/blog_profile_photo.jpg" alt="">
+                </div>
+                <p>회원 닉네임</p>
+                <p>회원설명</p>
+            </div>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span class="side-nav-list view-all">전체보기</span>                
+                    </a>
+                </li>
+                <li>
+                    <a href="dailyLife.html">
+                        <span class="side-nav-list vlog">일상공유</span>                
+                    </a>
+                </li>
+                <li>
+                    <a href="review.html">
+                        <span class="side-nav-list review">리뷰</span>                
+                    </a>
+                </li>
+                <li>
+                    <a href="photoBook.html">
+                        <span class="side-nav-list photo">사진첩</span>                
+                    </a>
+                </li>
+            </ul>
+
+<!-- 검색창 -->
+            <input type="text">
+            <button>검색</button>
+
+<!-- 통계 + js필요! -->
+            <div class="statistics-card">
+                <div class="card">
+                    <div class="cardName">게시물 수</div>
+                    <div id="boardCnt">200</div>
+                </div>
+                <div class="card">
+                    <div class="cardName">토탈 조회수</div>
+                    <div id="viewsCnt">500</div>
+                </div>
+            </div>
+
+<!-- logout button -->
+            <div class="log-out">
+                <button type="button">
+                    <a href="#">logout</a>
+                </button>
+            </div>
+        </div>
+<!-- 메인 prolog화면 -->
+        <div class="main-section main-prolog">
+            <div class="main-row">
+
+<!-- 방명록list -->
+                <div class="guest-book guest-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>글 번호</th>
+                                <th>작성자</th>
+                                <th>본문</th>
+                                <th>작성 날짜</th>
+                            </tr>
+                        </thead>
+                            <tbody id="boardData">
+                                <tr>
+                                    <td>글 번호</td>
+                                    <td>작성자</td>
+                                    <td>본문</td>
+                                    <td>2022-05-18</td>
+                                </tr>
+                                <tr>
+                                    <td>글 번호</td>
+                                    <td>작성자</td>
+                                    <td>본문</td>
+                                    <td>2022-05-18</td>
+                                </tr>
+                                <tr>
+                                    <td>글 번호</td>
+                                    <td>작성자</td>
+                                    <td>본문</td>
+                                    <td>2022-05-18</td>
+                                </tr>
+                                <tr>
+                                    <td>글 번호</td>
+                                    <td>작성자</td>
+                                    <td>본문</td>
+                                    <td>2022-05-18</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <a href="#">이전</a>
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">다음</a>
+                    </div>
+                </div>
+
+        <!-- 방명록 작성 -->
+                <div class="guest-book guest-input">
+                    <h2>방명록을 남겨주세요</h2>
+                    <div class="guest-input-wrap">
+                        <div class="guest-input-box">
+                            <label for="guest-writer">작성자 </label>
+                            <input id="guest-writer" type="text">
+                        </div>
+                        <div class="guest-input-box">
+                            <label for="guest-input">방명록 </label>
+                            <input id="guest-input" type="text" maxlength="30" placeholder="최대 30글자까지 가능합니다">
+                            <!-- <textarea id="content" rows="2" cols="50" placeholder="내용을 입력하세요"></textarea> -->
+                        </div>
+                        <div class="btn-area">
+                            <a href="#" class="guest-btn-cancel">취소</a>
+                            <a id="contentSubmit" href="#" class="btn-success">등록</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+<script src="index.js"></script>
+</html>
