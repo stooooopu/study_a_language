@@ -68,6 +68,49 @@ spring:
 - MySQL 접속정보 설정에서 tab은 계층표현이기 때문에 필수
 - sql에서 username 찾기 : mySQL -> localhost 우클릭 -> Edit connection에서 확인 가능
 - 주석은 #로 표시  
+
+## DB를 개발DB와 운영DB로 나눠서 활용
+
+```yaml
+---
+# 개발 버전 설정
+spring: 
+   profiles:
+      active: dev # 이것만 운영/개발로 수정하며 사용
+# 여기까지는 공통yaml파일
+---
+spring:
+   profiles: env # 운영모드
+   datasource:
+      initialization-mode: always
+      schema: classpath:init.sql
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://__DB주소__:3306/dw?useUnicode=true&charaterEncoding=utf-8&serverTimezone=UTC
+      username: 
+      password: 
+   mvc :
+      view:
+         prefix: /WEB-INF/views/
+         suffix: .jsp
+      static-path-pattern: /resources/static/** 
+
+---
+spring:
+   profiles: dev # 개발 모드
+   datasource:
+      initialization-mode: always
+      schema: classpath:init.sql
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/dw?useUnicode=true&charaterEncoding=utf-8&serverTimezone=UTC
+      username: 
+      password: 
+   mvc :
+      view:
+         prefix: /WEB-INF/views/
+         suffix: .jsp
+      static-path-pattern: /resources/static/**
+
+```
 ---
 ## mybatis
 - packageName : sqlmap  
