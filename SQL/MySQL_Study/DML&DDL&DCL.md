@@ -109,6 +109,16 @@ create user stopu@'%' identified by '12345';
 -- modify : 수정
 -- drop : 삭제
   ALTER TABLE tableName
+
+  cloumnName변경
+  ALTER TABLE tableName RENAME COLUMN 변경전이름 TO 변경할이름;
+
+  cloumnDataType변경
+  ALTER TABLE tableName MODIFY coulmn_name dataType() NOT NULL;
+
+  FK추가
+  ALTER TABLE tableName add constraint blog_board_id_fk foreign key(board_id)
+references blog_board_name(id) on delete cascade;
 ```
 ---
 
