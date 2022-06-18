@@ -234,7 +234,11 @@ footer button {
   width: 50px;
   height: 30px;
 }
-
+#search-blog-select {
+  width: 80%;
+  height: 30px;
+  border: none;
+}
 /* ----------------------------------main-blog---------------------------------- */
 .main-blog table {
   width: 100%;
