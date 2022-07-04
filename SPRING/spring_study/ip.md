@@ -16,7 +16,7 @@ public class Interceptor implements HandlerInterceptor{
 }
 ```
 
-![ip_01](img/ip_01.JPG)
+![ip_01](img/ip_01.jpg)
 
 전체선택 -> 생성
 
