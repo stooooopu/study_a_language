@@ -19,7 +19,7 @@
 ---
 ## spring에서 사용하는 암호화 : spring security (보안관련 기능 패키지)
 ### 암호화 전 DB password
-![암호화01](/spring_study/img/암호화01.JPG)  
+![암호화01](/SPRING/spring_study/img/%EC%95%94%ED%98%B8%ED%99%9401.JPG)  
 gradle
 ```gradle
 	//spirng security
@@ -67,7 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{ // 보안�
 	}
 ```
 ### 암호화 후 DB password
-![암호화02](/spring_study/img/암호화02.JPG)
+![암호화02](/SPRING/spring_study/img/%EC%95%94%ED%98%B8%ED%99%9402.JPG)
 
 ---
 # 로그인화면에서 받은 정보 체크
