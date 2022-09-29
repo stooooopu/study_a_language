@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- eventListener 예시 -->
+    <button id="c1" name="c1">c1</button>
+    <button id="c2">c2</button>
+    <button id="c3">c3</button>
+</body>
+<script>
+    // var x = document.c1;
+    // console.log(x);
+
+    // addEventListener 예시
+    function c(n){
+        return function(){
+            console.log(n);
+        }
+    }
+    document.getElementById('c1').addEventListener('click',c(1));
+    document.getElementById('c2').addEventListener('click',c(2));
+    document.getElementById('c3').addEventListener('click',c(3));
+    
+    // 비동기 처리 예시
+    console.log("Hello")
+
+    setTimeout(function() {
+        console.log("Hey");
+    },5000);
+
+    console.log("world")
+
+</script>
+</html>
