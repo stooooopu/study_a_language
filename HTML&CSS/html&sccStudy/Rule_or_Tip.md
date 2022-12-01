@@ -24,3 +24,18 @@
 - .row { display : flex; justify-content: space-between; }
 - .row-col { display : flex; flex-direction: column; }
 - three.js : IT 의료, 3D UI를 많이 보여주는 업체
+
+---
+## HTML includ
+```html
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">   
+$(document).ready( function() {
+
+$("#headers").load("common/header.html");  // 원하는 파일 경로를 삽입하면 된다
+$("#footers").load("common/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+
+});
+</script>
+```
+> https://blog.naver.com/PostView.nhn?isHttpsRedirect=true&blogId=blacklish1&logNo=221017411129&parentCategoryNo=&categoryNo=27&viewDate=&isShowPopularPosts=true&from=search
